@@ -1,0 +1,33 @@
+{
+  "name": "gulp-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ShabanovViacheslav",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "latest",
+    "@babel/preset-env": "latest",
+    "babel-loader": "latest",
+    "browser-sync": "latest",
+    "del": "latest",
+    "gulp": "latest",
+    "gulp-babel": "latest",
+    "gulp-cli": "latest",
+    "gulp-htmlmin": "latest",
+    "gulp-image": "latest",
+    "gulp-notify": "latest",
+    "gulp-sass": "latest",
+    "gulp-sourcemaps": "latest",
+    "gulp-svg-sprite": "latest",
+    "gulp-uglify-es": "latest",
+    "just-validate": "latest",
+    "sass": "latest"
+  },
+  "dependencies": {
+    "choices.js": "^9.1.0"
+  }
+}

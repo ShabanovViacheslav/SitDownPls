@@ -1,0 +1,44 @@
+@import 'fonts';
+@import 'variables';
+
+@mixin animate {
+    transition-duration: .2s;
+    transition-timing-function: ease-out;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    color: $colorBlack;
+    box-sizing: border-box;
+    outline: none;
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.link {
+    font-weight: normal;
+    font-size: 14px;
+    color: $colorGrey;
+    @include animate;
+    transition-property: color, background-color;
+
+    &:hover {
+        color: $colorPrimary;
+    }
+
+    &:focus:not(:hover) {
+        background-color: $colorPinkViolet;
+    }
+}
+
+@import 'header';
+
