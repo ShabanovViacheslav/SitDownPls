@@ -11,7 +11,7 @@
     align-items: center;
 }
 
-.header__formRegion {
+.header__formregion {
     grid-area: formRegion;
     display: flex;
     align-items: center;
@@ -179,10 +179,12 @@
 .header__sublist {
     display: flex;
     justify-content: flex-end;
+    margin: 0;
+    padding: 0;
 }
 
 .header__subitem:not(:last-child) {
-    margin-right: 64.5px;
+    margin-right: 65px;
 }
 
 .link_submenu:focus:not(:hover),
@@ -198,7 +200,7 @@
 .logo_header {
     grid-area: logoHeader;
     align-self: end;
-    width: 87.7%;
+    width: 88%;
     height: 48%;
     transform: translateY(3px);
 }
@@ -211,7 +213,8 @@
 .header__items {
     display: flex;
     justify-content: flex-end;
-    margin-right: 3px;
+    margin: 0 3px 0 0;
+    padding: 0;
 }
 
 .header__item:not(:last-child) {
@@ -224,7 +227,7 @@
     color: $colorBlack;
 }
 
-.header__formSearch {
+.header__formsearch {
     position: relative;
     grid-area: formSearch;
     align-self: end;
@@ -232,11 +235,11 @@
     min-height: 60px;
 }
 
-.header__inputSearch {
+.header__inputsearch {
     padding-top: 5px;
     padding-right: 75px;
     padding-left: 59px;
-    width: 71.5%;
+    width: 71%;
     background-color: $colorGreyLight;
     border: 2px solid $colorGreyLight;
     border-top-left-radius: 10px;
@@ -261,7 +264,7 @@
     }
 }
 
-.header__inputSearch::placeholder {
+.header__inputsearch::placeholder {
     font-weight: normal;
     font-size: 16px;
     color: $colorGrey;
@@ -282,7 +285,8 @@
 .header__btn {
     position: absolute;
     top: 55%;
-    right: 31.5%;
+    right: 338px;
+    padding: 0;
     background-color: transparent;
     border: none;
     transform: translateY(-50%);
@@ -324,7 +328,7 @@
 }
 
 .header__btn + .choices {
-    width: 29.5%;
+    width: 29%;
     background-color: $colorWhite;
     border: 2px solid $colorGreyLight;
     border-top-right-radius: 10px;
@@ -360,7 +364,7 @@
 .header__btn + .choices .choices__inner {
     position: absolute;
     top: 50%;
-    left: 11.5%;
+    left: 11%;
     transform: translateY(-50%);
 }
 
@@ -487,33 +491,36 @@
     .header__subnav::before {
         top: 59px;
     }
+    .header__subitem:not(:last-child) {
+        margin-right: 64px;
+    }
     .header__items {
         margin-right: 2px;
         margin-bottom: 5px;
     }
     .header__item:not(:last-child) {
-        margin-right: 41.5px;
+        margin-right: 42px;
     }
-    .header__inputSearch {
+    .header__inputsearch {
         padding-top: 3px;
         padding-left: 57px;
-        width: 68.5%;
+        width: 69%;
     }
     .header__loupe {
-        left: 3.6%;
+        left: 34px;
     }
     .header__btn {
         top: 53%;
-        right: 34.9%;
+        right: 35%;
     }
     .header__btn + .choices {
-        width: 31.5%;
+        width: 31%;
     }
     .header__btn + .choices[data-type*=select-one]::after {
         right: 30px;
     }
     .header__btn + .choices .choices__inner {
-        left: 10%;
+        left: 9%;
     }
     .header__list {
         align-self: center;
@@ -535,7 +542,7 @@
         padding: 0 72px;
     }
     .header__subitem:not(:last-child) {
-        margin-right: 35.5px;
+        margin-right: 35px;
     }
     .header__burger {
         position: relative;
@@ -634,14 +641,8 @@
             }
         }
     }
-    .header__loupe {
-        left: 5.5%;
-    }
-    .header__btn {
-        right: 35.4%;
-    }
     .header__btn + .choices .choices__inner {
-        left: 19.5%;
+        left: 19%;
     }
     .header__list {
         align-self: end;
@@ -691,7 +692,7 @@
             }
 
             .header__subitem:nth-child(3) {
-                width: 112.44px;
+                width: 112px;
             }
         }
     }
@@ -723,13 +724,13 @@
             }
         }
     }
-    .header__formSearch {
+    .header__formsearch {
         align-self: start;
         flex-wrap: wrap;
         row-gap: 16px;
         min-height: 136px;
     }
-    .header__inputSearch {
+    .header__inputsearch {
         width: 100%;
         height: 60px;
         border-radius: 10px;
@@ -750,7 +751,7 @@
         border-radius: 10px;
     }
     .header__btn + .choices .choices__inner {
-        left: 10.2%;
+        left: 10%;
     }
     .header__list {
         align-self: start;
