@@ -19,6 +19,19 @@
     burger.classList.toggle('header__burger_close');
     subMenu.classList.toggle('header__subnav_visible');
   })
+
+  const swiper = new Swiper('.swiper', {
+    loop: true,
+    autoplay: {
+      delay: 10000,
+    },
+    speed: 500,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    allowTouchMove: false,
+  });
 })();
 
 

@@ -18,7 +18,7 @@
     "gulp-babel": "latest",
     "gulp-cli": "latest",
     "gulp-htmlmin": "latest",
-    "gulp-image": "latest",
+    "gulp-image": "^6.2.1",
     "gulp-notify": "latest",
     "gulp-sass": "latest",
     "gulp-sourcemaps": "latest",
@@ -28,6 +28,7 @@
     "sass": "latest"
   },
   "dependencies": {
-    "choices.js": "^9.1.0"
+    "choices.js": "^9.1.0",
+    "swiper": "^7.4.1"
   }
 }

@@ -1,43 +1,129 @@
 @import './fonts', './variables';
 
 @mixin animate {
-    transition-duration: .2s;
-    transition-timing-function: ease-out;
+  transition-duration: .2s;
+  transition-timing-function: ease-out;
 }
 
 * {
-    box-sizing: border-box; 
+  box-sizing: border-box; 
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
-    color: $colorBlack;
-    scroll-behavior: smooth;
+  font-family: 'Open Sans', sans-serif;
+  color: $colorBlack;
+  scroll-behavior: smooth;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 ul {
-    list-style: none;
+  list-style: none;
+}
+
+h1 {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
 }
 
 .link {
-    font-weight: normal;
-    font-size: 14px;
-    color: $colorGrey;
-    @include animate;
-    transition-property: color, background-color;
+  font-weight: normal;
+  font-size: 14px;
+  color: $colorGrey;
+  @include animate;
+  transition-property: color, background-color;
+
+  &:hover {
+    color: $colorPrimary;
+  }
+
+  &:focus:not(:hover) {
+    background-color: $colorPinkViolet;
+  }
+}
+
+.title {
+  margin-bottom: 70px;
+  width: 44%;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 65px;
+  color: $colorGrey;
+
+  &_light {
+    color: $colorWhite;
+  }
+}
+
+.btn {
+  padding: 17px 48px;
+  font-weight: 700;
+  font-size: 16px;
+  border-radius: 10px;
+  @include animate;
+  transition-property: background-color, border-color;
+
+  &_primary {
+    color: $colorWhite;
+    background-color: $colorPrimary;
+    border: 2px solid $colorPrimary;
 
     &:hover {
-        color: $colorPrimary;
+      background-color: $colorPrimaryLight;
+      border-color: $colorPrimaryLight;
     }
 
     &:focus:not(:hover) {
-        background-color: $colorPinkViolet;
+      background-color: $colorPrimaryLight;
     }
+
+    &:active {
+      background-color: $colorPrimaryShade;
+      border-color: $colorPrimaryShade;
+    }
+  }
+
+  &_hero {
+    display: none;
+  }
 }
 
 @import './header';
+@import './hero';
+
+@media (max-width: 1919px) {
+  .title {
+    width: 60%;
+  }
+}
+
+@media (max-width: 1023px) {
+  .title {
+    width: 90%;
+  }
+}
+
+@media (max-width: 767px) {
+  .title {
+    width: 78%;
+    font-size: 20px;
+    line-height: 27px;
+  }
+  .btn_primary {
+    display: none;
+  }
+  .btn_hero {
+    display: block;
+    margin: 0 12px;
+    padding: 18px 0;
+    text-align: center;
+  }
+}
+
+
 

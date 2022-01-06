@@ -1,0 +1,110 @@
+.swiper {
+  height: 400px;
+}
+
+.hero__slide {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hero__slide_first {
+  background-image: url(../img/sofa.jpg);
+}
+
+.hero__slide_second {
+  background-image: url(../img/accessories.jpg);
+}
+
+.hero__slide_third {
+  background-image: url(../img/textile.jpg);
+}
+
+.hero__box {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-top: 41px;
+}
+
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  bottom: 20px;
+}
+
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  margin-right: 8px;
+  margin-left: 8px;
+}
+
+.swiper-pagination-bullet {
+  width: 14px;
+  height: 14px;
+  background-color: $colorBlack;
+  opacity: .3;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: $colorBlack;
+  opacity: 1;
+}
+
+@media (max-width: 1919px) {
+  .hero__slide_first {
+    background-image: url(../img/sofa1024.jpg);
+  }
+  .hero__slide_second {
+    background-image: url(../img/accessories1024.jpg);
+  }
+  .hero__slide_third {
+    background-image: url(../img/textile1024.jpg);
+  }
+  .hero__box {
+    padding: 40px 36px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .hero__slide_first {
+    background-image: url(../img/sofa768.jpg);
+  }
+  .hero__slide_second {
+    background-image: url(../img/accessories768.jpg);
+  }
+  .hero__slide_third {
+    background-image: url(../img/textile768.jpg);
+  }
+  .hero__box {
+    padding-right: 72px;
+    padding-left: 72px;
+  }
+}
+
+@media (max-width: 767px) {
+  .swiper {
+    height: 210px;
+    margin-bottom: 32px;
+  }
+  .hero__slide_first {
+    background-image: url(../img/sofa320.jpg);
+  }
+  .hero__slide_second {
+    background-image: url(../img/accessories320.jpg);
+  }
+  .hero__slide_third {
+    background-image: url(../img/textile320.jpg);
+  }
+  .hero__box {
+    padding-top: 13px;
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+  .swiper-pagination-bullets.swiper-pagination-horizontal {
+    bottom: 8px;
+  }
+  .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin-right: 4px;
+    margin-left: 4px;
+  }
+  .swiper-pagination-bullet {
+    width: 6px;
+    height: 6px;
+  }
+}

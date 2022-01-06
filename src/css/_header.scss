@@ -7,7 +7,7 @@
         'logoHeader logoHeader . navHeader navHeader navHeader navHeader navHeader navHeader navHeader navHeader navHeader'
         'formSearch formSearch formSearch formSearch formSearch formSearch formSearch formSearch formSearch formSearch listHeader listHeader';
     max-width: 1280px;
-    margin: 0 auto;
+    margin: 0 auto 33px auto;
     align-items: center;
 }
 
@@ -40,7 +40,7 @@
     top: 58%;
     margin-top: -2.5px;
     pointer-events: none;
-    background-image: url('../img/arrow.svg');
+    background-image: url(../img/arrow.svg);
     background-repeat: no-repeat;
     background-size: contain;
     @include animate;
@@ -53,14 +53,14 @@
 }
 
 .header__label + .choices:hover::after {
-    background-image: url('../img/arrowHover.svg');
+    background-image: url(../img/arrowHover.svg);
     @include animate;
     transition-property: background;
 }
 
 .header__label + .choices:focus:not(:hover)::after,
 .header__label + .choices:active::after {
-    background-image: url('../img/arrowFocus.svg');
+    background-image: url(../img/arrowFocus.svg);
     @include animate;
     transition-property: background;
 }
@@ -621,7 +621,7 @@
         padding-top: 93px;
         padding-left: 72px;
         background-color: $colorWhite;
-        background-image: url('/img/elephant.svg');
+        background-image: url(../img/elephant.svg);
         background-repeat: no-repeat;
         background-position: 88% 68%;
     }
@@ -651,7 +651,7 @@
 
 @media (max-width: 767px) {
     .header {
-        grid-template-rows: min(48px) min(60px) min(53px) min(48px) min(89px);
+        grid-template-rows: min(48px) min(60px) min(53px) min(48px) min-content;
         grid-template-areas: 
             '. logoHeader logoHeader logoHeader logoHeader .'
             'formRegion formRegion formRegion formRegion . .'
