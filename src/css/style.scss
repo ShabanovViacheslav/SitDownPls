@@ -6,7 +6,8 @@
 }
 
 * {
-  box-sizing: border-box; 
+  box-sizing: border-box;
+  outline: none; 
 }
 
 body {
@@ -48,15 +49,27 @@ h1 {
 }
 
 .title {
-  margin-bottom: 70px;
+  margin: 0;
   width: 44%;
   font-weight: 700;
   font-size: 48px;
   line-height: 65px;
   color: $colorGrey;
 
+  &_hero {
+    margin-bottom: 70px;
+  }
+
   &_light {
     color: $colorWhite;
+  }
+
+  &_offer {
+    margin-bottom: 26px;
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 100%;
+    color: $colorBlack;
   }
 }
 
@@ -66,7 +79,7 @@ h1 {
   font-size: 16px;
   border-radius: 10px;
   @include animate;
-  transition-property: background-color, border-color;
+  transition-property: background-color, border-color, color;
 
   &_primary {
     color: $colorWhite;
@@ -91,10 +104,39 @@ h1 {
   &_hero {
     display: none;
   }
+
+  &_offer {
+    grid-area: btnOffer;
+    margin-top: 23px;
+    margin-left: 30px;
+    padding: 16px 0;
+    width: 128px;
+    height: 54px;
+    border: 2px solid $colorPrimary;
+    color: $colorPrimary;
+    text-align: center;
+
+    &:hover {
+      color: $colorWhite;
+      background-color: $colorPrimary;
+    }
+
+    &:focus:not(:hover) {
+      color: $colorWhite;
+      background-color: $colorPrimaryLight;
+    }
+
+    &:active {
+      color: $colorWhite;
+      background-color: $colorPrimaryShade;
+      border-color: $colorPrimaryShade;
+    }
+  }
 }
 
 @import './header';
 @import './hero';
+@import './offer';
 
 @media (max-width: 1919px) {
   .title {
@@ -113,6 +155,10 @@ h1 {
     width: 78%;
     font-size: 20px;
     line-height: 27px;
+    &_offer {
+      font-size: 24px;
+      line-height: 100%;
+    }
   }
   .btn_primary {
     display: none;

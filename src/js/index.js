@@ -20,7 +20,7 @@
     subMenu.classList.toggle('header__subnav_visible');
   })
 
-  const swiper = new Swiper('.swiper', {
+  new Swiper('.swiper_hero', {
     loop: true,
     autoplay: {
       delay: 10000,
@@ -32,6 +32,34 @@
     },
     allowTouchMove: false,
   });
+
+  new Swiper('.swiper_offer', {
+    allowTouchMove: false,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+      disabledClass: 'offer__btn_disabled'
+    },
+    slidesPerView: "auto",
+    slidesPerGroup: 1,
+    spaceBetween: 0,
+    breakpoints: {
+      768: {
+        slidesPerGroup: 2,
+        spaceBetween: 32,
+      },
+      1024: {
+        slidesPerGroup: 3,
+        spaceBetween: 32,
+      },
+    },
+  });
+
+  const btnPrev = document.querySelector('.offer__btn_prev');
+  const btnNext = document.querySelector('.offer__btn_next');
+
+  btnPrev.setAttribute('aria-label', 'Предыдущие предложения');
+  btnNext.setAttribute('aria-label', 'Cледующие предложения');
 })();
 
 
