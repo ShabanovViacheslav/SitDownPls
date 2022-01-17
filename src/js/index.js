@@ -1,6 +1,8 @@
 (function(){
   "use strict";
 
+  // header
+
   const selectElements = document.querySelectorAll('.header__select');
 
   for(let i of selectElements) {
@@ -20,6 +22,8 @@
     subMenu.classList.toggle('header__subnav_visible');
   })
 
+  // hero
+
   new Swiper('.swiper_hero', {
     loop: true,
     autoplay: {
@@ -32,6 +36,8 @@
     },
     allowTouchMove: false,
   });
+
+  // offer
 
   new Swiper('.swiper_offer', {
     allowTouchMove: false,
@@ -60,6 +66,59 @@
 
   btnPrev.setAttribute('aria-label', 'Предыдущие предложения');
   btnNext.setAttribute('aria-label', 'Cледующие предложения');
+
+  // rate
+
+  const btnRate = document.querySelector('.btn_primaryrate');
+  const cards = document.querySelectorAll('.card_rate');
+
+  function setCardsView (elements, selector) {
+    for (let i of elements) {
+      if(window.innerWidth < 1920 && i.dataset.size === '1024') {
+        i.classList.add(selector);
+      } else if (window.innerWidth >= 1920 && i.dataset.size === '1024') {
+        i.classList.remove(selector);
+      }
+    }
+  };
+
+  setCardsView(cards, 'card_hidden');
+
+  window.addEventListener('resize', ()=> {
+    setView(cards, 'card_hidden');
+  });
+
+  function getVisibleCards () {
+    let n = (window.innerWidth < 1023) ? 2 :
+      (window.innerWidth < 1919) ? 3 :
+      4;
+    let count = false;
+    outer: for (let i of cards) {
+      while(n) {
+        if (i.classList.contains('card_hidden')) {
+          btnRate.addEventListener('click', (e) => {
+            i.classList.remove('card_hidden');
+            e.currentTarget.scrollIntoView({
+              behavior: 'smooth',
+              block: 'end'
+            });
+            getVisibleCards();
+          },
+          {once: true})
+          count = true;
+          n -= 1;
+          continue outer;
+        }
+        continue outer;
+      }
+    }
+    if (!count) {
+      btnRate.classList.add('card_hidden');
+    }
+  }
+
+  getVisibleCards();
+  
 })();
 
 

@@ -64,7 +64,8 @@ h1 {
     color: $colorWhite;
   }
 
-  &_offer {
+  &_offer,
+  &_rate {
     margin-bottom: 26px;
     font-weight: normal;
     font-size: 32px;
@@ -99,14 +100,23 @@ h1 {
       background-color: $colorPrimaryShade;
       border-color: $colorPrimaryShade;
     }
+
+    &rate {
+      position: absolute;
+      left: 50%;
+      padding: 18px 35px;
+      cursor: pointer;
+      transform: translateX(-50%);
+    }
   }
 
   &_hero {
     display: none;
   }
 
-  &_offer {
-    grid-area: btnOffer;
+  &_offer,
+  &_rate {
+    grid-area: btn;
     margin-top: 23px;
     margin-left: 30px;
     padding: 16px 0;
@@ -132,21 +142,228 @@ h1 {
       border-color: $colorPrimaryShade;
     }
   }
+
+  &_rate {
+    align-self: end;
+    margin: 0;
+  }
+}
+
+.card {
+  position: relative;
+  display: grid;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    background-color: $colorGreyLight;
+    border-radius: 10px;
+  }
+
+  &_offer {
+    grid-template-rows: min-content 3fr min-content 1fr;
+    grid-template-areas: 
+      'discount'
+      'product'
+      'listOffer'
+      'btn';
+    width: calc(100% / 4 - 24px);
+    padding-top: 30px;
+
+    &big {
+      width: calc(100% / 2 - 16px);
+    }
+  
+    &chair {
+      background-image: url(../img/chair.png);
+      background-position: 50% 24%;
+    }
+  
+    &sofa {
+      background-image: url(../img/sofa.png);
+      background-position: 52% 14%;
+  
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-image: url(../img/z44.png);
+        background-repeat: no-repeat;
+        background-position: 92% 92%;
+      }
+    }
+  
+    &clock {
+      background-image: url(../img/clock.png);
+      background-position: 50% 22%;
+    }
+  
+    &dear {
+      background-image: url(../img/dear.png);
+      background-position: 50% 24%;
+    }
+  
+    &sofa2 {
+      background-image: url(../img/sofa2.png);
+      background-position: 52% 14%;
+  
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-image: url(../img/z85.png);
+        background-repeat: no-repeat;
+        background-position: 92% 92%;
+      }
+    }
+  
+    &thermometer {
+      background-image: url(../img/thermometer.png);
+      background-position: 50% 22%;
+    }
+  }
+
+  &_hidden {
+    display: none;
+  }
+
+  &_rate {
+    grid-template-rows: min-content 56% 11% 21%;
+    grid-template-areas: 
+      'estimate'
+      'product'
+      'price'
+      'btn';
+    padding-top: 33px;
+    padding-left: 30px;
+
+    &black {
+      background-image: url(../img/sofa_black.png);
+      background-position: 50% 32%;
+    }
+
+    &brown {
+      background-image: url(../img/sofa_brown.png);
+      background-position: 50% 28%;
+    }
+
+    &blue {
+      background-image: url(../img/sofa_blue.png);
+      background-position: 50% 28%;
+    }
+
+    &orange {
+      background-image: url(../img/sofa_orange.png);
+      background-position: 50% 22%;
+    }
+
+    &ligth {
+      background-image: url(../img/sofa_ligth.png);
+      background-position: 50% 24%;
+    }
+
+    &beige {
+      background-image: url(../img/sofa_beige.png);
+      background-position: 50% 24%;
+    }
+
+    &grey {
+      background-image: url(../img/sofa_grey.png);
+      background-position: 50% 21%;
+    }
+
+    &choco {
+      background-image: url(../img/sofa_choco.png);
+      background-position: 50% 23%;
+    }
+  }
+}
+
+.product {
+  grid-area: product;
+  align-self: end;
+  margin: 0;
+  padding: 23px 30px;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 130%;
+  color: $colorBlack;
+
+  &_rate {
+    padding: 0;
+  }
 }
 
 @import './header';
 @import './hero';
 @import './offer';
+@import './rate';
 
 @media (max-width: 1919px) {
   .title {
     width: 60%;
+  }
+  .card {
+    &_offer {
+      width: calc(100% / 3 - 21px);
+      &big {
+        width: calc(100% / 3 - 21px);
+      }
+      &chair {
+        background-image: url(../img/chair1024.png);
+      }
+      &sofa {
+        background-image: url(../img/sofa1024.png);
+        background-position-y: 30%;
+        &::after {
+          content: none;
+        }
+      }
+      &clock {
+        background-image: url(../img/clock1024.png);
+      }
+      &dear {
+        background-image: url(../img/dear1024.png);
+      }
+      &sofa2 {
+        background-image: url(../img/sofa2_1024.png);
+        background-position-y: 30%;
+        &::after {
+          content: none;
+        }
+      }
+      &thermometer {
+        background-image: url(../img/thermometer1024.png);
+      }
+    }
+    &_rate {
+      grid-template-rows: min-content 56% 11% 20%;
+    }
   }
 }
 
 @media (max-width: 1023px) {
   .title {
     width: 90%;
+  }
+  .card_offer {
+    width: calc(100% / 2 - 16px);
+    &big {
+      width: calc(100% / 2 - 16px);
+    }
   }
 }
 
@@ -155,19 +372,65 @@ h1 {
     width: 78%;
     font-size: 20px;
     line-height: 27px;
-    &_offer {
+    &_offer,
+    &_rate {
       font-size: 24px;
       line-height: 100%;
+    } 
+  }
+  .btn {
+    &_primary {
+      display: none;
+      &rate {
+        display: block;
+        min-width: 296px;
+        padding: 19px 0;
+      }
+    }
+    &_hero {
+      display: block;
+      margin: 0 12px;
+      padding: 18px 0;
+      text-align: center;
+    }
+    &_rate {
+      width: 108px;
+      height: 40px;
+      padding: 9px 0; 
+      font-weight: 600;
     }
   }
-  .btn_primary {
-    display: none;
+  .card {
+    &_offer {
+      width: 100%;
+      &big {
+        width: 100%;
+      }
+    }
+    &_rate {
+      grid-template-rows: min-content 56% 11% 21%;
+      padding-top: 17px;
+      padding-left: 16px;
+      background-size: 77%;
+      &black {
+        background-position-y: 21%;
+      }
+      &brown,
+      &blue,
+      &beige {
+        background-position-y: 20%;
+      }
+      &orange,
+      &ligth,
+      &grey,
+      &choco {
+        background-position-y: 19%;
+      }
+    }
   }
-  .btn_hero {
-    display: block;
-    margin: 0 12px;
-    padding: 18px 0;
-    text-align: center;
+  .product_rate {
+    margin-bottom: 9px;
+    font-size: 16px;
   }
 }
 

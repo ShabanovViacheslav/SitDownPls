@@ -2,7 +2,7 @@
   position: relative;
   padding-top: 70px;
   max-width: 1280px;
-  margin: 0 auto;
+  margin: 0 auto 70px auto;
 
   &__btn {
     top: 70px;
@@ -98,80 +98,6 @@
     transition-property: fill, stroke;
   }
 
-  &__slide {
-    display: grid;
-    grid-template-rows: min-content 3fr min-content 1fr;
-    grid-template-areas: 
-      'discount'
-      'product'
-      'listOffer'
-      'btnOffer';
-    width: calc(100% / 4 - 24px);
-    padding-top: 30px;
-    background-repeat: no-repeat;
-    border-radius: 10px;
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      z-index: -1;
-      background-color: $colorGreyLight;
-      border-radius: 10px;
-    }
-
-    &_big {
-      width: calc(100% / 2 - 16px);
-    }
-
-    &_chair {
-      background-image: url(../img/chair.png);
-      background-position: 50% 24%;
-    }
-
-    &_sofa {
-      background-image: url(../img/sofa.png);
-      background-position: 52% 14%;
-
-      &::after {
-        content: '';
-        background-image: url(../img/z44.png);
-        background-repeat: no-repeat;
-        background-position: 92% 92%;
-      }
-    }
-
-    &_clock {
-      background-image: url(../img/clock.png);
-      background-position: 50% 22%;
-    }
-
-    &_dear {
-      background-image: url(../img/dear.png);
-      background-position: 50% 24%;
-    }
-
-    &_sofa2 {
-      background-image: url(../img/sofa2.png);
-      background-position: 52% 14%;
-
-      &::after {
-        content: '';
-        background-image: url(../img/z85.png);
-        background-repeat: no-repeat;
-        background-position: 92% 92%;
-      }
-    }
-
-    &_thermometer {
-      background-image: url(../img/thermometer.png);
-      background-position: 50% 22%;
-    }
-  }
-
   &__discount {
     grid-area: discount;
     display: inline-block;
@@ -182,17 +108,6 @@
     font-weight: 700;
     font-size: 14px;
     color: $colorWhite;
-  }
-
-  &__product {
-    grid-area: product;
-    align-self: end;
-    margin: 0;
-    padding: 23px 30px;
-    font-weight: normal;
-    font-size: 24px;
-    line-height: 130%;
-    color: $colorBlack;
   }
 
   &__list {
@@ -234,38 +149,6 @@
     &__btn_next {
       right: 36px;
     }
-    &__slide {
-      width: calc(100% / 3 - 21px);
-      &_big {
-        width: calc(100% / 3 - 21px);
-      }
-      &_chair {
-        background-image: url(../img/chair1024.png);
-      }
-      &_sofa {
-        background-image: url(../img/sofa1024.png);
-        background-position-y: 30%;
-        &::after {
-          content: none;
-        }
-      }
-      &_clock {
-        background-image: url(../img/clock1024.png);
-      }
-      &_dear {
-        background-image: url(../img/dear1024.png);
-      }
-      &_sofa2 {
-        background-image: url(../img/sofa2_1024.png);
-        background-position-y: 30%;
-        &::after {
-          content: none;
-        }
-      }
-      &_thermometer {
-        background-image: url(../img/thermometer1024.png);
-      }
-    }
   }
 }
 
@@ -278,12 +161,6 @@
     }
     &__btn_next {
       right: 72px;
-    }
-    &__slide {
-      width: calc(100% / 2 - 16px);
-      &_big {
-        width: calc(100% / 2 - 16px);
-      }
     }
   }
 }
@@ -303,12 +180,6 @@
       }
       &_next {
         right: 43%;
-      }
-    }
-    &__slide {
-      width: 100%;
-      &_big {
-        width: 100%;
       }
     }
   }

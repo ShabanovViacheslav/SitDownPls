@@ -1,0 +1,76 @@
+.rate {
+  max-width: 1280px;
+  margin: 0 auto;
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 420px;
+    gap: 32px;
+    margin-bottom: 32px;
+  }
+
+  &__estimate {
+    grid-area: estimate;
+    font-weight: normal;
+    font-size: 16px;
+    color: $colorSecondary;
+
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 16px;
+      height: 15px;
+      margin-right: 7px;
+      background-image: url(../img/star.svg);
+    }
+  }
+
+  &__price {
+    grid-area: price;
+    align-self: end;
+    margin: 0;
+    font-weight: normal;
+    font-size: 16px;
+    color: $colorGrey;
+  }
+}
+
+@media (max-width: 1919px) {
+  .rate {
+    padding-right: 36px;
+    padding-left: 36px;
+    &__container {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+@media (max-width: 1023px) {
+  .rate {
+    padding-right: 72px;
+    padding-left: 72px;
+    &__container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .rate {
+    padding-right: 12px;
+    padding-left: 12px;
+    &__container {
+      grid-auto-rows: 278px;
+      gap: 16px;
+    }
+    &__estimate {
+      font-size: 12px;
+      &::before {
+        width: 13px;
+        height: 12px;
+        background-size: contain;
+      }
+    }
+  }
+}
