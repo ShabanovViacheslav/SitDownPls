@@ -72,6 +72,14 @@ h1 {
     line-height: 100%;
     color: $colorBlack;
   }
+
+  &_banner {
+    margin-bottom: 4px;
+    font-family: 'Playfair Display', sans-serif;
+    font-weight: 900;
+    font-size: 60px;
+    color: $colorGold;
+  }
 }
 
 .btn {
@@ -107,6 +115,10 @@ h1 {
       padding: 18px 35px;
       cursor: pointer;
       transform: translateX(-50%);
+    }
+
+    &banner {
+      padding: 17px 30px;
     }
   }
 
@@ -311,6 +323,7 @@ h1 {
 @import './hero';
 @import './offer';
 @import './rate';
+@import './banner';
 
 @media (max-width: 1919px) {
   .title {
@@ -373,10 +386,11 @@ h1 {
     font-size: 20px;
     line-height: 27px;
     &_offer,
-    &_rate {
+    &_rate,
+    &_banner {
       font-size: 24px;
       line-height: 100%;
-    } 
+    }
   }
   .btn {
     &_primary {
@@ -385,6 +399,16 @@ h1 {
         display: block;
         min-width: 296px;
         padding: 19px 0;
+      }
+      &banner {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        display: block;
+        min-width: 296px;
+        padding: 19px 0;
+        text-align: center;
+        transform: translate(-50%, 92px);
       }
     }
     &_hero {

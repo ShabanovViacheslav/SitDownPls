@@ -24,3 +24,12 @@
     font-weight: 700;
     font-style: normal;
   }
+
+  @font-face {
+    font-family: 'Playfair Display';
+    src: url('/../fonts/playfair-900.woff2') format('woff2'),
+      url('/../fonts/playfair-900.woff') format('woff');
+    font-display: swap;
+    font-weight: 900;
+    font-style: normal;
+  }
