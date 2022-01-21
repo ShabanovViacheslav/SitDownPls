@@ -1,5 +1,6 @@
 .banner {
   min-height: 600px;
+  margin-bottom: 70px;
   background-image: url(../img/banner.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -43,6 +44,7 @@
   .banner {
     position: relative;
     min-height: 210px;
+    margin-bottom: 163px;
     background-image: url(../img/banner320.jpg);
     &__container {
       padding: 34px 12px 0 12px;

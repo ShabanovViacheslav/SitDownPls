@@ -84,15 +84,11 @@
 
   setCardsView(cards, 'card_hidden');
 
-  window.addEventListener('resize', ()=> {
-    setView(cards, 'card_hidden');
-  });
-
   function getVisibleCards () {
     let n = (window.innerWidth < 1023) ? 2 :
       (window.innerWidth < 1919) ? 3 :
       4;
-    let count = false;
+    let isEmpty = false;
     outer: for (let i of cards) {
       while(n) {
         if (i.classList.contains('card_hidden')) {
@@ -105,20 +101,36 @@
             getVisibleCards();
           },
           {once: true})
-          count = true;
+          isEmpty = true;
           n -= 1;
           continue outer;
         }
         continue outer;
       }
     }
-    if (!count) {
+    if (!isEmpty) {
       btnRate.classList.add('card_hidden');
     }
   }
 
   getVisibleCards();
-  
+
+  // categories
+
+  const linkElements = document.querySelectorAll('.categories__link');
+
+  function setLinkView (element) {
+    for (let i of element) {
+      i.firstChild.textContent = (window.innerWidth < 768) ? '' : 'В каталог ';
+    }
+  }
+
+  setLinkView(linkElements);
+
+  window.addEventListener('resize', ()=> {
+    setCardsView(cards, 'card_hidden');
+    setLinkView(linkElements);
+  });
 })();
 
 

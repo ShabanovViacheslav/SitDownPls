@@ -65,7 +65,8 @@ h1 {
   }
 
   &_offer,
-  &_rate {
+  &_rate,
+  &_categories {
     margin-bottom: 26px;
     font-weight: normal;
     font-size: 32px;
@@ -209,6 +210,7 @@ h1 {
         right: 0;
         bottom: 0;
         left: 0;
+        z-index: -1;
         background-image: url(../img/z44.png);
         background-repeat: no-repeat;
         background-position: 92% 92%;
@@ -236,6 +238,7 @@ h1 {
         right: 0;
         bottom: 0;
         left: 0;
+        z-index: -1;
         background-image: url(../img/z85.png);
         background-repeat: no-repeat;
         background-position: 92% 92%;
@@ -302,6 +305,41 @@ h1 {
       background-position: 50% 23%;
     }
   }
+
+  &_categories {
+    grid-template-rows: min-content 1fr min-content;
+    grid-template-areas: 
+      'list'
+      'product'
+      'link';
+    padding: 27px 0  32px 30px;
+    background-position-y: 60%;
+
+    &sofas {
+      grid-area: sofa;
+      background-image: url(../img/cat_sofa.png);
+    }
+    
+    &chairs {
+      grid-area: chair;
+      background-image: url(../img/cat_armchair.png);
+    }
+
+    &beds {
+      grid-area: bed;
+      background-image: url(../img/cat_bed.png);
+    }
+
+    &dressers {
+      grid-area: dresser;
+      background-image: url(../img/cat_dresser.png);
+    }
+
+    &stools {
+      grid-area: stool;
+      background-image: url(../img/cat_chair.png);
+    }    
+  }
 }
 
 .product {
@@ -317,6 +355,11 @@ h1 {
   &_rate {
     padding: 0;
   }
+
+  &_categories {
+    align-self: start;
+    padding: 0;
+  }
 }
 
 @import './header';
@@ -324,6 +367,7 @@ h1 {
 @import './offer';
 @import './rate';
 @import './banner';
+@import './categories';
 
 @media (max-width: 1919px) {
   .title {
@@ -365,6 +409,26 @@ h1 {
     &_rate {
       grid-template-rows: min-content 56% 11% 20%;
     }
+    &_categories {
+      background-position-y: 58%;
+      &sofas {
+        background-image: url(../img/cat_sofa1024.png);
+        background-position-y: 59%;
+      }
+      &chairs {
+        background-image: url(../img/cat_armchair1024.png);
+      }
+      &beds {
+        background-image: url(../img/cat_bed1024.png);
+        background-size: contain;
+      }
+      &dressers {
+        background-image: url(../img/cat_dresser1024.png);
+      }
+      &stools {
+        background-image: url(../img/cat_chair1024.png);
+      }    
+    }
   }
 }
 
@@ -387,7 +451,8 @@ h1 {
     line-height: 27px;
     &_offer,
     &_rate,
-    &_banner {
+    &_banner,
+    &_categories {
       font-size: 24px;
       line-height: 100%;
     }
@@ -449,6 +514,76 @@ h1 {
       &grey,
       &choco {
         background-position-y: 19%;
+      }
+    }
+    &_categories {
+      grid-template-columns: min-content 1fr;
+      grid-template-rows: min-content min-content;
+      grid-template-areas: 
+        'list list'
+        'product link';
+        background-position-y: 83%;
+      &sofas {
+        background-image: url(../img/cat_sofa320.png);
+        background-position-y: 85%;
+      }
+      &chairs {
+        background-image: url(../img/cat_armchair320.png);
+        background-size: contain;
+      }
+      &beds {
+        background-image: url(../img/cat_bed320.png);
+      }
+      &dressers {
+        grid-template-columns: min-content 1fr;
+        grid-template-rows: min-content min-content;
+        grid-template-areas: 
+          'list .'
+          'product link';
+        padding: 13px 0 0 16px;
+        background-image: url(../img/cat_dresser320.png);
+        background-position-y: 85%;
+        background-size: contain;
+        .categories__list {
+          margin-bottom: 8px;
+        }
+        .categories__item {
+          line-height: 70%;
+        }
+        .link {
+          font-size: 10px;
+        }
+        .product_categories {
+          font-size: 16px;
+          line-height: 105%;
+        }
+        .categories__link {
+          align-self: end;
+        }
+        .categories__svg {
+          transform: translate(6px, 8px);
+        }
+      }
+      &stools {
+        background-image: url(../img/cat_chair320.png);
+      }  
+    }
+    &_categories:not(:first-child, &_categoriesdressers) {
+      padding: 13px 0 0 16px;
+      .categories__list {
+        margin-bottom: 8px;
+      }
+      .categories__item {
+        line-height: 70%;
+      }
+      .product_categories {
+        font-size: 16px;
+      }
+      .link {
+        font-size: 10px;
+      }
+      .categories__svg {
+        transform: translate(5px, -1px);
       }
     }
   }

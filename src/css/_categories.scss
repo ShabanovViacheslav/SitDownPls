@@ -1,0 +1,181 @@
+.categories {
+  max-width: 1280px;
+  margin: 0 auto;
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: min(511px) min(405px);
+    grid-template-areas: 
+        'sofa sofa sofa sofa sofa sofa chair chair chair chair chair chair'
+        'bed bed bed bed dresser dresser dresser dresser stool stool stool stool';
+    gap: 32px;
+  }
+
+  &__list {
+    grid-area: list;
+    margin: 0 0 14px 0;
+    padding: 0;
+    display: flex;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 30px;
+  }
+
+  &__link {
+    position: relative;
+    grid-area: link;
+    justify-self: start;
+    font-weight: 700;
+    font-size: 16px;
+    color: $colorPrimary;
+    @include animate;
+    transition-property: color;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 25px;
+      bottom: 0;
+      left: 0;
+      border-bottom: 2px solid $colorPrimary;
+      opacity: 0;
+      @include animate;
+      transition-property: opacity;
+    }
+
+    &:hover {
+
+      &::before {
+        opacity: 1;
+        @include animate;
+        transition-property: opacity;
+      }
+
+      .categories__svg path {
+        stroke: $colorWhite;
+        @include animate;
+        transition-property: stroke;
+      }
+
+      .categories__svg circle {
+        fill: $colorPrimary;
+        @include animate;
+        transition-property: fill;
+      }
+    }
+
+    &:focus:not(:hover) {
+
+      &::before {
+        opacity: 1;
+        @include animate;
+        transition-property: opacity;
+      }
+
+      .categories__svg path {
+        stroke: $colorWhite;
+        @include animate;
+        transition-property: stroke;
+      }
+
+      .categories__svg circle {
+        fill: $colorPrimaryLight;
+        @include animate;
+        transition-property: fill;
+      }
+    }
+
+    &:active {
+      color: $colorPrimaryShade;
+
+      &::before {
+        opacity: 1;
+        @include animate;
+        transition-property: opacity;
+      }
+
+      .categories__svg path {
+        stroke: $colorWhite;
+        @include animate;
+        transition-property: stroke;
+      }
+
+      .categories__svg circle {
+        fill: $colorPrimaryShade;
+        stroke: $colorPrimaryShade;
+        @include animate;
+        transition-property: fill, stroke;
+      }
+    }
+  }
+
+  &__svg {
+    transform: translateY(5px);
+
+    path {
+      stroke: $colorPrimary;
+      @include animate;
+      transition-property: stroke;
+    }
+
+    circle {
+      stroke: $colorPrimary;
+      fill: transparent;
+      @include animate;
+      transition-property: fill, stroke;
+    }
+  }
+}
+
+@media (max-width: 1919px) {
+  .categories {
+    padding-right: 36px;
+    padding-left: 36px;
+    &__container {
+      grid-template-columns: repeat(9, 1fr);
+      grid-template-rows: repeat(2, min(511px));
+      grid-template-areas: 
+          'sofa sofa sofa sofa sofa sofa bed bed bed'
+          'dresser dresser dresser chair chair chair stool stool stool';
+    }
+  }
+}
+
+@media (max-width: 1023px) {
+  .categories {
+    padding-right: 72px;
+    padding-left: 72px;
+    &__container {
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: repeat(3, min(511px));
+      grid-template-areas: 
+          'sofa sofa sofa sofa sofa sofa'
+          'bed bed bed chair chair chair' 
+          'dresser dresser dresser stool stool stool';
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .categories {
+    padding-right: 12px;
+    padding-left: 12px;
+    &__container {
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: min(332px) repeat(2, min(206px));
+      gap: 32px 16px; 
+    }
+    &__list {
+      flex-wrap: wrap;
+    }
+    &__item:not(:last-child) {
+      margin-right: 20px;
+    }
+    &__svg {
+      transform: translate(6px, 5px);
+    }
+  }
+}
