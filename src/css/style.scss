@@ -66,7 +66,8 @@ h1 {
 
   &_offer,
   &_rate,
-  &_categories {
+  &_categories,
+  &_useful {
     margin-bottom: 26px;
     font-weight: normal;
     font-size: 32px;
@@ -128,7 +129,8 @@ h1 {
   }
 
   &_offer,
-  &_rate {
+  &_rate,
+  &_useful {
     grid-area: btn;
     margin-top: 23px;
     margin-left: 30px;
@@ -340,6 +342,17 @@ h1 {
       background-image: url(../img/cat_chair.png);
     }    
   }
+
+  &_useful {
+    grid-template-rows: min-content 1fr min-content;
+    grid-template-areas: 
+      'picture'
+      'text'
+      'btn';
+    padding-bottom: 30px;
+    min-height: 676px;
+    height: 100%;
+  }
 }
 
 .product {
@@ -368,6 +381,7 @@ h1 {
 @import './rate';
 @import './banner';
 @import './categories';
+@import './useful';
 
 @media (max-width: 1919px) {
   .title {
@@ -429,6 +443,10 @@ h1 {
         background-image: url(../img/cat_chair1024.png);
       }    
     }
+    &_useful {
+      min-height: 456px;
+      height: 100%;
+    }
   }
 }
 
@@ -452,7 +470,8 @@ h1 {
     &_offer,
     &_rate,
     &_banner,
-    &_categories {
+    &_categories,
+    &_useful {
       font-size: 24px;
       line-height: 100%;
     }

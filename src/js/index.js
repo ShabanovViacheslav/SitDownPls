@@ -127,6 +127,30 @@
 
   setLinkView(linkElements);
 
+  // useful
+
+  new Swiper('.swiper_useful', {
+    allowTouchMove: false,
+    navigation: {
+      nextEl: '.useful__btn_next',
+      prevEl: '.useful__btn_prev',
+      disabledClass: 'useful__btn_disabled'
+    },
+    slidesPerView: 1,
+    spaceBetween: 32,
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 3,
+      },
+      1920: {
+        slidesPerView: 2,
+      },
+    },
+  });
+
   window.addEventListener('resize', ()=> {
     setCardsView(cards, 'card_hidden');
     setLinkView(linkElements);

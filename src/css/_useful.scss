@@ -1,0 +1,175 @@
+.useful {
+  position: relative;
+  max-width: 1280px;
+  margin: 0 auto;
+
+  &__btn {
+    position: absolute;
+    top: 0;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+
+    &_prev {
+      right: 45px;
+      left: auto;
+    }
+
+    &_next {
+      right: 0;
+    }
+
+    &_disabled {
+      opacity: 1;
+      cursor: auto;
+      pointer-events: none;
+
+      .useful__svg path {
+        stroke: $colorGrey;
+        @include animate;
+        transition-property: stroke;
+      }
+
+      .useful__svg circle {
+        stroke: $colorGrey;
+        @include animate;
+        transition-property: stroke;
+      }
+    }
+
+    &:hover {
+      .useful__svg path {
+
+        stroke: $colorWhite;
+        @include animate;
+        transition-property: stroke;
+      }
+
+      .useful__svg circle {
+        fill: $colorPrimary;
+        @include animate;
+        transition-property: fill;
+      }
+    }
+
+    &:focus:not(:hover) {
+
+      .useful__svg path {
+        stroke: $colorWhite;
+        @include animate;
+        transition-property: stroke;
+      }
+
+      .useful__svg circle {
+        fill: $colorPrimaryLight;
+        @include animate;
+        transition-property: fill;
+      }
+    }
+
+    &:active {
+
+      .useful__svg path {
+        stroke: $colorWhite;
+        @include animate;
+        transition-property: stroke;
+      }
+
+      .useful__svg circle {
+        fill: $colorPrimaryShade;
+        stroke: $colorPrimaryShade;
+        @include animate;
+        transition-property: fill, stroke;
+      }
+    }
+  }
+
+  &__svg path {
+    stroke: $colorPrimary;
+    @include animate;
+    transition-property: stroke;
+  }
+
+  &__svg circle {
+    stroke: $colorPrimary;
+    fill: transparent;
+    @include animate;
+    transition-property: fill, stroke;
+  }
+
+  &__box {
+    grid-area: picture;
+  }
+
+  &__picture {
+    width: 100%;
+  }
+
+  &__text {
+    grid-area: text;
+    width: 90%;
+    margin-top: 27px;
+    margin-bottom: 0;
+    margin-left: 30px;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 33px;
+    color: $colorBlack;
+  }
+}
+
+.swiper_useful {
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 1919px) {
+  .useful {
+    padding-right: 36px;
+    padding-left: 36px;
+    &__btn_prev {
+      right: 81px;
+    }
+    &__btn_next {
+      right: 36px;
+    }
+    &__text {
+      width: 77%;
+      font-size: 16px;
+      line-height: 22px;
+    }
+  }
+}
+
+@media (max-width: 1023px) {
+  .useful {
+    padding-right: 72px;
+    padding-left: 72px;
+    &__btn_prev {
+      right: 117px;
+    }
+    &__btn_next {
+      right: 72px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .useful {
+    padding-right: 12px;
+    padding-bottom: 17px;
+    padding-left: 12px;
+    &__btn {
+      top: auto;
+      bottom: 0;
+      left: auto;
+      transform: translateX(50%);
+      &_prev {
+        right: 57%;
+      }
+      &_next {
+        right: 43%;
+      }
+    }
+  }
+}
