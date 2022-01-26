@@ -39,6 +39,11 @@ h1 {
   @include animate;
   transition-property: color, background-color;
 
+  &_feedback {
+    color: $colorPrimary;
+    text-decoration: underline;
+  }
+
   &:hover {
     color: $colorPrimary;
   }
@@ -67,7 +72,8 @@ h1 {
   &_offer,
   &_rate,
   &_categories,
-  &_useful {
+  &_useful,
+  &_feedback {
     margin-bottom: 26px;
     font-weight: normal;
     font-size: 32px;
@@ -82,6 +88,10 @@ h1 {
     font-size: 60px;
     color: $colorGold;
   }
+
+  &_feedback {
+    margin-bottom: 9px;
+  }
 }
 
 .btn {
@@ -89,6 +99,7 @@ h1 {
   font-weight: 700;
   font-size: 16px;
   border-radius: 10px;
+  cursor: pointer;
   @include animate;
   transition-property: background-color, border-color, color;
 
@@ -115,12 +126,17 @@ h1 {
       position: absolute;
       left: 50%;
       padding: 18px 35px;
-      cursor: pointer;
       transform: translateX(-50%);
     }
 
     &banner {
       padding: 17px 30px;
+    }
+
+    &feedback {
+      justify-self: start;
+      padding: 16px 31px;
+      margin-bottom: 12px;
     }
   }
 
@@ -382,6 +398,7 @@ h1 {
 @import './banner';
 @import './categories';
 @import './useful';
+@import './feedback';
 
 @media (max-width: 1919px) {
   .title {
@@ -471,7 +488,9 @@ h1 {
     &_rate,
     &_banner,
     &_categories,
-    &_useful {
+    &_useful,
+    &_feedback {
+      width: 100%;
       font-size: 24px;
       line-height: 100%;
     }
@@ -493,6 +512,10 @@ h1 {
         padding: 19px 0;
         text-align: center;
         transform: translate(-50%, 92px);
+      }
+      &feedback{
+        display: block;
+        margin-bottom: 9px;
       }
     }
     &_hero {
@@ -609,6 +632,11 @@ h1 {
   .product_rate {
     margin-bottom: 9px;
     font-size: 16px;
+  }
+  .link {
+    &_feedback {
+      font-size: 12px;
+    }
   }
 }
 

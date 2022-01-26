@@ -151,6 +151,41 @@
     },
   });
 
+  // feedback
+
+  tippy('.feedback__svg', {
+    content: 'Реплицированные с зарубежных источников, исследования формируют глобальную сеть.',
+    maxWidth: 157,
+    theme: 'SitDownPls',
+  });
+
+  new JustValidate('.feedback__form', {
+    rules: {
+      name: {
+        required: true,
+        minLength: 3,
+        maxLength: 15,
+      },
+      email: {
+        required: true,
+        email: true,
+      },
+      phone: {
+        required: true,
+      },
+      agreement: {
+        required: true,
+      },
+    },
+    colorWrong: '#FF6972',
+    messages: {
+      name: 'Недопустимый формат',
+      email: 'Недопустимый формат',
+      phone: 'Недопустимый формат',
+      agreement: 'Примите соглашение',
+      },
+  });
+
   window.addEventListener('resize', ()=> {
     setCardsView(cards, 'card_hidden');
     setLinkView(linkElements);
