@@ -399,6 +399,7 @@ h1 {
 @import './categories';
 @import './useful';
 @import './feedback';
+@import './footer';
 
 @media (max-width: 1919px) {
   .title {
@@ -636,6 +637,11 @@ h1 {
   .link {
     &_feedback {
       font-size: 12px;
+    }
+  }
+  .logo {
+    &_footer {
+      margin-bottom: 19px;
     }
   }
 }
