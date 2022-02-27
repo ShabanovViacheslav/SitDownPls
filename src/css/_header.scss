@@ -229,6 +229,7 @@
 
 .header__formsearch {
     position: relative;
+    z-index: 2;
     grid-area: formSearch;
     align-self: end;
     display: flex;
@@ -546,7 +547,7 @@
     }
     .header__burger {
         position: relative;
-        z-index: 2;
+        z-index: 5;
         grid-area: burger;
         align-self: end;
         display: inline-block;
@@ -612,7 +613,7 @@
     }
     .header__nav {
         position: absolute;
-        z-index: 1;
+        z-index: 4;
         top: 109px;
         left: 0;
         display: none;

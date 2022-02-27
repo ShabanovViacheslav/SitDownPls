@@ -83,6 +83,48 @@
     color: $colorBlack;
   }
 
+  &__svg path,
+  &__svg rect {
+    @include animate;
+    transition-property: fill;
+  }
+
+  &__social {
+
+    &:hover {
+
+      .footer__svg path {
+        fill: $colorPrimary;
+        @include animate;
+        transition-property: fill;
+      }
+    }
+
+    &:focus:not(:hover) {
+
+      .footer__svg path {
+        fill: $colorWhite;
+        @include animate;
+        transition-property: fill;
+      }
+
+      .footer__svg rect {
+        fill: $colorPrimaryLight;
+        @include animate;
+        transition-property: fill;
+      }
+    }
+
+    &:active {
+
+      .footer__svg path {
+        fill: $colorPrimaryShade;
+        @include animate;
+        transition-property: fill;
+      }
+    }
+  }
+
   &__small {
     display: block;
     padding: 7px 0;

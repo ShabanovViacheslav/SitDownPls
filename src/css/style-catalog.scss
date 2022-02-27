@@ -1,0 +1,333 @@
+@import './fonts', './variables';
+
+@mixin animate {
+  transition-duration: .2s;
+  transition-timing-function: ease-out;
+}
+
+* {
+  box-sizing: border-box;
+  outline: none; 
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: $colorBlack;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+h1 {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
+
+.link {
+  font-weight: normal;
+  font-size: 14px;
+  color: $colorGrey;
+  @include animate;
+  transition-property: color, background-color;
+
+  &_active {
+    color: $colorPrimaryShade;
+  }
+
+  &:hover {
+    color: $colorPrimary;
+  }
+
+  &:focus:not(:hover) {
+    background-color: $colorPinkViolet;
+  }
+}
+
+.title {
+  margin: 0;
+  width: 44%;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 65px;
+  color: $colorGrey;
+
+  &_oxford {
+    width: 100%;
+    font-family: 'Playfair Display', sans-serif;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 31px;
+    color: $colorGold;
+  }
+
+  &_catalog {
+    grid-area: title;
+    margin-bottom: 27px;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 100%;
+    color: $colorBlack;
+  }
+}
+
+.btn {
+  padding: 17px 48px;
+  font-weight: 700;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  @include animate;
+  transition-property: background-color, border-color, color;
+
+  &_catalog {
+    grid-area: btn;
+    align-self: end;
+    margin: 0;
+    padding: 16px 0;
+    width: 128px;
+    height: 54px;
+    border: 2px solid $colorPrimary;
+    color: $colorPrimary;
+    text-align: center;
+
+    &:hover {
+      color: $colorWhite;
+      background-color: $colorPrimary;
+    }
+
+    &:focus:not(:hover) {
+      color: $colorWhite;
+      background-color: $colorPrimaryLight;
+    }
+
+    &:active {
+      color: $colorWhite;
+      background-color: $colorPrimaryShade;
+      border-color: $colorPrimaryShade;
+    }
+  }
+}
+
+.card {
+  position: relative;
+  display: grid;
+  grid-template-rows: min-content 56% 11% 21%;
+  grid-template-areas: 
+    'estimate'
+    'product'
+    'price'
+    'btn';
+  height: calc((100% - 64px) / 3);
+  padding-top: 33px;
+  padding-left: 30px;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    background-color: $colorGreyLight;
+    border-radius: 10px;
+  }
+
+  &_black {
+    background-image: url(../img/sofa_black.png);
+    background-position: 50% 32%;
+  }
+
+  &_brown {
+    background-image: url(../img/sofa_brown.png);
+    background-position: 50% 28%;
+  }
+
+  &_blue {
+    background-image: url(../img/sofa_blue.png);
+    background-position: 50% 28%;
+  }
+
+  &_orange {
+    background-image: url(../img/sofa_orange.png);
+    background-position: 50% 22%;
+  }
+
+  &_ligth {
+    background-image: url(../img/sofa_ligth.png);
+    background-position: 50% 24%;
+  }
+
+  &_beige {
+    background-image: url(../img/sofa_beige.png);
+    background-position: 50% 24%;
+  }
+
+  &_grey {
+    background-image: url(../img/sofa_grey.png);
+    background-position: 50% 21%;
+  }
+
+  &_choco {
+    background-image: url(../img/sofa_choco.png);
+    background-position: 50% 23%;
+  }
+
+  &_green {
+    background-image: url(../img/sofa_green.png);
+    background-position: 50% 22%;
+  }
+
+  &_h64 {
+    background-image: url(../img/sofa_h64.png);
+    background-position: 50% 21%;
+  }
+
+  &_c42 {
+    background-image: url(../img/sofa_c42.png);
+    background-position: 50% 22%;
+  }
+
+  &_r85 {
+    background-image: url(../img/sofa_r85.png);
+    background-position: 50% 27%;
+  }
+
+  &_h58 {
+    background-image: url(../img/sofa_h58.png);
+    background-position: 50% 20%;
+  }
+
+  &_u58 {
+    background-image: url(../img/sofa_u58.png);
+    background-position: 50% 30%;
+  }
+
+  &_s44 {
+    background-image: url(../img/sofa_s44.png);
+    background-position: 50% 27%;
+  }
+
+  &_r43 {
+    background-image: url(../img/sofa_r43.png);
+    background-position: 50% 27%;
+  }
+
+  &_f41 {
+    background-image: url(../img/sofa_f41.png);
+    background-position: 50% 27%;
+  }
+
+  &_c80 {
+    background-image: url(../img/sofa_c80.png);
+    background-position: 50% 21%;
+  }
+}
+
+.product {
+  grid-area: product;
+  align-self: end;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 130%;
+  color: $colorBlack;
+}
+
+@import './header';
+@import './header-catalog';
+@import './catalog';
+@import './rate';
+@import './footer';
+
+@media (max-width: 1919px) {
+  .title {
+    width: 60%;
+    margin-bottom: 18px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .title {
+    width: 90%;
+    &_catalog {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .title {
+    width: 78%;
+    font-size: 20px;
+    line-height: 27px;
+    &_catalog {
+      width: 100%;
+      font-size: 24px;
+      line-height: 100%;
+    }
+  }
+  .btn {
+    &_catalog {
+      width: 108px;
+      height: 40px;
+      padding: 9px 0; 
+      font-weight: 600;
+    }
+  }
+  .card {
+    grid-template-rows: min-content 56% 11% 21%;
+    height: calc((100% - 32px) / 3);
+    padding-top: 17px;
+    padding-left: 16px;
+    background-size: 77%;
+    &_black {
+      background-position-y: 21%;
+    }
+    &_brown,
+    &_blue,
+    &_beige {
+      background-position-y: 20%;
+    }
+    &_orange,
+    &_ligth,
+    &_grey,
+    &_choco,
+    &_green,
+    &_h64,
+    &_c42,
+    &_r85,
+    &_h55,
+    &_u58,
+    &_s44,
+    &_r43,
+    &_f41,
+    &_c80 {
+      background-position-y: 19%;
+    }
+  }
+  .product {
+    margin-bottom: 9px;
+    font-size: 16px;
+  }
+  .logo {
+    &_footer {
+      margin-bottom: 19px;
+    }
+  }
+}
+
+
+

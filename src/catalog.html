@@ -4,20 +4,19 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SitDownPls</title>
+  <title>Каталог SitDownPls</title>
   <link rel="shortcut icon" href="/img/icon.png" type="image/png">
   <script src="/js/choices.min.js"></script>
   <script src="/js/swiper-bundle.min.js"></script>
-  <script src="https://unpkg.com/@popperjs/core@2"></script>
-  <script src="https://unpkg.com/tippy.js@6"></script>
-  <script src="/js/just-validate.min.js"></script>
+  <script src="/js/nouislider.min.js"></script>
   <link rel="stylesheet" href="/css/choices.min.css">
   <link rel="stylesheet" href="/css/swiper-bundle.min.css">
+  <link rel="stylesheet" href="/css/nouislider.min.css">
   <link rel="stylesheet" href="/css/normalize.css">
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/style-catalog.css">
 </head>
 <body>
-  <h1>SitDownPls. Интернет-магазин мебели</h1>
+  <h1>SitDownPls. Каталог интернет-магазина мебели</h1>
   <header class="header">
     <form class="header__formregion" action="#">
       <label class="header__label" for="city" aria-label="Ваш регион">Ваш регион:</label>
@@ -55,7 +54,7 @@
       <span class="header__line header__line_second"></span>
       <span class="header__line header__line_third"></span>
     </button>
-    <a href="#" class="logo logo_header" aria-label="Логотип сит даун плиз. Интернет-магазин мебели">
+    <a href="/index.html" class="logo logo_header" aria-label="Логотип сит даун плиз. Интернет-магазин мебели">
       <svg width="187" height="27" viewBox="0 0 187 27" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g clip-path="url(#clip0_702_3117)">
         <path fill-rule="evenodd" clip-rule="evenodd" d="M5.43305 23.4518C10.091 23.4518 10.9688 19.3274 10.9688 16.0252C11.522 16.0252 15.8942 16.0252 17.8884 16.0252C28.7361 16.0252 28.7388 0.569824 18.2344 0.569824C15.3773 0.569824 13.537 2.3141 13.0443 2.92173C7.18338 2.92173 6.471 6.00565 6.471 11.9937C6.471 13.1489 6.471 16.9042 6.471 17.4826C6.471 18.8906 5.90913 19.804 4.39476 19.804C3.10182 19.804 2.48943 18.6511 1.97288 17.0332C1.7037 17.1788 -0.186405 18.2083 -0.448662 18.3771C0.123249 19.9934 0.735638 23.4518 5.43305 23.4518ZM12.0185 9.64148C13.793 9.64148 13.9439 12.3294 11.8929 12.3294C10.164 12.3294 10.209 9.64148 12.0185 9.64148ZM18.2348 17.6962C16.7349 17.6962 12.3527 17.3692 12.3527 17.3692V25.6558L16.5045 25.7155L17.5425 19.7211L30.6898 19.4723L31.0361 26.0445L35.8799 26.1045C35.8799 26.1045 36.5715 13.2319 36.5715 10.6494C36.5715 5.85938 34.4434 3.14827 29.6519 2.92173C28.4513 2.86502 26.8805 2.63948 25.8461 2.58575C30.3553 8.11113 26.7674 17.6962 18.2348 17.6962ZM26.5384 21.0561L26.884 25.9251L29.6519 25.9851L29.3059 21.0561H26.5384ZM17.8884 25.7758L20.6563 25.8355L21.3479 21.0561H18.926L17.8884 25.7758Z" fill="#FF862F"/>
@@ -80,7 +79,7 @@
     <nav class="header__nav">
       <ul class="header__items">
         <li class="header__item">
-          <a href="/catalog.html" class="link link_menu">Каталог</a>
+          <a href="#" class="link link_menu">Каталог</a>
         </li>
         <li class="header__item">
           <a href="#" class="link link_menu">Магазины</a>
@@ -141,434 +140,413 @@
         </a>
       </li>
     </ul>
+    <div class="header__breadcrumps">
+      <a href="/index.html" class="link">Главная</a>
+      <span class="header__slash">&#47;</span>
+      <a href="#" class="link link_submenu">Каталог</a>
+      <span class="header__slash">&#47;</span>
+      <a href="#" class="link link_submenu">Диваны</a>
+      <span class="header__slash">&#47;</span>
+      <a href="#" class="link link_submenu link_active">Прямые диваны</a>
+    </div>
   </header>
 
   <main>
-
-    <section class="hero">
-      <div class="swiper swiper_hero">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide hero__slide hero__slide_first">
-            <div class="hero__box">
-              <h2 class="title title_hero">Скидка&nbsp;15% на&nbsp;первую покупку</h2>
-              <a href="#" class="btn btn_primary">Получить!</a>  
-            </div>
-          </div>
-          <div class="swiper-slide hero__slide hero__slide_second">
-            <div class="hero__box">
-              <h2 class="title title_hero">1000+ аксессуаров для&nbsp;дома</h2>
-              <a href="#" class="btn btn_primary">Подробнее</a>  
-            </div>
-          </div>
-          <div class="swiper-slide hero__slide hero__slide_third">
-            <div class="hero__box">
-              <h2 class="title title_hero title_light">Коллекция стильного и&nbsp;яркого текстиля</h2>
-              <a href="#" class="btn btn_primary">Подробнее</a>  
-            </div>
-          </div>
+    <section class="catalog">
+      <h2 class="title title_catalog">Каталог</h2>
+      <div class="catalog__tags">
+        <div class="catalog__tag catalog__tag_category" data-item="sofas">
+          <p>Диваны</p>
+          <button class="catalog__close" aria-label="Снять фильтр">
+            <span class="catalog__line"></span>
+            <span class="catalog__line"></span>
+          </button>
         </div>
-        <div class="swiper-pagination"></div>
-      </div>
-      <a href="#" class="btn btn_primary btn_hero">Получить!</a>  
-    </section>
-
-    <section class="offer">
-      <h2 class="title title_offer">Специальные предложения</h2>
-      <div class="swiper-button-prev offer__btn offer__btn_prev">
-        <svg class="offer__svg" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle r="15" transform="matrix(-1 0 0 1 16 16)" stroke="#999999" stroke-width="2"/>
-          <path d="M18 11L13 16L18 21" stroke="#999999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </div>
-      <div class="swiper-button-next offer__btn offer__btn_next">
-        <svg class="offer__svg" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="16" cy="16" r="15" stroke="#A65CF0" stroke-width="2"/>
-          <path d="M14 11L19 16L14 21" stroke="#A65CF0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </div>
-      <div class="swiper swiper_offer">
-        <div class="swiper-wrapper">
-          <article class="swiper-slide card card_offer card_offerchair">
-            <span class="offer__discount">- 9 000</span>
-            <h3 class="product">Кресло велюровое<br>“X-24”</h3>
-            <ul class="offer__list">
-              <li class="offer__item offer__item_actual">15 990 руб</li>
-              <li class="offer__item offer__item_old">24 990 руб</li>
-            </ul>
-            <a href="#" class="btn btn_offer">Купить</a>
-          </article>
-          <article class="swiper-slide card card_offer card_offerbig card_offersofa">
-            <span class="offer__discount">- 10 000</span>
-            <h3 class="product">Диван тканевый<br>“Z-44”</h3>
-            <ul class="offer__list">
-              <li class="offer__item offer__item_actual">22 990 руб</li>
-              <li class="offer__item offer__item_old">32 990 руб</li>
-            </ul>
-            <a href="#" class="btn btn_offer">Купить</a>
-          </article>
-          <article class="swiper-slide card card_offer card_offerclock">
-            <span class="offer__discount">- 600</span>
-            <h3 class="product">Будильник<br>“Quartz-23”</h3>
-            <ul class="offer__list">
-              <li class="offer__item offer__item_actual">1 290 руб</li>
-              <li class="offer__item offer__item_old">1 890 руб</li>
-            </ul>
-            <a href="#" class="btn btn_offer">Купить</a>
-          </article>
-          <article class="swiper-slide card card_offer card_offerdear">
-            <span class="offer__discount">- 300</span>
-            <h3 class="product">Мини-скульптура<br>“Oh my deer”</h3>
-            <ul class="offer__list">
-              <li class="offer__item offer__item_actual">690 руб</li>
-              <li class="offer__item offer__item_old">990 руб</li>
-            </ul>
-            <a href="#" class="btn btn_offer">Купить</a>
-          </article>
-          <article class="swiper-slide card card_offer card_offerbig card_offersofa2">
-            <span class="offer__discount">- 10 000</span>
-            <h3 class="product">Диван вел-флок<br>“Z-85”</h3>
-            <ul class="offer__list">
-              <li class="offer__item offer__item_actual">22 990 руб</li>
-              <li class="offer__item offer__item_old">32 990 руб</li>
-            </ul>
-            <a href="#" class="btn btn_offer">Купить</a>
-          </article>
-          <article class="swiper-slide card card_offer card_offerthermometer">
-            <span class="offer__discount">- 700</span>
-            <h3 class="product">Термометр +<br>гидрометр “H-18”</h3>
-            <ul class="offer__list">
-              <li class="offer__item offer__item_actual">1 390 руб</li>
-              <li class="offer__item offer__item_old">2 090 руб</li>
-            </ul>
-            <a href="#" class="btn btn_offer">Купить</a>
-          </article>
+        <div class="catalog__tag catalog__tag_price" data-item="to">
+          <p>До 130000</p>
+          <button class="catalog__close" aria-label="Снять фильтр">
+            <span class="catalog__line"></span>
+            <span class="catalog__line"></span>
+          </button>
+        </div>
+        <div class="catalog__tag catalog__tag_discount" data-item="notimp">
+          <p>Нет скидки</p>
+          <button class="catalog__close" aria-label="Снять фильтр">
+            <span class="catalog__line"></span>
+            <span class="catalog__line"></span>
+          </button>
+        </div>
+        <div class="catalog__tag catalog__tag_color" data-item="orange">
+          <p>Оранжевый</p>
+          <button class="catalog__close" aria-label="Снять фильтр">
+            <span class="catalog__line"></span>
+            <span class="catalog__line"></span>
+          </button>
         </div>
       </div>
-    </section>
-
-    <section class="rate">
-      <h2 class="title title_rate">Высокий рейтинг</h2>
-      <div class="rate__container">
-        <article class="card card_rate card_rateblack">
-          <span class="rate__estimate">5,0</span>
-          <h3 class="product product_rate">Диван кожаный<br>“R-94”</h3>
-          <p class="rate__price">94 990 руб</p>
-          <a href="#" class="btn btn_rate">Купить</a>
-        </article>
-        <article class="card card_rate card_ratebrown">
-          <span class="rate__estimate">4,9</span>
-          <h3 class="product product_rate">Диван апартековый<br>“T-75”</h3>
-          <p class="rate__price">69 990 руб</p>
-          <a href="#" class="btn btn_rate">Купить</a>
-        </article>
-        <article class="card card_rate card_rateblue">
-          <span class="rate__estimate">4,8</span>
-          <h3 class="product product_rate">Диван тканевый<br>“D-31”</h3>
-          <p class="rate__price">28 490 руб</p>
-          <a href="#" class="btn btn_rate">Купить</a>
-        </article>
-        <article class="card card_rate card_rateorange">
-          <span class="rate__estimate">4,8</span>
-          <h3 class="product product_rate">Диван велюровый<br>“Y-68”</h3>
-          <p class="rate__price">22 990 руб</p>
-          <a href="#" class="btn btn_rate">Купить</a>
-        </article>
-        <article class="card card_rate card_rateligth">
-          <span class="rate__estimate">4,8</span>
-          <h3 class="product product_rate">Диван из&nbsp;шинила<br>“W-95”</h3>
-          <p class="rate__price">22 990 руб</p>
-          <a href="#" class="btn btn_rate">Купить</a>
-        </article>
-        <article class="card card_rate card_ratebeige">
-          <span class="rate__estimate">4,8</span>
-          <h3 class="product product_rate">Диван флоковый<br>“G-41”</h3>
-          <p class="rate__price">17 990 руб</p>
-          <a href="#" class="btn btn_rate">Купить</a>
-        </article>
-        <article class="card card_rate card_rategrey" data-size="1024">
-          <span class="rate__estimate">4,8</span>
-          <h3 class="product product_rate">Диван шиниловый<br>“V-43”</h3>
-          <p class="rate__price">19 990 руб</p>
-          <a href="#" class="btn btn_rate">Купить</a>
-        </article>
-        <article class="card card_rate card_ratechoco" data-size="1024">
-          <span class="rate__estimate">4,7</span>
-          <h3 class="product product_rate">Диван велюровый<br>“S-99”</h3>
-          <p class="rate__price">19 990 руб</p>
-          <a href="#" class="btn btn_rate">Купить</a>
-        </article>
-        <article class="card card_rate card_rate card_hidden">
-          <span class="rate__estimate">No data</span>
-          <h3 class="product product_rate">No data</h3>
-          <p class="rate__price">No data</p>
-          <a href="#" class="btn btn_rate">Купить</a>
-        </article>
-        <article class="card card_rate card_rate card_hidden">
-          <span class="rate__estimate">No data</span>
-          <h3 class="product product_rate">No data</h3>
-          <p class="rate__price">No data</p>
-          <a href="#" class="btn btn_rate">Купить</a>
-        </article>
-        <article class="card card_rate card_rate card_hidden">
-          <span class="rate__estimate">No data</span>
-          <h3 class="product product_rate">No data</h3>
-          <p class="rate__price">No data</p>
-          <a href="#" class="btn btn_rate">Купить</a>
-        </article>
-        <article class="card card_rate card_rate card_hidden">
-          <span class="rate__estimate">No data</span>
-          <h3 class="product product_rate">No data</h3>
-          <p class="rate__price">No data</p>
-          <a href="#" class="btn btn_rate">Купить</a>
-        </article>
-        <article class="card card_rate card_rate card_hidden">
-          <span class="rate__estimate">No data</span>
-          <h3 class="product product_rate">No data</h3>
-          <p class="rate__price">No data</p>
-          <a href="#" class="btn btn_rate">Купить</a>
-        </article>
-        <article class="card card_rate card_rate card_hidden">
-          <span class="rate__estimate">No data</span>
-          <h3 class="product product_rate">No data</h3>
-          <p class="rate__price">No data</p>
-          <a href="#" class="btn btn_rate">Купить</a>
-        </article>
-        <article class="card card_rate card_rate card_hidden">
-          <span class="rate__estimate">No data</span>
-          <h3 class="product product_rate">No data</h3>
-          <p class="rate__price">No data</p>
-          <a href="#" class="btn btn_rate">Купить</a>
-        </article>
-        <article class="card card_rate card_rate card_hidden">
-          <span class="rate__estimate">No data</span>
-          <h3 class="product product_rate">No data</h3>
-          <p class="rate__price">No data</p>
-          <a href="#" class="btn btn_rate">Купить</a>
-        </article>
-        <article class="card card_rate card_rate card_hidden">
-          <span class="rate__estimate">No data</span>
-          <h3 class="product product_rate">No data</h3>
-          <p class="rate__price">No data</p>
-          <a href="#" class="btn btn_rate">Купить</a>
-        </article>
-        <article class="card card_rate card_rate card_hidden">
-          <span class="rate__estimate">No data</span>
-          <h3 class="product product_rate">No data</h3>
-          <p class="rate__price">No data</p>
-          <a href="#" class="btn btn_rate">Купить</a>
-        </article>
-        <article class="card card_rate card_rate card_hidden">
-          <span class="rate__estimate">No data</span>
-          <h3 class="product product_rate">No data</h3>
-          <p class="rate__price">No data</p>
-          <a href="#" class="btn btn_rate">Купить</a>
-        </article>
-        <article class="card card_rate card_rate card_hidden">
-          <span class="rate__estimate">No data</span>
-          <h3 class="product product_rate">No data</h3>
-          <p class="rate__price">No data</p>
-          <a href="#" class="btn btn_rate">Купить</a>
-        </article>
-      </div>
-      <button class="btn btn_primary btn_primaryrate">Смотреть больше товаров</button>
-    </section>
-
-    <section class="banner">
-      <div class="banner__container">
-        <h2 class="title title_banner">Оксфорд 1950</h2>
-        <p class="banner__text">Новая коллекция изысканных кресел</p>
-        <a href="#" class="btn btn_primary btn_primarybanner">Ознакомиться</a>
-      </div>
-    </section>
-
-    <section class="categories">
-      <h2 class="title title_categories">Топ категории</h2>
-      <div class="categories__container">
-        <article class="card card_categories card_categoriessofas">
-          <ul class="categories__list">
-            <li class="categories__item">
-              <a href="#" class="link">Прямые</a>
-            </li>
-            <li class="categories__item">
-              <a href="#" class="link">Угловые</a>
-            </li>
-            <li class="categories__item">
-              <a href="#" class="link">Модульные</a>
-            </li>
-          </ul>
-          <h3 class="product product_categories">Диваны</h3>
-          <a href="#" class="categories__link">
-            В каталог
-            <svg class="categories__svg" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="11" cy="11" r="10" stroke="#A65CF0" stroke-width="2"/>
-              <path d="M9.625 7.5625L13.0625 11L9.625 14.4375" stroke="#A65CF0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </a>
-        </article>
-        <article class="card card_categories card_categorieschairs">
-          <ul class="categories__list">
-            <li class="categories__item">
-              <a href="#" class="link">Мягкие</a>
-            </li>
-            <li class="categories__item">
-              <a href="#" class="link">Кресла-кровати</a>
-            </li>
-          </ul>
-          <h3 class="product product_categories">Кресла</h3>
-          <a href="#" class="categories__link">
-            В каталог
-            <svg class="categories__svg" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="11" cy="11" r="10" stroke="#A65CF0" stroke-width="2"/>
-              <path d="M9.625 7.5625L13.0625 11L9.625 14.4375" stroke="#A65CF0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </a>
-        </article>
-        <article class="card card_categories card_categoriesbeds">
-          <ul class="categories__list">
-            <li class="categories__item">
-              <a href="#" class="link">Односпальные</a>
-            </li>
-            <li class="categories__item">
-              <a href="#" class="link">Двуспальные</a>
-            </li>
-          </ul>
-          <h3 class="product product_categories">Кровати</h3>
-          <a href="#" class="categories__link">
-            В каталог
-            <svg class="categories__svg" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="11" cy="11" r="10" stroke="#A65CF0" stroke-width="2"/>
-              <path d="M9.625 7.5625L13.0625 11L9.625 14.4375" stroke="#A65CF0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </a>
-        </article>
-        <article class="card card_categories card_categoriesdressers">
-          <ul class="categories__list">
-            <li class="categories__item">
-              <a href="#" class="link">Тумбы</a>
-            </li>
-            <li class="categories__item">
-              <a href="#" class="link">Комоды</a>
-            </li>
-          </ul>
-          <h3 class="product product_categories">Тумбы и&nbsp;комоды</h3>
-          <a href="#" class="categories__link">
-            В каталог
-            <svg class="categories__svg" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="11" cy="11" r="10" stroke="#A65CF0" stroke-width="2"/>
-              <path d="M9.625 7.5625L13.0625 11L9.625 14.4375" stroke="#A65CF0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </a>
-        </article>
-        <article class="card card_categories card_categoriesstools">
-          <ul class="categories__list">
-            <li class="categories__item">
-              <a href="#" class="link">Деревянные</a>
-            </li>
-            <li class="categories__item">
-              <a href="#" class="link">Металлокаркас</a>
-            </li>
-          </ul>
-          <h3 class="product product_categories">Стулья</h3>
-          <a href="#" class="categories__link">
-            В каталог
-            <svg class="categories__svg" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="11" cy="11" r="10" stroke="#A65CF0" stroke-width="2"/>
-              <path d="M9.625 7.5625L13.0625 11L9.625 14.4375" stroke="#A65CF0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </a>
-        </article>
-      </div>
-    </section>
-
-    <section class="useful">
-      <h2 class="title title_useful">Полезное</h2>
-      <div class="useful__btn useful__btn_prev">
-        <svg class="useful__svg" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle r="15" transform="matrix(-1 0 0 1 16 16)" stroke="#999999" stroke-width="2"/>
-          <path d="M18 11L13 16L18 21" stroke="#999999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </div>
-      <div class="useful__btn useful__btn_next">
-        <svg class="useful__svg" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="16" cy="16" r="15" stroke="#A65CF0" stroke-width="2"/>
-          <path d="M14 11L19 16L14 21" stroke="#A65CF0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </div>
-      <div class="swiper swiper_useful">
-        <div class="swiper-wrapper">
-          <article class="swiper-slide card card_useful">
-            <picture class="useful__box">
-              <source srcset="/img/back1_1024.jpg" media="(max-width: 1919px)">
-              <img class="useful__picture" src="/img/back1.jpg" alt="#">
-            </picture>
-            <h3 class="useful__text">И&nbsp;нет сомнений, что сделанные на&nbsp;базе интернет-аналитики выводы представляют собой не&nbsp;что иное?</h3>
-            <a href="#" class="btn btn_useful">Читать</a>
-          </article>
-          <article class="swiper-slide card card_useful">
-            <picture class="useful__box">
-              <source srcset="/img/back2_1024.jpg" media="(max-width: 1919px)">
-              <img class="useful__picture" src="/img/back2.jpg" alt="#">
-            </picture>
-            <h3 class="useful__text">Как принято считать, некоторые особенности приносят несомненную пользу обществу?</h3>
-            <a href="#" class="btn btn_useful">Читать</a>
-          </article>
-          <article class="swiper-slide card card_useful">
-            <picture class="useful__box">
-              <source srcset="/img/back3_1024.jpg" media="(max-width: 1919px)">
-              <img class="useful__picture" src="/img/back3.jpg" alt="#">
-            </picture>
-            <h3 class="useful__text">Ясность нашей позиции очевидна: укрепление и развитие внутренней структуры?</h3>
-            <a href="#" class="btn btn_useful">Читать</a>
-          </article>
-          <article class="swiper-slide card card_useful">
-            <picture class="useful__box">
-              <source srcset="/img/back4_1024.jpg" media="(max-width: 1919px)">
-              <img class="useful__picture" src="/img/back4.jpg" alt="#">
-            </picture>
-            <h3 class="useful__text">Прежде всего, консультация с&nbsp;широким активом однозначно фиксирует необходимость распределения?</h3>
-            <a href="#" class="btn btn_useful">Читать</a>
-          </article>
-          <article class="swiper-slide card card_useful">
-            <picture class="useful__box">
-              <source srcset="/img/back5_1024.jpg" media="(max-width: 1919px)">
-              <img class="useful__picture" src="/img/back5.jpg" alt="#">
-            </picture>
-            <h3 class="useful__text">Как принято считать, некоторые особенности приносят несомненную пользу обществу?</h3>
-            <a href="#" class="btn btn_useful">Читать</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="feedback">
-      <h2 class="title title_feedback">Мы всегда вам рады!</h2>
-      <div class="feedback__container">
-        <div class="feedback__box">
-          <p class="feedback__text">
-            Безусловно, новая модель организационной деятельности в&nbsp;значительной степени обусловливает важность распределения внутренних резервов и&nbsp;ресурсов.
-            <svg class="feedback__svg" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="7" cy="7" r="7" stroke="none" fill="none" stroke-width="0"/>
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M7 1.27273C3.83691 1.27273 1.27273 3.83691 1.27273 7C1.27273 10.1631 3.83691 12.7273 7 12.7273C10.1631 12.7273 12.7273 10.1631 12.7273 7C12.7273 3.83691 10.1631 1.27273 7 1.27273ZM0 7C0 3.13401 3.13401 0 7 0C10.866 0 14 3.13401 14 7C14 10.866 10.866 14 7 14C3.13401 14 0 10.866 0 7ZM7.16433 4.47002C6.86809 4.4192 6.56343 4.47487 6.3043 4.62716C6.04517 4.77946 5.8483 5.01854 5.74856 5.30208C5.63193 5.63362 5.26862 5.80784 4.93708 5.69121C4.60554 5.57458 4.43132 5.21127 4.54795 4.87973C4.74743 4.31266 5.14117 3.83449 5.65943 3.52991C6.17769 3.22532 6.78701 3.11398 7.3795 3.21561C7.97198 3.31723 8.50937 3.62527 8.8965 4.08515C9.28355 4.54494 9.49543 5.12685 9.49462 5.72785C9.49433 6.70171 8.77231 7.34484 8.2567 7.68857C7.97948 7.87339 7.70679 8.00928 7.50591 8.09856C7.40457 8.1436 7.31923 8.17778 7.25774 8.2012C7.22694 8.21294 7.20197 8.22203 7.18379 8.22849L7.16169 8.23623L7.15465 8.23864L7.15217 8.23947L7.1512 8.2398C7.15101 8.23986 7.1504 8.24007 6.94916 7.63636L7.1504 8.24007C6.81698 8.35121 6.4566 8.17101 6.34546 7.8376C6.23439 7.5044 6.41427 7.14427 6.74726 7.03287L6.75742 7.02931C6.76721 7.02583 6.78325 7.02001 6.80465 7.01186C6.84756 6.99551 6.91137 6.97003 6.98901 6.93552C7.14608 6.86571 7.35067 6.76297 7.55072 6.6296C7.98956 6.33704 8.22189 6.02581 8.22189 5.72727L8.22189 5.72632C8.22234 5.42575 8.1164 5.13473 7.92283 4.90479C7.72927 4.67485 7.46057 4.52083 7.16433 4.47002ZM7.63642 10.1818C7.63642 10.5333 7.35151 10.8182 7.00005 10.8182C6.6486 10.8182 6.36369 10.5333 6.36369 10.1818C6.36369 9.83036 6.6486 9.54545 7.00005 9.54545C7.35151 9.54545 7.63642 9.83036 7.63642 10.1818Z" fill="#FF862F"/>
-              <circle cx="7" cy="7" r="6" stroke="none" fill="none" stroke-width="2"/>
-            </svg>
-          </p>
-          <form action="#" class="feedback__form">
-            <input type="text" name="name" class="feedback__input feedback__input_name" placeholder="Как вас зовут?" data-validate-field="name">
-            <input type="tel" name="phone" class="feedback__input feedback__input_phone" placeholder="Ваш телефон" data-validate-field="phone">
-            <input type="email" name="mail" class="feedback__input feedback__input_mail" placeholder="Ваш e-mail" data-validate-field="email">
-            <div>
-              <button class="btn btn_primary btn_primaryfeedback" type="submit">Отправить</button>
-              <div class="feedback__block">
-                <label class="feedback__text feedback__text_label" for="agreement">
-                  Принимаю <a class="link link_feedback" href="#">пользовательское соглашение</a> 
-                </label>
-                <input id="agreement" class="feedback__check" type="checkbox" data-validate-field="agreement">
+      <form class="catalog__filters">
+        <h3 class="catalog__title">Фильтровать по:</h3>
+        <ul class="catalog__list">
+          <li class="catalog__item">
+            <button class="catalog__btn">Категория</button>
+            <ul class="catalog__sublist catalog__listcat">
+              <li class="catalog__itemcat">
+                <label for="sofas" class="catalog__text">Диваны</label>
+                <input class="catalog__check" type="checkbox" name="sofas" id="sofas" data-type="category" data-status="1" checked>
                 <span></span>
-              </div>
-            </div>
-          </form>
+              </li>
+              <li class="catalog__itemcat">
+                <label for="chairs" class="catalog__text">Кресла</label>
+                <input class="catalog__check" type="checkbox" name="chairs" id="chairs" data-type="category" data-status="0">
+                <span></span>
+              </li>
+              <li class="catalog__itemcat">
+                <label for="poufs" class="catalog__text">Пуфы</label>
+                <input class="catalog__check" type="checkbox" name="poufs" id="poufs" data-type="category" data-status="0">
+                <span></span>
+              </li>
+              <li class="catalog__itemcat">
+                <label for="beds" class="catalog__text">Кровати</label>
+                <input class="catalog__check" type="checkbox" name="beds" id="beds" data-type="category" data-status="0">
+                <span></span>
+              </li>
+              <li class="catalog__itemcat">
+                <label for="bedsidetables" class="catalog__text">Тумбы</label>
+                <input class="catalog__check" type="checkbox" name="bedsidetables" id="bedsidetables" data-type="category" data-status="0">
+                <span></span>
+              </li>
+              <li class="catalog__itemcat">
+                <label for="dressers" class="catalog__text">Комоды</label>
+                <input class="catalog__check" type="checkbox" name="dressers" id="dressers" data-type="category" data-status="0">
+                <span></span>
+              </li>
+              <li class="catalog__itemcat">
+                <label for="stools" class="catalog__text">Стулья</label>
+                <input class="catalog__check" type="checkbox" name="stools" id="stools" data-type="category" data-status="0">
+                <span></span>
+              </li>
+              <li class="catalog__itemcat">
+                <label for="tables" class="catalog__text">Столы</label>
+                <input class="catalog__check" type="checkbox" name="tables" id="tables" data-type="category" data-status="0">
+                <span></span>
+              </li>
+              <li class="catalog__itemcat">
+                <label for="accessories" class="catalog__text">Аксессуары</label>
+                <input class="catalog__check" type="checkbox" name="accessories" id="accessories" data-type="category" data-status="0">
+                <span></span>
+              </li>
+              <li class="catalog__itemcat catalog__itemcat_hidden" data-example="1">
+                <label for="example1" class="catalog__text">Example1</label>
+                <input class="catalog__check" type="checkbox" name="example" id="example1" data-type="category" data-status="0">
+                <span></span>
+              </li>
+              <li class="catalog__itemcat catalog__itemcat_hidden" data-example="1">
+                <label for="example2" class="catalog__text">Example2</label>
+                <input class="catalog__check" type="checkbox" name="example" id="example2" data-type="category" data-status="0">
+                <span></span>
+              </li>
+              <li class="catalog__itemcat catalog__itemcat_hidden" data-example="1">
+                <label for="example3" class="catalog__text">Example3</label>
+                <input class="catalog__check" type="checkbox" name="example" id="example3" data-type="category" data-status="0">
+                <span></span>
+              </li>
+              <li class="catalog__itemcat catalog__itemcat_hidden" data-example="1">
+                <label for="example4" class="catalog__text">Example4</label>
+                <input class="catalog__check" type="checkbox" name="example" id="example4" data-type="category" data-status="0">
+                <span></span>
+              </li>
+              <li class="catalog__itemcat catalog__itemcat_hidden" data-example="1">
+                <label for="example5" class="catalog__text">Example5</label>
+                <input class="catalog__check" type="checkbox" name="example" id="example5" data-type="category" data-status="0">
+                <span></span>
+              </li>
+              <li class="catalog__itemcat catalog__itemcat_hidden" data-example="1">
+                <label for="example6" class="catalog__text">Example6</label>
+                <input class="catalog__check" type="checkbox" name="example" id="example6" data-type="category" data-status="0">
+                <span></span>
+              </li>
+              <li class="catalog__itemcat catalog__itemcat_hidden" data-example="1">
+                <label for="example7" class="catalog__text">Example7</label>
+                <input class="catalog__check" type="checkbox" name="example" id="example7" data-type="category" data-status="0">
+                <span></span>
+              </li>
+              <li class="catalog__itemcat catalog__itemcat_hidden" data-example="1">
+                <label for="example8" class="catalog__text">Example8</label>
+                <input class="catalog__check" type="checkbox" name="example" id="example8" data-type="category" data-status="0">
+                <span></span>
+              </li>
+              <li class="catalog__itemcat catalog__itemcat_hidden" data-example="1">
+                <label for="example9" class="catalog__text">Example9</label>
+                <input class="catalog__check" type="checkbox" name="example" id="example9" data-type="category" data-status="0">
+                <span></span>
+              </li>
+              <li class="catalog__itemcat catalog__itemcat_hidden" data-example="1">
+                <label for="example10" class="catalog__text">Example10</label>
+                <input class="catalog__check" type="checkbox" name="example" id="example10" data-type="category" data-status="0">
+                <span></span>
+              </li>
+              <li class="catalog__itemcat catalog__itemcat_hidden" data-example="1">
+                <label for="example11" class="catalog__text">Example11</label>
+                <input class="catalog__check" type="checkbox" name="example" id="example11" data-type="category" data-status="0">
+                <span></span>
+              </li>
+              <li class="catalog__itemcat catalog__itemcat_hidden" data-example="1">
+                <label for="example12" class="catalog__text">Example12</label>
+                <input class="catalog__check" type="checkbox" name="example" id="example12" data-type="category" data-status="0">
+                <span></span>
+              </li>
+              <li>
+                <button class="catalog__add" data-text="Свернуть">+ ещё 12</button>
+              </li>
+            </ul>
+          </li>
+          <li class="catalog__item catalog__item_price">
+            <button class="catalog__btn catalog__btn_price">Цена</button>
+            <ul class="catalog__sublist catalog__sublist_price catalog__listprice">
+              <li class="catalog__itemprice">
+                <label for="from" class="catalog__text catalog__text_price">от</label>
+                <input class="catalog__number" type="number" name="from" id="from" min="10" max="150000" placeholder="2000">
+              </li>
+              <li class="catalog__itemprice">
+                <label for="to" class="catalog__text catalog__text_price">до</label>
+                <input class="catalog__number" type="number" name="to" id="to" min="10" max="150000" placeholder="150 000" data-type="price">
+              </li>
+            </ul>
+            <div class="catalog__range"></div>
+          </li>
+          <li class="catalog__item">
+            <button class="catalog__btn">Скидка</button>
+            <ul class="catalog__sublist catalog__listdisc">
+              <li class="catalog__itemdisc">
+                <label for="more" class="catalog__text">Более 5 000</label>
+                <input class="catalog__check" type="checkbox" name="more" id="more" data-type="discount" data-status="0">
+                <span></span>
+              </li>
+              <li class="catalog__itemdisc">
+                <label for="less" class="catalog__text">Менее 5 000</label>
+                <input class="catalog__check" type="checkbox" name="less" id="less" data-type="discount" data-status="0">
+                <span></span>
+              </li>
+              <li class="catalog__itemdisc">
+                <label for="notimp" class="catalog__text">Не важно</label>
+                <input class="catalog__check" type="checkbox" name="notimp" id="notimp" data-type="discount" data-status="1" checked>
+                <span></span>
+              </li>
+            </ul>
+          </li>
+          <li class="catalog__item">
+            <button class="catalog__btn">Цвет</button>
+            <ul class="catalog__sublist catalog__listcolor">
+              <li class="catalog__itemcolor">
+                <label for="brown" class="catalog__text">Коричневый</label>
+                <input class="catalog__check" type="checkbox" name="brown" id="brown" data-type="color" data-status="0">
+                <span></span>
+              </li>
+              <li class="catalog__itemcolor">
+                <label for="black" class="catalog__text">Черный</label>
+                <input class="catalog__check" type="checkbox" name="black" id="black" data-type="color" data-status="0">
+                <span></span>
+              </li>
+              <li class="catalog__itemcolor">
+                <label for="beige" class="catalog__text">Бежевый</label>
+                <input class="catalog__check" type="checkbox" name="beige" id="beige" data-type="color" data-status="0">
+                <span></span>
+              </li>
+              <li class="catalog__itemcolor">
+                <label for="grey" class="catalog__text">Серый</label>
+                <input class="catalog__check" type="checkbox" name="grey" id="grey" data-type="color" data-status="0">
+                <span></span>
+              </li>
+              <li class="catalog__itemcolor">
+                <label for="white" class="catalog__text">Белый</label>
+                <input class="catalog__check" type="checkbox" name="white" id="white" data-type="color" data-status="0">
+                <span></span>
+              </li>
+              <li class="catalog__itemcolor">
+                <label for="blue" class="catalog__text">Синий</label>
+                <input class="catalog__check" type="checkbox" name="blue" id="blue" data-type="color" data-status="0">
+                <span></span>
+              </li>
+              <li class="catalog__itemcolor">
+                <label for="orange" class="catalog__text">Оранжевый</label>
+                <input class="catalog__check" type="checkbox" name="orange" id="orange" data-type="color" data-status="1" checked>
+                <span></span>
+              </li>
+              <li class="catalog__itemcolor">
+                <label for="yellow" class="catalog__text">Желтый</label>
+                <input class="catalog__check" type="checkbox" name="yellow" id="yellow" data-type="color" data-status="0">
+                <span></span>
+              </li>
+              <li class="catalog__itemcolor">
+                <label for="green" class="catalog__text">Зеленый</label>
+                <input class="catalog__check" type="checkbox" name="green" id="green" data-type="color" data-status="0">
+                <span></span>
+              </li>
+              <li class="catalog__itemcolor catalog__itemcolor_hidden" data-example="1">
+                <label for="example-1" class="catalog__text">Example1</label>
+                <input class="catalog__check" type="checkbox" name="example" id="example-1" data-type="color" data-status="0">
+                <span></span>
+              </li>
+              <li class="catalog__itemcolor catalog__itemcolor_hidden" data-example="1">
+                <label for="example-2" class="catalog__text">Example2</label>
+                <input class="catalog__check" type="checkbox" name="example" id="example-2" data-type="color" data-status="0">
+                <span></span>
+              </li>
+              <li class="catalog__itemcolor catalog__itemcolor_hidden" data-example="1">
+                <label for="example-3" class="catalog__text">Example3</label>
+                <input class="catalog__check" type="checkbox" name="example" id="example-3" data-type="color" data-status="0">
+                <span></span>
+              </li>
+              <li class="catalog__itemcolor catalog__itemcolor_hidden" data-example="1">
+                <label for="example-4" class="catalog__text">Example4</label>
+                <input class="catalog__check" type="checkbox" name="example" id="example-4" data-type="color" data-status="0">
+                <span></span>
+              </li>
+              <li class="catalog__itemcolor catalog__itemcolor_hidden" data-example="1">
+                <label for="example-5" class="catalog__text">Example5</label>
+                <input class="catalog__check" type="checkbox" name="example" id="example-5" data-type="color" data-status="0">
+                <span></span>
+              </li>
+              <li class="catalog__itemcolor catalog__itemcolor_hidden" data-example="1">
+                <label for="example-6" class="catalog__text">Example6</label>
+                <input class="catalog__check" type="checkbox" name="example" id="example-6" data-type="color" data-status="0">
+                <span></span>
+              </li>
+              <li class="catalog__itemcolor catalog__itemcolor_hidden" data-example="1">
+                <label for="example-7" class="catalog__text">Example7</label>
+                <input class="catalog__check" type="checkbox" name="example" id="example-7" data-type="color" data-status="0">
+                <span></span>
+              </li>
+              <li>
+                <button class="catalog__add" data-text="Свернуть">+ ещё 7</button>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </form>
+      <div class="catalog__products swiper swiper_catalog">
+        <div class="swiper-wrapper">
+          <article class="card card_black swiper-slide">
+            <span class="catalog__estimate">5,0</span>
+            <h3 class="product">Диван кожаный<br>“R-94”</h3>
+            <p class="catalog__price">94 990 руб</p>
+            <a href="#" class="btn btn_catalog">Купить</a>
+          </article>
+          <article class="card card_orange swiper-slide">
+            <span class="catalog__estimate">4,8</span>
+            <h3 class="product">Диван велюровый<br>“Y-68”</h3>
+            <p class="catalog__price">22 990 руб</p>
+            <a href="#" class="btn btn_catalog">Купить</a>
+          </article>
+          <article class="card card_grey swiper-slide">
+            <span class="catalog__estimate">4,8</span>
+            <h3 class="product">Диван шиниловый<br>“V-43”</h3>
+            <p class="catalog__price">19 990 руб</p>
+            <a href="#" class="btn btn_catalog">Купить</a>
+          </article>
+          <article class="card card_brown swiper-slide">
+            <span class="catalog__estimate">4,9</span>
+            <h3 class="product">Диван апартековый<br>“T-75”</h3>
+            <p class="catalog__price">69 990 руб</p>
+            <a href="#" class="btn btn_catalog">Купить</a>
+          </article>
+          <article class="card card_ligth swiper-slide">
+            <span class="catalog__estimate">4,8</span>
+            <h3 class="product">Диван из&nbsp;шинила<br>“W-95”</h3>
+            <p class="catalog__price">22 990 руб</p>
+            <a href="#" class="btn btn_catalog">Купить</a>
+          </article>
+          <article class="card card_choco swiper-slide">
+            <span class="catalog__estimate">4,7</span>
+            <h3 class="product">Диван велюровый<br>“S-99”</h3>
+            <p class="catalog__price">19 990 руб</p>
+            <a href="#" class="btn btn_catalog">Купить</a>
+          </article>
+          <article class="card card_blue swiper-slide">
+            <span class="catalog__estimate">4,8</span>
+            <h3 class="product">Диван тканевый<br>“D-31”</h3>
+            <p class="catalog__price">28 490 руб</p>
+            <a href="#" class="btn btn_catalog">Купить</a>
+          </article>
+          <article class="card card_beige swiper-slide">
+            <span class="catalog__estimate">4,8</span>
+            <h3 class="product">Диван флоковый<br>“G-41”</h3>
+            <p class="catalog__price">17 990 руб</p>
+            <a href="#" class="btn btn_catalog">Купить</a>
+          </article>
+          <article class="card card_green swiper-slide">
+            <span class="catalog__estimate">4,7</span>
+            <h3 class="product">Диван из кожзама<br>“F-85”</h3>
+            <p class="catalog__price">26 990 руб</p>
+            <a href="#" class="btn btn_catalog">Купить</a>
+          </article>
+          <article class="card card_h64 swiper-slide">
+            <span class="catalog__estimate">4,6</span>
+            <h3 class="product">Диван флоковый<br>“H-64”</h3>
+            <p class="catalog__price">25 990 руб</p>
+            <a href="#" class="btn btn_catalog">Купить</a>
+          </article>
+          <article class="card card_c42 swiper-slide">
+            <span class="catalog__estimate">4,6</span>
+            <h3 class="product">Диван из шинила<br>“С-42”</h3>
+            <p class="catalog__price">18 990 руб</p>
+            <a href="#" class="btn btn_catalog">Купить</a>
+          </article>
+          <article class="card card_r85 swiper-slide">
+            <span class="catalog__estimate">4,5</span>
+            <h3 class="product">Диван велюровый<br>“R-85”</h3>
+            <p class="catalog__price">34 990 руб</p>
+            <a href="#" class="btn btn_catalog">Купить</a>
+          </article>
+          <article class="card card_h58 swiper-slide">
+            <span class="catalog__estimate">4,6</span>
+            <h3 class="product">Диван флоковый<br>“H-58”</h3>
+            <p class="catalog__price">23 990 руб</p>
+            <a href="#" class="btn btn_catalog">Купить</a>
+          </article>
+          <article class="card card_u58 swiper-slide">
+            <span class="catalog__estimate">4,6</span>
+            <h3 class="product">Диван велюровый<br>“U-58”</h3>
+            <p class="catalog__price">21 990 руб</p>
+            <a href="#" class="btn btn_catalog">Купить</a>
+          </article>
+          <article class="card card_s44 swiper-slide">
+            <span class="catalog__estimate">4,5</span>
+            <h3 class="product">Диван велюровый<br>“S-44”</h3>
+            <p class="catalog__price">19 990 руб</p>
+            <a href="#" class="btn btn_catalog">Купить</a>
+          </article>
+          <article class="card card_r43 swiper-slide">
+            <span class="catalog__estimate">4,6</span>
+            <h3 class="product">Диван из кожзама<br>“R-43”</h3>
+            <p class="catalog__price">33 990 руб</p>
+            <a href="#" class="btn btn_catalog">Купить</a>
+          </article>
+          <article class="card card_f41 swiper-slide">
+            <span class="catalog__estimate">4,5</span>
+            <h3 class="product">Диван флоковый<br>“F-41”</h3>
+            <p class="catalog__price">17 490 руб</p>
+            <a href="#" class="btn btn_catalog">Купить</a>
+          </article>
+          <article class="card card_c80 swiper-slide">
+            <span class="catalog__estimate">4,4</span>
+            <h3 class="product">Диван из шинила<br>“С-80”</h3>
+            <p class="catalog__price">20 990 руб</p>
+            <a href="#" class="btn btn_catalog">Купить</a>
+          </article>
         </div>
-        <div class="feedback__box feedback__box_curve"></div>
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="catalog__adv">
+        <h3 class="title title_oxford">Оксфорд 1950</h3>
+        <p class="catalog__desc">Новая коллекция изысканных кресел</p>
+        <a href="#" class="catalog__link">
+          В каталог
+          <svg class="catalog__svg" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="11" cy="11" r="10" stroke="#A65CF0" stroke-width="2"/>
+            <path d="M9.625 7.5625L13.0625 11L9.625 14.4375" stroke="#A65CF0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
       </div>
     </section>
   </main>
@@ -680,7 +658,6 @@
     </div>
     <small class="footer__small">SDP&reg; 2011-2021</small>
   </footer>
-
-  <script src="/js/index.js"></script>
+  <script src="/js/index-catalog.js"></script>
 </body>
 </html>

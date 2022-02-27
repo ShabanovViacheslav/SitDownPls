@@ -70,7 +70,10 @@ const htmlMinify = () => {
 };
 
 const scripts = () => {
-  return src('src/js/index.js')
+  return src([
+    'src/js/index.js',
+    'src/js/index-catalog.js',
+  ])
     .pipe(babel({
       presets: ['@babel/env']
     }))

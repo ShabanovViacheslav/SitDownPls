@@ -35,6 +35,9 @@
       clickable: true,
     },
     allowTouchMove: false,
+    a11y: {
+      paginationBulletMessage: 'Следующий слайд',
+    },
   });
 
   // offer
@@ -59,13 +62,11 @@
         spaceBetween: 32,
       },
     },
+    a11y: {
+      nextSlideMessage: 'Cледующие предложения',
+      prevSlideMessage: 'Предыдущие предложения',
+    },
   });
-
-  const btnPrev = document.querySelector('.offer__btn_prev');
-  const btnNext = document.querySelector('.offer__btn_next');
-
-  btnPrev.setAttribute('aria-label', 'Предыдущие предложения');
-  btnNext.setAttribute('aria-label', 'Cледующие предложения');
 
   // rate
 
@@ -148,6 +149,10 @@
       1920: {
         slidesPerView: 2,
       },
+    },
+    a11y: {
+      nextSlideMessage: 'Cледующий слайд',
+      prevSlideMessage: 'Предыдущий слайд',
     },
   });
 
