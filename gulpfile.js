@@ -73,6 +73,7 @@ const scripts = () => {
   return src([
     'src/js/index.js',
     'src/js/index-catalog.js',
+    'src/js/index-card.js',
   ])
     .pipe(babel({
       presets: ['@babel/env']

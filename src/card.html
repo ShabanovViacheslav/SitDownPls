@@ -4,19 +4,17 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Каталог SitDownPls</title>
+  <title>Карточка товара SitDownPls</title>
   <link rel="shortcut icon" href="/img/icon.png" type="image/png">
   <script src="/js/choices.min.js"></script>
   <script src="/js/swiper-bundle.min.js"></script>
-  <script src="/js/nouislider.min.js"></script>
   <link rel="stylesheet" href="/css/choices.min.css">
   <link rel="stylesheet" href="/css/swiper-bundle.min.css">
-  <link rel="stylesheet" href="/css/nouislider.min.css">
   <link rel="stylesheet" href="/css/normalize.css">
-  <link rel="stylesheet" href="/css/style-catalog.css">
+  <link rel="stylesheet" href="/css/style-card.css">
 </head>
 <body>
-  <h1>SitDownPls. Каталог интернет-магазина мебели</h1>
+  <h1>SitDownPls. Карточка товара</h1>
   <header class="header">
     <form class="header__formregion" action="#">
       <label class="header__label" for="city" aria-label="Ваш регион">Ваш регион:</label>
@@ -147,408 +145,201 @@
       <span class="header__slash">&#47;</span>
       <a href="#" class="link link_submenu">Диваны</a>
       <span class="header__slash">&#47;</span>
-      <a href="#" class="link link_submenu link_active">Прямые диваны</a>
+      <a href="#" class="link link_submenu">Прямые диваны</a>
+      <span class="header__slash">&#47;</span>
+      <a href="#" class="link link_submenu link_active">D-31</a>
     </div>
   </header>
 
   <main>
-    <section class="catalog">
-      <h2 class="title title_catalog">Каталог</h2>
-      <div class="catalog__tags">
-        <div class="catalog__tag catalog__tag_category" data-item="sofas">
-          <p>Диваны</p>
-          <button class="catalog__close" aria-label="Снять фильтр">
-            <span class="catalog__line"></span>
-            <span class="catalog__line"></span>
-          </button>
-        </div>
-        <div class="catalog__tag catalog__tag_price" data-item="to">
-          <p>До 130000</p>
-          <button class="catalog__close" aria-label="Снять фильтр">
-            <span class="catalog__line"></span>
-            <span class="catalog__line"></span>
-          </button>
-        </div>
-        <div class="catalog__tag catalog__tag_discount" data-item="notimp">
-          <p>Нет скидки</p>
-          <button class="catalog__close" aria-label="Снять фильтр">
-            <span class="catalog__line"></span>
-            <span class="catalog__line"></span>
-          </button>
-        </div>
-        <div class="catalog__tag catalog__tag_color" data-item="orange">
-          <p>Оранжевый</p>
-          <button class="catalog__close" aria-label="Снять фильтр">
-            <span class="catalog__line"></span>
-            <span class="catalog__line"></span>
-          </button>
-        </div>
-      </div>
-      <form class="catalog__filters">
-        <h3 class="catalog__title">Фильтровать по:</h3>
-        <ul class="catalog__list">
-          <li class="catalog__item">
-            <button class="catalog__btn">Категория</button>
-            <ul class="catalog__sublist catalog__listcat">
-              <li class="catalog__itemcat">
-                <label for="sofas" class="catalog__text">Диваны</label>
-                <input class="catalog__check" type="checkbox" name="sofas" id="sofas" data-type="category" data-status="1" checked>
-                <span></span>
-              </li>
-              <li class="catalog__itemcat">
-                <label for="chairs" class="catalog__text">Кресла</label>
-                <input class="catalog__check" type="checkbox" name="chairs" id="chairs" data-type="category" data-status="0">
-                <span></span>
-              </li>
-              <li class="catalog__itemcat">
-                <label for="poufs" class="catalog__text">Пуфы</label>
-                <input class="catalog__check" type="checkbox" name="poufs" id="poufs" data-type="category" data-status="0">
-                <span></span>
-              </li>
-              <li class="catalog__itemcat">
-                <label for="beds" class="catalog__text">Кровати</label>
-                <input class="catalog__check" type="checkbox" name="beds" id="beds" data-type="category" data-status="0">
-                <span></span>
-              </li>
-              <li class="catalog__itemcat">
-                <label for="bedsidetables" class="catalog__text">Тумбы</label>
-                <input class="catalog__check" type="checkbox" name="bedsidetables" id="bedsidetables" data-type="category" data-status="0">
-                <span></span>
-              </li>
-              <li class="catalog__itemcat">
-                <label for="dressers" class="catalog__text">Комоды</label>
-                <input class="catalog__check" type="checkbox" name="dressers" id="dressers" data-type="category" data-status="0">
-                <span></span>
-              </li>
-              <li class="catalog__itemcat">
-                <label for="stools" class="catalog__text">Стулья</label>
-                <input class="catalog__check" type="checkbox" name="stools" id="stools" data-type="category" data-status="0">
-                <span></span>
-              </li>
-              <li class="catalog__itemcat">
-                <label for="tables" class="catalog__text">Столы</label>
-                <input class="catalog__check" type="checkbox" name="tables" id="tables" data-type="category" data-status="0">
-                <span></span>
-              </li>
-              <li class="catalog__itemcat">
-                <label for="accessories" class="catalog__text">Аксессуары</label>
-                <input class="catalog__check" type="checkbox" name="accessories" id="accessories" data-type="category" data-status="0">
-                <span></span>
-              </li>
-              <li class="catalog__itemcat catalog__itemcat_hidden" data-example="1">
-                <label for="example1" class="catalog__text">Example1</label>
-                <input class="catalog__check" type="checkbox" name="example" id="example1" data-type="category" data-status="0">
-                <span></span>
-              </li>
-              <li class="catalog__itemcat catalog__itemcat_hidden" data-example="1">
-                <label for="example2" class="catalog__text">Example2</label>
-                <input class="catalog__check" type="checkbox" name="example" id="example2" data-type="category" data-status="0">
-                <span></span>
-              </li>
-              <li class="catalog__itemcat catalog__itemcat_hidden" data-example="1">
-                <label for="example3" class="catalog__text">Example3</label>
-                <input class="catalog__check" type="checkbox" name="example" id="example3" data-type="category" data-status="0">
-                <span></span>
-              </li>
-              <li class="catalog__itemcat catalog__itemcat_hidden" data-example="1">
-                <label for="example4" class="catalog__text">Example4</label>
-                <input class="catalog__check" type="checkbox" name="example" id="example4" data-type="category" data-status="0">
-                <span></span>
-              </li>
-              <li class="catalog__itemcat catalog__itemcat_hidden" data-example="1">
-                <label for="example5" class="catalog__text">Example5</label>
-                <input class="catalog__check" type="checkbox" name="example" id="example5" data-type="category" data-status="0">
-                <span></span>
-              </li>
-              <li class="catalog__itemcat catalog__itemcat_hidden" data-example="1">
-                <label for="example6" class="catalog__text">Example6</label>
-                <input class="catalog__check" type="checkbox" name="example" id="example6" data-type="category" data-status="0">
-                <span></span>
-              </li>
-              <li class="catalog__itemcat catalog__itemcat_hidden" data-example="1">
-                <label for="example7" class="catalog__text">Example7</label>
-                <input class="catalog__check" type="checkbox" name="example" id="example7" data-type="category" data-status="0">
-                <span></span>
-              </li>
-              <li class="catalog__itemcat catalog__itemcat_hidden" data-example="1">
-                <label for="example8" class="catalog__text">Example8</label>
-                <input class="catalog__check" type="checkbox" name="example" id="example8" data-type="category" data-status="0">
-                <span></span>
-              </li>
-              <li class="catalog__itemcat catalog__itemcat_hidden" data-example="1">
-                <label for="example9" class="catalog__text">Example9</label>
-                <input class="catalog__check" type="checkbox" name="example" id="example9" data-type="category" data-status="0">
-                <span></span>
-              </li>
-              <li class="catalog__itemcat catalog__itemcat_hidden" data-example="1">
-                <label for="example10" class="catalog__text">Example10</label>
-                <input class="catalog__check" type="checkbox" name="example" id="example10" data-type="category" data-status="0">
-                <span></span>
-              </li>
-              <li class="catalog__itemcat catalog__itemcat_hidden" data-example="1">
-                <label for="example11" class="catalog__text">Example11</label>
-                <input class="catalog__check" type="checkbox" name="example" id="example11" data-type="category" data-status="0">
-                <span></span>
-              </li>
-              <li class="catalog__itemcat catalog__itemcat_hidden" data-example="1">
-                <label for="example12" class="catalog__text">Example12</label>
-                <input class="catalog__check" type="checkbox" name="example" id="example12" data-type="category" data-status="0">
-                <span></span>
-              </li>
-              <li>
-                <button class="catalog__add" data-text="Свернуть">+ ещё 12</button>
-              </li>
-            </ul>
+    <section class="stuff">
+      <button class="stuff__btn" aria-label="Открыть модальное окно с изображениями товара">
+        <picture>
+          <source srcset="/img/d31320.png" media="(max-width: 767px)">
+          <source srcset="/img/d31768.png" media="(max-width: 1023px)">
+          <source srcset="/img/d311024.png" media="(max-width: 1919px)">
+          <img class="stuff__picture" src="/img/d31.png" alt="#">
+        </picture>
+      </button>
+      <div class="stuff__pictures">
+        <ul class="stuff__items">
+          <li class="stuff__element">
+            <!-- <source srcset="/img/back1_1024.jpg" media="(max-width: 1919px)"> -->
+            <img class="stuff__img" src="/img/d31-1.png" alt="#">
           </li>
-          <li class="catalog__item catalog__item_price">
-            <button class="catalog__btn catalog__btn_price">Цена</button>
-            <ul class="catalog__sublist catalog__sublist_price catalog__listprice">
-              <li class="catalog__itemprice">
-                <label for="from" class="catalog__text catalog__text_price">от</label>
-                <input class="catalog__number" type="number" name="from" id="from" min="10" max="150000" placeholder="2000">
-              </li>
-              <li class="catalog__itemprice">
-                <label for="to" class="catalog__text catalog__text_price">до</label>
-                <input class="catalog__number" type="number" name="to" id="to" min="10" max="150000" placeholder="150 000" data-type="price">
-              </li>
-            </ul>
-            <div class="catalog__range"></div>
+          <li class="stuff__element">
+            <!-- <source srcset="/img/back1_1024.jpg" media="(max-width: 1919px)"> -->
+            <img class="stuff__img" src="/img/d31-2.png" alt="#">
           </li>
-          <li class="catalog__item">
-            <button class="catalog__btn">Скидка</button>
-            <ul class="catalog__sublist catalog__listdisc">
-              <li class="catalog__itemdisc">
-                <label for="more" class="catalog__text">Более 5 000</label>
-                <input class="catalog__check" type="checkbox" name="more" id="more" data-type="discount" data-status="0">
-                <span></span>
-              </li>
-              <li class="catalog__itemdisc">
-                <label for="less" class="catalog__text">Менее 5 000</label>
-                <input class="catalog__check" type="checkbox" name="less" id="less" data-type="discount" data-status="0">
-                <span></span>
-              </li>
-              <li class="catalog__itemdisc">
-                <label for="notimp" class="catalog__text">Не важно</label>
-                <input class="catalog__check" type="checkbox" name="notimp" id="notimp" data-type="discount" data-status="1" checked>
-                <span></span>
-              </li>
-            </ul>
+          <li class="stuff__element">
+            <!-- <source srcset="/img/back1_1024.jpg" media="(max-width: 1919px)"> -->
+            <img class="stuff__img" src="/img/d31-3.png" alt="#">
           </li>
-          <li class="catalog__item">
-            <button class="catalog__btn">Цвет</button>
-            <ul class="catalog__sublist catalog__listcolor">
-              <li class="catalog__itemcolor">
-                <label for="brown" class="catalog__text">Коричневый</label>
-                <input class="catalog__check" type="checkbox" name="brown" id="brown" data-type="color" data-status="0">
-                <span></span>
-              </li>
-              <li class="catalog__itemcolor">
-                <label for="black" class="catalog__text">Черный</label>
-                <input class="catalog__check" type="checkbox" name="black" id="black" data-type="color" data-status="0">
-                <span></span>
-              </li>
-              <li class="catalog__itemcolor">
-                <label for="beige" class="catalog__text">Бежевый</label>
-                <input class="catalog__check" type="checkbox" name="beige" id="beige" data-type="color" data-status="0">
-                <span></span>
-              </li>
-              <li class="catalog__itemcolor">
-                <label for="grey" class="catalog__text">Серый</label>
-                <input class="catalog__check" type="checkbox" name="grey" id="grey" data-type="color" data-status="0">
-                <span></span>
-              </li>
-              <li class="catalog__itemcolor">
-                <label for="white" class="catalog__text">Белый</label>
-                <input class="catalog__check" type="checkbox" name="white" id="white" data-type="color" data-status="0">
-                <span></span>
-              </li>
-              <li class="catalog__itemcolor">
-                <label for="blue" class="catalog__text">Синий</label>
-                <input class="catalog__check" type="checkbox" name="blue" id="blue" data-type="color" data-status="0">
-                <span></span>
-              </li>
-              <li class="catalog__itemcolor">
-                <label for="orange" class="catalog__text">Оранжевый</label>
-                <input class="catalog__check" type="checkbox" name="orange" id="orange" data-type="color" data-status="1" checked>
-                <span></span>
-              </li>
-              <li class="catalog__itemcolor">
-                <label for="yellow" class="catalog__text">Желтый</label>
-                <input class="catalog__check" type="checkbox" name="yellow" id="yellow" data-type="color" data-status="0">
-                <span></span>
-              </li>
-              <li class="catalog__itemcolor">
-                <label for="green" class="catalog__text">Зеленый</label>
-                <input class="catalog__check" type="checkbox" name="green" id="green" data-type="color" data-status="0">
-                <span></span>
-              </li>
-              <li class="catalog__itemcolor catalog__itemcolor_hidden" data-example="1">
-                <label for="example-1" class="catalog__text">Example1</label>
-                <input class="catalog__check" type="checkbox" name="example" id="example-1" data-type="color" data-status="0">
-                <span></span>
-              </li>
-              <li class="catalog__itemcolor catalog__itemcolor_hidden" data-example="1">
-                <label for="example-2" class="catalog__text">Example2</label>
-                <input class="catalog__check" type="checkbox" name="example" id="example-2" data-type="color" data-status="0">
-                <span></span>
-              </li>
-              <li class="catalog__itemcolor catalog__itemcolor_hidden" data-example="1">
-                <label for="example-3" class="catalog__text">Example3</label>
-                <input class="catalog__check" type="checkbox" name="example" id="example-3" data-type="color" data-status="0">
-                <span></span>
-              </li>
-              <li class="catalog__itemcolor catalog__itemcolor_hidden" data-example="1">
-                <label for="example-4" class="catalog__text">Example4</label>
-                <input class="catalog__check" type="checkbox" name="example" id="example-4" data-type="color" data-status="0">
-                <span></span>
-              </li>
-              <li class="catalog__itemcolor catalog__itemcolor_hidden" data-example="1">
-                <label for="example-5" class="catalog__text">Example5</label>
-                <input class="catalog__check" type="checkbox" name="example" id="example-5" data-type="color" data-status="0">
-                <span></span>
-              </li>
-              <li class="catalog__itemcolor catalog__itemcolor_hidden" data-example="1">
-                <label for="example-6" class="catalog__text">Example6</label>
-                <input class="catalog__check" type="checkbox" name="example" id="example-6" data-type="color" data-status="0">
-                <span></span>
-              </li>
-              <li class="catalog__itemcolor catalog__itemcolor_hidden" data-example="1">
-                <label for="example-7" class="catalog__text">Example7</label>
-                <input class="catalog__check" type="checkbox" name="example" id="example-7" data-type="color" data-status="0">
-                <span></span>
-              </li>
-              <li>
-                <button class="catalog__add" data-text="Свернуть">+ ещё 7</button>
-              </li>
-            </ul>
+          <li class="stuff__element">
+            <!-- <source srcset="/img/back1_1024.jpg" media="(max-width: 1919px)"> -->
+            <img class="stuff__img" src="/img/d31-4.png" alt="#">
           </li>
         </ul>
-      </form>
-      <div class="catalog__products swiper swiper_catalog">
-        <div class="swiper-wrapper">
-          <article class="card card_black swiper-slide">
-            <span class="catalog__estimate">5,0</span>
-            <a href="#" class="product">Диван кожаный<br>“R-94”</a>
-            <p class="catalog__price">94 990 руб</p>
-            <a href="#" class="btn btn_catalog">Купить</a>
-          </article>
-          <article class="card card_orange swiper-slide">
-            <span class="catalog__estimate">4,8</span>
-            <a href="#" class="product">Диван велюровый<br>“Y-68”</a>
-            <p class="catalog__price">22 990 руб</p>
-            <a href="#" class="btn btn_catalog">Купить</a>
-          </article>
-          <article class="card card_grey swiper-slide">
-            <span class="catalog__estimate">4,8</span>
-            <a href="#" class="product">Диван шиниловый<br>“V-43”</a>
-            <p class="catalog__price">19 990 руб</p>
-            <a href="#" class="btn btn_catalog">Купить</a>
-          </article>
-          <article class="card card_brown swiper-slide">
-            <span class="catalog__estimate">4,9</span>
-            <a href="#" class="product">Диван апартековый<br>“T-75”</a>
-            <p class="catalog__price">69 990 руб</p>
-            <a href="#" class="btn btn_catalog">Купить</a>
-          </article>
-          <article class="card card_ligth swiper-slide">
-            <span class="catalog__estimate">4,8</span>
-            <a href="#" class="product">Диван из&nbsp;шинила<br>“W-95”</a>
-            <p class="catalog__price">22 990 руб</p>
-            <a href="#" class="btn btn_catalog">Купить</a>
-          </article>
-          <article class="card card_choco swiper-slide">
-            <span class="catalog__estimate">4,7</span>
-            <a href="#" class="product">Диван велюровый<br>“S-99”</a>
-            <p class="catalog__price">19 990 руб</p>
-            <a href="#" class="btn btn_catalog">Купить</a>
-          </article>
-          <article class="card card_blue swiper-slide">
-            <span class="catalog__estimate">4,8</span>
-            <a href="/card.html" class="product">Диван тканевый<br>“D-31”</a>
-            <p class="catalog__price">28 490 руб</p>
-            <a href="#" class="btn btn_catalog">Купить</a>
-          </article>
-          <article class="card card_beige swiper-slide">
-            <span class="catalog__estimate">4,8</span>
-            <a href="#" class="product">Диван флоковый<br>“G-41”</a>
-            <p class="catalog__price">17 990 руб</p>
-            <a href="#" class="btn btn_catalog">Купить</a>
-          </article>
-          <article class="card card_green swiper-slide">
-            <span class="catalog__estimate">4,7</span>
-            <a href="#" class="product">Диван из кожзама<br>“F-85”</a>
-            <p class="catalog__price">26 990 руб</p>
-            <a href="#" class="btn btn_catalog">Купить</a>
-          </article>
-          <article class="card card_h64 swiper-slide">
-            <span class="catalog__estimate">4,6</span>
-            <a href="#" class="product">Диван флоковый<br>“H-64”</a>
-            <p class="catalog__price">25 990 руб</p>
-            <a href="#" class="btn btn_catalog">Купить</a>
-          </article>
-          <article class="card card_c42 swiper-slide">
-            <span class="catalog__estimate">4,6</span>
-            <a href="#" class="product">Диван из шинила<br>“С-42”</a>
-            <p class="catalog__price">18 990 руб</p>
-            <a href="#" class="btn btn_catalog">Купить</a>
-          </article>
-          <article class="card card_r85 swiper-slide">
-            <span class="catalog__estimate">4,5</span>
-            <a href="#" class="product">Диван велюровый<br>“R-85”</a>
-            <p class="catalog__price">34 990 руб</p>
-            <a href="#" class="btn btn_catalog">Купить</a>
-          </article>
-          <article class="card card_h58 swiper-slide">
-            <span class="catalog__estimate">4,6</span>
-            <a href="#" class="product">Диван флоковый<br>“H-58”</a>
-            <p class="catalog__price">23 990 руб</p>
-            <a href="#" class="btn btn_catalog">Купить</a>
-          </article>
-          <article class="card card_u58 swiper-slide">
-            <span class="catalog__estimate">4,6</span>
-            <a href="#" class="product">Диван велюровый<br>“U-58”</a>
-            <p class="catalog__price">21 990 руб</p>
-            <a href="#" class="btn btn_catalog">Купить</a>
-          </article>
-          <article class="card card_s44 swiper-slide">
-            <span class="catalog__estimate">4,5</span>
-            <a href="#" class="product">Диван велюровый<br>“S-44”</a>
-            <p class="catalog__price">19 990 руб</p>
-            <a href="#" class="btn btn_catalog">Купить</a>
-          </article>
-          <article class="card card_r43 swiper-slide">
-            <span class="catalog__estimate">4,6</span>
-            <a href="#" class="product">Диван из кожзама<br>“R-43”</a>
-            <p class="catalog__price">33 990 руб</p>
-            <a href="#" class="btn btn_catalog">Купить</a>
-          </article>
-          <article class="card card_f41 swiper-slide">
-            <span class="catalog__estimate">4,5</span>
-            <a href="#" class="product">Диван флоковый<br>“F-41”</a>
-            <p class="catalog__price">17 490 руб</p>
-            <a href="#" class="btn btn_catalog">Купить</a>
-          </article>
-          <article class="card card_c80 swiper-slide">
-            <span class="catalog__estimate">4,4</span>
-            <a href="#" class="product">Диван из шинила<br>“С-80”</a>
-            <p class="catalog__price">20 990 руб</p>
-            <a href="#" class="btn btn_catalog">Купить</a>
-          </article>
+      </div>
+      <div class="stuff__head">
+        <span class="stuff__estimate">4,8</span>
+        <h2 class="stuff__title">Диван тканевый прямой “D-31”</h2>
+        <p class="stuff__text stuff__text_head">Мини 120 см без ящика Stark синий (Рогожка)</p>
+        <p class="stuff__price">28 490 руб</p>
+        <a href="#" class="btn btn_primary">Купить в один клик</a>
+        <button class="stuff__cart">+ Добавить в корзину</button>
+      </div>
+      <div class="stuff__descr">
+        <div class="stuff__box stuff__box_top">
+          <p class="stuff__text stuff__text_bold">Опорный механизм</p>
+          <p class="stuff__text stuff__text_descr">Опорный механизм напоминает пантограф, к&nbsp;которому добавили дополнительную секцию. У&nbsp;опорного дивана сиденье &laquo;выпрыгивает&raquo; вперёд и&nbsp;вытаскивает вторую часть спального места. Заключительный штрих&nbsp;&mdash; опустить спинку.</p>
+          <p class="stuff__text stuff__text_descr">Этот механизм не&nbsp;портит пол и&nbsp;не&nbsp;боится ковров. Требуется чуть больше силы, чтобы разложить диван, но&nbsp;подросток справится.</p>
+        </div>
+        <div class="stuff__box stuff__box_bottom">
+          <picture>
+            <source srcset="/img/scheme-11024.png" media="(max-width: 1919px)">
+            <img class="stuff__picture" src="/img/scheme-1.png" alt="#">
+          </picture>
+          <picture>
+            <source srcset="/img/scheme-21024.png" media="(max-width: 1919px)">
+            <img class="stuff__picture" src="/img/scheme-2.png" alt="#">
+          </picture>
         </div>
       </div>
-      <div class="swiper-pagination"></div>
-      <aside class="catalog__adv">
-        <h3 class="title title_oxford">Оксфорд 1950</h3>
-        <p class="catalog__desc">Новая коллекция изысканных кресел</p>
-        <a href="#" class="catalog__link">
-          В каталог
-          <svg class="catalog__svg" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="11" cy="11" r="10" stroke="#A65CF0" stroke-width="2"/>
-            <path d="M9.625 7.5625L13.0625 11L9.625 14.4375" stroke="#A65CF0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
-      </aside>
+      <div class="stuff__param">
+        <ul class="stuff__list">
+          <li class="stuff__item">
+            <p class="stuff__text stuff__text_left">Гарантия</p>
+            <p class="stuff__text stuff__text_rigth">18 месяцев</p>
+          </li>
+          <li class="stuff__item">
+            <p class="stuff__text stuff__text_left">Артикул</p>
+            <p class="stuff__text stuff__text_rigth">AAA41269004</p>
+          </li>
+          <li class="stuff__item">
+            <p class="stuff__text stuff__text_left">Длина</p>
+            <p class="stuff__text stuff__text_rigth">163 см</p>
+          </li>
+          <li class="stuff__item">
+            <p class="stuff__text stuff__text_left">Высота</p>
+            <p class="stuff__text stuff__text_rigth">90 см</p>
+          </li>
+          <li class="stuff__item">
+            <p class="stuff__text stuff__text_left">Глубина</p>
+            <p class="stuff__text stuff__text_rigth">108 см</p>
+          </li>
+          <li class="stuff__item">
+            <p class="stuff__text stuff__text_left">Спальное место</p>
+            <p class="stuff__text stuff__text_rigth">200 см х 125 см</p>
+          </li>
+          <li class="stuff__item">
+            <p class="stuff__text stuff__text_left">Высота посадки</p>
+            <p class="stuff__text stuff__text_rigth">45 см</p>
+          </li>
+          <li class="stuff__item">
+            <p class="stuff__text stuff__text_left">Механизм</p>
+            <p class="stuff__text stuff__text_rigth">Опорный</p>
+          </li>
+          <li class="stuff__item">
+            <p class="stuff__text stuff__text_left">Тип обивки</p>
+            <p class="stuff__text stuff__text_rigth">Рогожка</p>
+          </li>
+          <li class="stuff__item">
+            <p class="stuff__text stuff__text_left">Цвет</p>
+            <p class="stuff__text stuff__text_rigth">Синий</p>
+          </li>
+          <li class="stuff__item">
+            <p class="stuff__text stuff__text_left">Наполнитель</p>
+            <p class="stuff__text stuff__text_rigth">Независимый пружинный блок</p>
+          </li>
+          <li class="stuff__item">
+            <p class="stuff__text stuff__text_left">Материал каркаса</p>
+            <p class="stuff__text stuff__text_rigth">Металл. рама с дерев. латами</p>
+          </li>
+          <li class="stuff__item">
+            <p class="stuff__text stuff__text_left">Количество мест</p>
+            <p class="stuff__text stuff__text_rigth">Двухместные</p>
+          </li>
+          <li class="stuff__item">
+            <p class="stuff__text stuff__text_left">Категория</p>
+            <p class="stuff__text stuff__text_rigth">Прямые тканевые диваны</p>
+          </li>
+          <li class="stuff__item">
+            <p class="stuff__text stuff__text_left">Возврат</p>
+            <p class="stuff__text stuff__text_rigth">Условия</p>
+          </li>
+        </ul>
+      </div>
     </section>
+
+    <section class="similar">
+      <h2 class="similar__title">Похожие товары</h2>
+      <div class="swiper-button-prev similar__btn similar__btn_prev">
+        <svg class="similar__svg" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle r="15" transform="matrix(-1 0 0 1 16 16)" stroke="#999999" stroke-width="2"/>
+          <path d="M18 11L13 16L18 21" stroke="#999999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="swiper-button-next similar__btn similar__btn_next">
+        <svg class="similar__svg" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="16" cy="16" r="15" stroke="#A65CF0" stroke-width="2"/>
+          <path d="M14 11L19 16L14 21" stroke="#A65CF0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="similar__products swiper swiper_similar">
+        <div class="swiper-wrapper">
+          <article class="card card_r85 swiper-slide">
+            <span class="similar__estimate">4,5</span>
+            <a href="#" class="product">Диван велюровый<br>“R-85”</a>
+            <p class="similar__price">34 990 руб</p>
+            <a href="#" class="btn btn_similar">Купить</a>
+          </article>
+          <article class="card card_h58 swiper-slide">
+            <span class="similar__estimate">4,6</span>
+            <a href="#" class="product">Диван флоковый<br>“H-58”</a>
+            <p class="similar__price">23 990 руб</p>
+            <a href="#" class="btn btn_similar">Купить</a>
+          </article>
+          <article class="card card_s44 swiper-slide">
+            <span class="similar__estimate">4,5</span>
+            <a href="#" class="product">Диван велюровый<br>“S-44”</a>
+            <p class="similar__price">19 990 руб</p>
+            <a href="#" class="btn btn_similar">Купить</a>
+          </article>
+          <article class="card card_grey swiper-slide">
+            <span class="similar__estimate">4,8</span>
+            <a href="#" class="product">Диван шиниловый<br>“V-43”</a>
+            <p class="similar__price">19 990 руб</p>
+            <a href="#" class="btn btn_similar">Купить</a>
+          </article>
+          <article class="card card_orange swiper-slide">
+            <span class="similar__estimate">4,8</span>
+            <a href="#" class="product">Диван велюровый<br>“Y-68”</a>
+            <p class="similar__price">22 990 руб</p>
+            <a href="#" class="btn btn_similar">Купить</a>
+          </article>
+          <article class="card card_ligth swiper-slide">
+            <span class="similar__estimate">4,8</span>
+            <a href="#" class="product">Диван из&nbsp;шинила<br>“W-95”</a>
+            <p class="similar__price">22 990 руб</p>
+            <a href="#" class="btn btn_similar">Купить</a>
+          </article>
+          <article class="card card_green swiper-slide">
+            <span class="similar__estimate">4,7</span>
+            <a href="#" class="product">Диван из кожзама<br>“F-85”</a>
+            <p class="similar__price">26 990 руб</p>
+            <a href="#" class="btn btn_similar">Купить</a>
+          </article>
+          <article class="card card_r43 swiper-slide">
+            <span class="similar__estimate">4,6</span>
+            <a href="#" class="product">Диван из кожзама<br>“R-43”</a>
+            <p class="similar__price">33 990 руб</p>
+            <a href="#" class="btn btn_similar">Купить</a>
+          </article>
+        </div>  
+      </div>
+    </section>
+    
   </main>
 
   <footer class="footer">
@@ -658,6 +449,6 @@
     </div>
     <small class="footer__small">SDP&reg; 2011-2021</small>
   </footer>
-  <script src="/js/index-catalog.js"></script>
+  <script src="/js/index-card.js"></script>
 </body>
 </html>

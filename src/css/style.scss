@@ -380,6 +380,16 @@ h1 {
   font-size: 24px;
   line-height: 130%;
   color: $colorBlack;
+  @include animate;
+  transition-property: color, background-color;
+
+  &:hover:not(.product_categories) {
+    color: $colorPrimary;
+  }
+
+  &:focus:not(:hover, .product_categories) {
+    background-color: $colorPinkViolet;
+  }
 
   &_rate {
     padding: 0;

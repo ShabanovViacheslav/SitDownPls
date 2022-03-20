@@ -1,0 +1,195 @@
+.similar {
+  position: relative;
+  max-width: 1280px;
+  margin: 0 auto 70px auto;
+
+  &__title {
+    margin: 0 0 26px 0;
+    font-weight: normal;
+    font-size: 24px;
+  }
+
+  &__btn {
+    top: -2px;
+    width: 32px;
+    height: 32px;
+    margin: 0;
+
+    &_prev {
+      right: 45px;
+      left: auto;
+  
+      &::after {
+        content: none;
+      }
+    }
+  
+    &_next {
+      right: 0;
+  
+      &::after {
+        content: none;
+      }
+    }
+
+    &_disabled {
+      opacity: 1;
+      cursor: auto;
+      pointer-events: none;
+
+      .similar__svg path {
+        stroke: $colorGrey;
+        @include animate;
+        transition-property: stroke;
+      }
+      .similar__svg circle {
+        stroke: $colorGrey;
+        @include animate;
+        transition-property: stroke;
+      }
+    }
+
+    &:hover {
+
+      .similar__svg path {
+        stroke: $colorWhite;
+        @include animate;
+        transition-property: stroke;
+      }
+
+      .similar__svg circle {
+        fill: $colorPrimary;
+        @include animate;
+        transition-property: fill;
+      }
+    }
+
+    &:focus:not(:hover) {
+
+      .similar__svg path {
+        stroke: $colorWhite;
+        @include animate;
+        transition-property: stroke;
+      }
+
+      .similar__svg circle {
+        fill: $colorPrimaryLight;
+        @include animate;
+        transition-property: fill;
+      }
+    }
+
+    &:active {
+
+      .similar__svg path {
+        stroke: $colorWhite;
+        @include animate;
+        transition-property: stroke;
+      }
+      
+      .similar__svg circle {
+        fill: $colorPrimaryShade;
+        stroke: $colorPrimaryShade;
+        @include animate;
+        transition-property: fill, stroke;
+      }
+    }
+  }
+
+  &__svg path {
+    stroke: $colorPrimary;
+    @include animate;
+    transition-property: stroke;
+  }
+
+  &__svg circle {
+    stroke: $colorPrimary;
+    fill: transparent;
+    @include animate;
+    transition-property: fill, stroke;
+  }
+
+  &__estimate {
+    grid-area: estimate;
+    font-weight: normal;
+    font-size: 16px;
+    color: $colorSecondary;
+
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 16px;
+      height: 15px;
+      margin-right: 7px;
+      background-image: url(../img/star.svg);
+    }
+  }
+
+  &__price {
+    grid-area: price;
+    align-self: end;
+    margin: 0;
+    font-weight: normal;
+    font-size: 16px;
+    color: $colorGrey;
+  }
+}
+
+@media (max-width: 1919px) {
+  .similar {
+    padding-right: 37px;
+    padding-left: 37px;
+    &__btn {
+      &_next {
+        right: 36px;
+      }
+      &_prev {
+        right: 81px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1023px) {
+  .similar {
+    padding-right: 72px;
+    padding-left: 72px;
+    &__btn {
+      &_next {
+        right: 72px;
+      }
+      &_prev {
+        right: 117px;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .similar {
+    margin-bottom: 117px;
+    padding-right: 12px;
+    padding-left: 12px;
+    &__btn {
+      top: auto;
+      right: auto;
+      bottom: -47px;
+      transform: translateX(-50%);
+      &_prev {
+        left: 43%;
+      }
+      &_next {
+        left: 57%;
+      }
+    }
+    &__estimate {
+      font-size: 12px;
+      &::before {
+        margin-right: 3px;
+        height: 12px;
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+}

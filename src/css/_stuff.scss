@@ -1,0 +1,386 @@
+.stuff {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-areas: 
+    'btn btn btn btn btn btn title title title title title title'
+    'pictures pictures pictures pictures pictures pictures title title title title title title'
+    'descr descr descr descr descr descr param param param param param param';
+    gap: 15px 32px;
+  max-width: 1280px;
+  margin: 0 auto 87px auto;
+
+  &__btn {
+    grid-area: btn;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    @include animate;
+    transition-property: background-color;
+
+    &:hover {
+      background-color: $colorGreyLight;
+    }
+
+    &:focus:not(:hover) {
+      background-color: $colorPinkLight;
+    }
+
+    &:active {
+      background-color: $colorGreyLight;
+    }
+  }
+
+  &__picture {
+    width: 100%;
+  }
+
+  &__pictures {
+    grid-area: pictures;
+    padding: 8px 25px;
+    background-color: $colorGreyLight;
+  }
+
+  &__items {
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__element:not(:last-child) {
+    margin-right: 38px;
+  }
+
+  &__head {
+    grid-area: title;
+    display: grid;
+    grid-template-areas: 
+    'estimate'
+    'title'
+    'text'
+    'price'
+    'btn'
+    'cart';
+    grid-auto-rows: min-content;
+    justify-items: start;
+    align-items: start;
+    padding-top: 17px;
+  }
+
+  &__estimate {
+    grid-area: estimate;
+    margin-bottom: 4px;
+    font-weight: normal;
+    font-size: 16px;
+    color: $colorSecondary;
+
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 16px;
+      height: 15px;
+      margin-right: 7px;
+      background-image: url(../img/star.svg);
+    }
+  }
+
+  &__title {
+    grid-area: title;
+    margin: 0 0 5px 0;
+    font-weight: normal;
+    font-size: 24px;
+  }
+
+  &__text {
+    margin: 0;
+    background-color: $colorWhite;
+    font-weight: normal;
+    font-size: 14px;
+    color: $colorGrey;
+
+    &_left {
+      padding-right: 4px;
+    }
+
+    &_rigth {
+      padding-left: 4px;
+      color: $colorBlack;
+    }
+
+    &_head {
+      grid-area: text;
+      margin-bottom: 23px;
+    }
+
+    &_bold {
+      font-weight: 600;
+      margin-bottom: 6px;
+      font-size: 16px;
+      color: $colorBlack;
+    }
+
+    &_descr {
+      line-height: 180%;
+
+      &:not(:last-child) {
+        margin-bottom: 8px;
+      }
+    }
+  }
+
+  &__price {
+    grid-area: price;
+    margin: 0 0 24px 0;
+    font-weight: normal;
+    font-size: 36px;
+  }
+
+  &__cart {
+    grid-area: cart;
+    margin: 0 0 0 30px;
+    padding: 0;
+    color: $colorPrimary;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    @include animate;
+    transition-property: color, background-color;
+
+    &:hover {
+      color: $colorPrimaryLight;
+    }
+  
+    &:focus:not(:hover) {
+      color: $colorPrimaryShade;
+      background-color: $colorPinkViolet;
+    }
+
+    &:active {
+      color: $colorPrimaryShade;
+    }
+  }
+
+  &__descr {
+    grid-area: descr;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 15px;
+  }
+
+  &__box {
+
+    &_bottom {
+      display: flex;
+      justify-content: space-between;
+      width: 84%;
+      transform: translateY(7px);
+    }
+  }
+
+  &__param {
+    grid-area: param;
+    padding-top: 20px;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: start;
+    column-gap: 24px;
+
+    &:not(:last-child) {
+      margin-bottom: 9px;
+    }
+
+    &::after {
+      content: ".....................................................................................";
+      position: absolute;
+      bottom: 0;
+      z-index: -1;
+      width: 55%;
+      overflow: hidden;
+      white-space: nowrap;
+      font-size: 5px;
+      color: $colorGrey;
+      letter-spacing: .6em;
+    }
+  }
+}
+
+@media (max-width: 1919px) {
+  .stuff {
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-areas: 
+      'btn btn btn btn btn title title title title'
+      'pictures pictures pictures pictures pictures title title title title'
+      'descr descr descr descr descr param param param param';
+    margin-bottom: 76px;
+    padding-right: 37px;
+    padding-left: 37px;
+    &__pictures {
+      padding: 9px;
+      overflow: hidden;
+    }
+    &__box {
+      &_bottom {
+        width: 100%;
+      }
+    }
+    &__item {
+      grid-template-columns: auto 54%;
+      gap: 0;
+    }
+    &__text {
+      &_rigth {
+        padding-left: 3px;
+      }
+      &_left {
+        padding-right: 3px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1023px) {
+  .stuff {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-areas: 
+      'btn btn btn btn btn btn'
+      'pictures pictures title title title title'
+      'descr descr descr descr descr descr' 
+      'param param param param param param';
+    row-gap: 30px;
+    margin-bottom: 38px;
+    padding-right: 72px;
+    padding-left: 72px;
+    &__pictures {
+      // margin-top: 15px;
+      padding: 25px 0 21px 0;
+    }
+    &__items {
+      flex-direction: column;
+      align-items: center;
+    }
+    &__element {
+      &:not(:last-child) {
+        margin-right: 0;
+        margin-bottom: 15px;
+      }
+    }
+    &__head {
+      padding-top: 52px;
+    }
+    &__descr {
+      margin-bottom: 9px;
+      padding-top: 0;
+    }
+    &__box {
+      width: 85%;
+      &_top{
+        margin-bottom: 26px;
+      }
+      &_bottom {
+        width: 83%;
+      }
+    }
+    &__param {
+      padding-top: 0;
+    }
+    &__item {
+      grid-template-columns: auto 35%;
+      &::after {
+        content: "................................................................................................................................................";
+        width: 70%;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .stuff {
+    grid-template-areas: 
+      'btn btn btn btn btn btn'
+      'pictures pictures pictures pictures pictures pictures'
+      'title title title title title title'
+      'descr descr descr descr descr descr' 
+      'param param param param param .';
+    gap: 13px 0;
+    margin-bottom: 79px;
+    padding-right: 12px;
+    padding-left: 12px;
+    &__pictures {
+      padding: 9px 10px 8px 10px;
+    }
+    &__element {
+      &:not(:last-child) {
+        margin-right: 38px;
+        margin-bottom: 0;
+      }
+    }
+    &__items {
+      flex-direction: row;
+    }
+    &__head {
+      justify-items: stretch;
+      margin-bottom: 19px;
+      padding-top: 5px;
+    }
+    &__title {
+      margin-bottom: 6px;
+      font-size: 16px;
+    }
+    &__text {
+      &_head {
+        width: 75%;
+        margin-bottom: 16px;
+      }
+      &_left {
+        margin-bottom: 3px;
+        padding: 0;
+        font-size: 10px;
+      }
+      &_rigth {
+        padding: 0;
+        font-size: 14px;
+      }
+    }
+    &__price {
+      margin-bottom: 17px;
+      font-size: 24px;
+    }
+    &__cart {
+      margin: 0;
+    }
+    &__descr {
+      margin-bottom: 22px;
+    }
+    &__box {
+      &_top {
+        width: 98%;
+      }
+      &_bottom {
+        width: 100%;
+        picture:first-child{
+          margin-right: 16px;
+        }
+      }
+    }
+    &__item {
+      display: list-item;
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
+      &::after {
+        content: none;
+      }
+    }
+  }
+}
