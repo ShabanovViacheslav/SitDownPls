@@ -2,6 +2,8 @@ const {src, dest, series, watch} = require('gulp');
 const sourcemaps = require('gulp-sourcemaps');
 const sass = require('gulp-sass')(require('sass'));
 const htmlMin = require('gulp-htmlmin');
+const autoprefixer = require('gulp-autoprefixer');
+const cleanCSS = require('gulp-clean-css');
 const svgSprite = require('gulp-svg-sprite');
 const image = require('gulp-image');
 const del = require('del');
@@ -24,6 +26,16 @@ const fonts = () => {
     .pipe(dest('build/fonts'))
 };
 
+const mailer = () => {
+  return src('src/PHPMailer/**/*')
+    .pipe(dest('build/PHPMailer'))
+};
+
+const php = () => {
+  return src('src/mail.php')
+    .pipe(dest('build'))
+};
+
 const js = () => {
   return src('src/js/**/*.min.js')
     .pipe(dest('build/js'))
@@ -38,17 +50,17 @@ const styles = () => {
     .pipe(browserSync.stream())
 };
 
-const SVGSprites = () => {
-  return src('src/img/svg/**/*.svg')
-    .pipe(svgSprite({
-      mode: {
-        stack: {
-          sprite: '../sprite.svg'
-        }
-      }
-    }))
-    .pipe(dest('build/img'))
-};
+// const SVGSprites = () => {
+//   return src('src/img/svg/**/*.svg')
+//     .pipe(svgSprite({
+//       mode: {
+//         stack: {
+//           sprite: '../sprite.svg'
+//         }
+//       }
+//     }))
+//     .pipe(dest('build/img'))
+// };
 
 const images = () => {
   return src([
@@ -93,6 +105,28 @@ const watchFiles = () => {
 watch('src/**/*.html', htmlMinify);
 watch('src/css/**/*.scss', styles);
 watch('src/js/**/*.js', scripts);
-watch('src/img/svg/**/*.svg', SVGSprites);
+// watch('src/img/svg/**/*.svg', SVGSprites);
 
-exports.default = series(clean, htmlMinify, styles, SVGSprites, images, css, fonts, js, scripts, watchFiles);
+exports.default = series(clean, htmlMinify, styles, images, css, fonts, js, scripts, watchFiles);
+
+const stylesBuild = () => {
+  return src('src/css/**/*.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(autoprefixer({
+      cascade: false,
+    }))
+    .pipe(cleanCSS({
+      level: 2,
+    }))
+    .pipe(dest('build/css'))
+};
+
+const htmlMinifyBuild = () => {
+  return src('src/**/*.html')
+    .pipe(htmlMin({
+      collapseWhitespace: true,
+    }))
+    .pipe(dest('build'))
+};
+
+exports.build = series(clean, htmlMinifyBuild, stylesBuild, images, css, fonts, js, scripts, mailer, php);

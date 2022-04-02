@@ -1,0 +1,499 @@
+.modul {
+  height: 0;
+  opacity: 0;
+  @include animate;
+  transition-property: heigth, opacity;
+
+  &_visible {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 15;
+    height: auto;
+    opacity: 1;
+    background-color: rgba(0, 0, 0, .3);
+    @include animate;
+    transition-property: heigth, opacity;
+  }
+
+  &__box {
+    position: relative;
+    top: 59%;
+    display: none;
+    margin: 0 auto;
+    background-color: $colorWhite;
+    border-radius: 10px;
+    transform: translateY(-50%);
+
+    &_main {
+      width: 624px;
+      height: 421px;
+      padding: 30px;
+    }
+
+    &_swiper {
+      flex-direction: column;
+      justify-content: space-between;
+      width: 1280px;
+      height: 684px;
+      padding-top: 50px;
+    }
+
+    &_visible {
+      display: block;
+    }
+
+    &_visiblesw {
+      display: flex;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 21px;
+    right: 20px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    @include animate;
+    transition-property: background-color;
+
+    &:focus:not(:hover) {
+      background-color: $colorPinkViolet;
+      @include animate;
+      transition-property: background-color;
+
+      .modul__line {
+        background-color: $colorPrimaryShade;
+        @include animate;
+        transition-property: background-color;
+      }
+    }
+
+    &:active > .modul__line {
+      background-color: $colorPrimary;
+      @include animate;
+      transition-property: background-color;
+    }
+  }
+
+  &__line {
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    display: inline-block;
+    background-color: $colorGrey;
+    border-radius: 4px;
+    @include animate;
+    transition-property: background-color;
+
+    &_first {
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%) rotate(45deg);
+    }
+
+    &_second {
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%) rotate(-45deg);
+    }
+  }
+
+  &__greet {
+    
+    &_hidden {
+      display: none;
+    }
+  }
+
+  &__title {
+    margin: 0 0 4px 0;
+    font-weight: normal;
+    font-size: 32px;
+    color: $colorBlack;
+  }
+
+  &__text {
+    width: 65%;
+    margin: 0 0 31px 0;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 19px;
+
+    &_label {
+      margin: 0;
+      padding-left: 22px;
+      cursor: pointer;
+
+      & + .js-validate-error-label {
+        position: absolute;
+        top: -12px;
+        left: 23px;
+        font-family: inherit;
+        font-weight: normal;
+        font-size: 12px;
+      }
+    }
+
+    &_thanks {
+      position: absolute;
+      top: 68%;
+      width: 100%;
+      margin: auto;
+      font-size: 32px;
+      text-align: center;
+    }
+  }
+
+  &__form {
+    position: relative;
+    display: grid;
+    row-gap: 31px;
+  }
+
+  &__input {
+    padding: 16px;
+    background-color: $colorGreyLight;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    font-weight: normal;
+    font-size: 16px;
+    color: $colorBlack;
+    @include animate;
+    transition-property: color, background-color, border-color;
+
+    &_name::placeholder,
+    &_phone::placeholder {
+      font-weight: normal;
+      font-size: 16px;
+      color: $colorGrey;
+    }
+
+    &:focus:not(:hover) {
+      background-color: $colorPinkLight;
+      border-color: $colorPrimary;
+      @include animate;
+      transition-property: background-color, border-color;
+    }
+
+    &:active {
+      border-color: $colorGreenInput;
+      @include animate;
+      transition-property: border-color;
+    }
+
+    & + .js-validate-error-label {
+      position: absolute;
+      top: -16px;
+      left: 18px;
+      font-family: inherit;
+      font-weight: normal;
+      font-size: 12px;
+    }
+
+    &_phone + .js-validate-error-label {
+      top: 68px;
+    }
+  }
+
+  &__block {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__check {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    opacity: 0;
+  }
+
+  &__check + span {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    z-index: -1;
+    width: 14px;
+    height: 14px;
+    background-color: transparent;
+    border: 1px solid $colorGrey;
+    border-radius: 2px;
+    @include animate;
+    transition-property: background-color, border-color;
+  }
+
+  &__check + span::before {
+    content: '';
+    position: absolute;
+    top: 1px;
+    right: 0;
+    bottom: 0;
+    left: 3px;
+    width: 3px;
+    height: 7px;
+    border-right: 2px solid $colorWhite;
+    border-bottom: 2px solid $colorWhite;
+    transform: rotate(45deg);
+  }
+
+  &__check:checked + span {
+    background-color: $colorPrimary;
+    border-color: $colorPrimary;
+    @include animate;
+    transition-property: background-color, border-color;
+  }
+
+  &__thanks {
+    position: relative;
+    display: none;
+    background-image: url(../img/el.svg);
+    background-repeat: no-repeat;
+    background-position: 44% 36%;
+
+    &_visible {
+      display: block;
+      height: 100%;
+    }
+  }
+
+  &__swiper {
+    width: 100%;
+    height: 418px;;
+  }
+
+  &__slide {
+    display: flex;
+    justify-content: center;
+
+    &_thumb {
+      align-items: center;
+    }
+  }
+
+  &__picture {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  &__container {
+    position: relative;
+    width: 100%;
+    height: 166px;
+    padding: 0 44px; 
+    background-color: $colorGreyLight;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+
+  &__btn {
+    display: none;
+  }
+
+  &__thumbs {
+    width: 100%;
+    height: 100%;
+    background-color: $colorGreyLight;
+  }
+
+  &__btn {
+    top: auto;
+    bottom: 66px;
+    width: 32px;
+    height: 32px;
+    margin: 0;
+
+    &_prev {
+      right: auto;
+      left: 16px;
+  
+      &::after {
+        content: none;
+      }
+    }
+  
+    &_next {
+      right: 16px;
+  
+      &::after {
+        content: none;
+      }
+    }
+
+    &_disabled {
+      opacity: 1;
+      cursor: auto;
+      pointer-events: none;
+
+      .similar__svg path {
+        stroke: $colorGrey;
+        @include animate;
+        transition-property: stroke;
+      }
+      .similar__svg circle {
+        stroke: $colorGrey;
+        @include animate;
+        transition-property: stroke;
+      }
+    }
+
+    &:focus:not(:hover) {
+
+      .similar__svg path {
+        stroke: $colorWhite;
+        @include animate;
+        transition-property: stroke;
+      }
+
+      .similar__svg circle {
+        fill: $colorPrimaryLight;
+        @include animate;
+        transition-property: fill;
+      }
+    }
+
+    &:active {
+
+      .similar__svg path {
+        stroke: $colorWhite;
+        @include animate;
+        transition-property: stroke;
+      }
+      
+      .similar__svg circle {
+        fill: $colorPrimaryShade;
+        stroke: $colorPrimaryShade;
+        @include animate;
+        transition-property: fill, stroke;
+      }
+    }
+  }
+
+  &__svg path {
+    stroke: $colorPrimary;
+    @include animate;
+    transition-property: stroke;
+  }
+
+  &__svg circle {
+    stroke: $colorPrimary;
+    fill: transparent;
+    @include animate;
+    transition-property: fill, stroke;
+  }
+}
+
+@media (min-width: 1920px) {
+  .modul {
+    &__close {
+      &:hover > .modul__line {
+        background-color: $colorPrimary;
+        @include animate;
+        transition-property: background-color;
+      }
+      &:active > .modul__line {
+        background-color: $colorPrimary;
+        @include animate;
+        transition-property: background-color;
+      }
+    }
+    &__input {
+      &:hover {
+        background-color: $colorMdGrey;
+        border-color: $colorMdGrey;
+        @include animate;
+        transition-property: background-color, border-color;
+      }
+      &:active {
+        border-color: $colorGreenInput;
+        @include animate;
+        transition-property: border-color;
+      }
+    }
+  }
+}
+
+@media (max-width: 1919px) {
+  .modul {
+    &__box {
+      &_swiper {
+        width: 952px;
+        height: 588px;
+      }
+    }
+    &__swiper {
+      width: 90%;
+      height: 322px;;
+    }
+    &__btn {
+      display: flex;
+    }
+  }
+}
+
+@media (max-width: 1023px) {
+  .modul {
+    &__box {
+      &_swiper {
+        width: 624px;
+        height: 494px;
+      }
+    }
+    &__swiper {
+      width: 90%;
+      height: 228px;;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .modul {
+    padding: 0 12px;
+    &__box {
+      margin: 0;
+      &_main {
+        width: 100%;
+        height: 387px;
+        padding: 28px 16px;
+      }
+      &_swiper {
+        width: 100%;
+        height: 286px;
+        padding-top: 2px;
+      }
+    }
+    &__close {
+      z-index: 5;
+      top: 12px;
+      right: 12px;
+    }
+    &__title {
+      margin-bottom: 7px;
+      font-size: 24px;
+    }
+    &__text {
+      width: 100%;
+      margin-bottom: 16px;
+      &_label {
+        padding-left: 15px;
+        font-size: 12px;
+      }
+    }
+    &__form {
+      row-gap: 17px;
+    }
+    &__container {
+      height: 118px;
+      padding: 0 62px;
+    }
+    &__btn {
+      bottom: 42px;
+    }
+  }
+}

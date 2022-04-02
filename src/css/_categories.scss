@@ -7,8 +7,8 @@
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: min(511px) min(405px);
     grid-template-areas: 
-        'sofa sofa sofa sofa sofa sofa chair chair chair chair chair chair'
-        'bed bed bed bed dresser dresser dresser dresser stool stool stool stool';
+      'sofa sofa sofa sofa sofa sofa chair chair chair chair chair chair'
+      'bed bed bed bed dresser dresser dresser dresser stool stool stool stool';
     gap: 32px;
   }
 
@@ -44,27 +44,6 @@
       opacity: 0;
       @include animate;
       transition-property: opacity;
-    }
-
-    &:hover {
-
-      &::before {
-        opacity: 1;
-        @include animate;
-        transition-property: opacity;
-      }
-
-      .categories__svg path {
-        stroke: $colorWhite;
-        @include animate;
-        transition-property: stroke;
-      }
-
-      .categories__svg circle {
-        fill: $colorPrimary;
-        @include animate;
-        transition-property: fill;
-      }
     }
 
     &:focus:not(:hover) {
@@ -130,6 +109,49 @@
   }
 }
 
+@media (min-width: 1920px) {
+  .categories {
+    &__link {
+      &:hover {
+        &::before {
+          opacity: 1;
+          @include animate;
+          transition-property: opacity;
+        }
+        .categories__svg path {
+          stroke: $colorWhite;
+          @include animate;
+          transition-property: stroke;
+        }
+        .categories__svg circle {
+          fill: $colorPrimary;
+          @include animate;
+          transition-property: fill;
+        }
+      }
+      &:active {
+        color: $colorPrimaryShade;
+        &::before {
+          opacity: 1;
+          @include animate;
+          transition-property: opacity;
+        }
+        .categories__svg path {
+          stroke: $colorWhite;
+          @include animate;
+          transition-property: stroke;
+        }
+        .categories__svg circle {
+          fill: $colorPrimaryShade;
+          stroke: $colorPrimaryShade;
+          @include animate;
+          transition-property: fill, stroke;
+        }
+      }
+    }
+  }
+}
+
 @media (max-width: 1919px) {
   .categories {
     padding-right: 36px;
@@ -138,8 +160,8 @@
       grid-template-columns: repeat(9, 1fr);
       grid-template-rows: repeat(2, min(511px));
       grid-template-areas: 
-          'sofa sofa sofa sofa sofa sofa bed bed bed'
-          'dresser dresser dresser chair chair chair stool stool stool';
+        'sofa sofa sofa sofa sofa sofa bed bed bed'
+        'dresser dresser dresser chair chair chair stool stool stool';
     }
   }
 }
@@ -152,9 +174,9 @@
       grid-template-columns: repeat(6, 1fr);
       grid-template-rows: repeat(3, min(511px));
       grid-template-areas: 
-          'sofa sofa sofa sofa sofa sofa'
-          'bed bed bed chair chair chair' 
-          'dresser dresser dresser stool stool stool';
+        'sofa sofa sofa sofa sofa sofa'
+        'bed bed bed chair chair chair' 
+        'dresser dresser dresser stool stool stool';
     }
   }
 }

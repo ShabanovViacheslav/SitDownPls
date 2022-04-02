@@ -44,19 +44,6 @@
       }
     }
 
-    &:hover {
-      .offer__svg path {
-        stroke: $colorWhite;
-        @include animate;
-        transition-property: stroke;
-      }
-      .offer__svg circle {
-        fill: $colorPrimary;
-        @include animate;
-        transition-property: fill;
-      }
-    }
-
     &:focus:not(:hover) {
       .offer__svg path {
         stroke: $colorWhite;
@@ -137,6 +124,38 @@
 .swiper_offer {
   width: 100%;
   height: 511px;
+}
+
+@media (min-width: 1920px) {
+  .offer {
+    &__btn {
+      &:hover {
+        .offer__svg path {
+          stroke: $colorWhite;
+          @include animate;
+          transition-property: stroke;
+        }
+        .offer__svg circle {
+          fill: $colorPrimary;
+          @include animate;
+          transition-property: fill;
+        }
+      }
+      &:active {
+        .offer__svg path {
+          stroke: $colorWhite;
+          @include animate;
+          transition-property: stroke;
+        }
+        .offer__svg circle {
+          fill: $colorPrimaryShade;
+          stroke: $colorPrimaryShade;
+          @include animate;
+          transition-property: fill, stroke;
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: 1919px) {

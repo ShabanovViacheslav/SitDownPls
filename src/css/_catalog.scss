@@ -180,10 +180,6 @@
       color: $colorGreyShade;
     }
 
-    &:hover {
-      border-color: $colorPrimary;
-    }
-
     &:focus:not(:hover) {
       border-color: $colorPrimary;
       background-color: $colorPinkViolet;
@@ -218,10 +214,6 @@
     -moz-appearance: none;
     appearance: none;
     opacity: 0;
-
-    &:hover + span {
-      border-color: $colorPrimary;
-    }
 
     &:focus:not(:hover) + span {
       border-color: $colorPrimary;
@@ -343,27 +335,6 @@
       transition-property: opacity;
     }
 
-    &:hover {
-
-      &::before {
-        opacity: 1;
-        @include animate;
-        transition-property: opacity;
-      }
-
-      .categories__svg path {
-        stroke: $colorWhite;
-        @include animate;
-        transition-property: stroke;
-      }
-
-      .categories__svg circle {
-        fill: $colorPrimary;
-        @include animate;
-        transition-property: fill;
-      }
-    }
-
     &:focus:not(:hover) {
 
       &::before {
@@ -468,10 +439,6 @@
   @include animate;
   transition-property: border-color;
 
-  &:hover {
-    border-color: transparent transparent $colorPrimaryLight transparent;
-  }
-
   &:focus:not(:hover),
   &:active {
     border-color: transparent transparent $colorPrimaryShade transparent;
@@ -503,12 +470,6 @@
   @include animate;
   transition-property: opacity;
 
-  &:hover {
-    color: $colorWhite;
-    background-color: $colorPrimary;
-    border-color: $colorPrimary;
-  }
-
   &:focus:not(:hover) {
     color: $colorWhite;
     background-color: $colorPrimaryLight;
@@ -530,6 +491,85 @@
 
 .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
   margin: 0 8px;
+}
+
+@media (min-width: 1920px) {
+  .catalog {
+    &__number {
+      &:hover {
+        border-color: $colorPrimary;
+      }
+      &:active {
+        border-color: $colorPrimaryShade;
+      }
+    }
+    &__check {
+      &:hover + span {
+        border-color: $colorPrimary;
+      }
+      &:active + span {
+        border-color: $colorPrimaryShade;
+      }
+    }
+    &__link {
+      &:hover {
+        &::before {
+          opacity: 1;
+          @include animate;
+          transition-property: opacity;
+        }
+        .categories__svg path {
+          stroke: $colorWhite;
+          @include animate;
+          transition-property: stroke;
+        }
+        .categories__svg circle {
+          fill: $colorPrimary;
+          @include animate;
+          transition-property: fill;
+        }
+      }
+      &:active {
+        color: $colorPrimaryShade;
+        &::before {
+          opacity: 1;
+          @include animate;
+          transition-property: opacity;
+        }
+        .categories__svg path {
+          stroke: $colorWhite;
+          @include animate;
+          transition-property: stroke;
+        }
+        .categories__svg circle {
+          fill: $colorPrimaryShade;
+          stroke: $colorPrimaryShade;
+          @include animate;
+          transition-property: fill, stroke;
+        }
+      }
+    }
+  }
+  .noUi-handle {
+    &:hover {
+      border-color: transparent transparent $colorPrimaryLight transparent;
+    }
+    &:active {
+      border-color: transparent transparent $colorPrimaryShade transparent;
+    }
+  }
+  .swiper-pagination-bullet {
+    &:hover {
+      color: $colorWhite;
+      background-color: $colorPrimary;
+      border-color: $colorPrimary;
+    }
+    &:active {
+      color: $colorWhite;
+      background-color: $colorPrimaryShade;
+      border-color: $colorPrimaryShade;
+    }
+  }
 }
 
 @media (max-width: 1919px) {

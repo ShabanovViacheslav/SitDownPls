@@ -49,21 +49,6 @@
       }
     }
 
-    &:hover {
-
-      .similar__svg path {
-        stroke: $colorWhite;
-        @include animate;
-        transition-property: stroke;
-      }
-
-      .similar__svg circle {
-        fill: $colorPrimary;
-        @include animate;
-        transition-property: fill;
-      }
-    }
-
     &:focus:not(:hover) {
 
       .similar__svg path {
@@ -132,6 +117,38 @@
     font-weight: normal;
     font-size: 16px;
     color: $colorGrey;
+  }
+}
+
+@media (min-width: 1920px) {
+  .similar {
+    &__btn {
+      &:hover {
+        .similar__svg path {
+          stroke: $colorWhite;
+          @include animate;
+          transition-property: stroke;
+        }
+        .similar__svg circle {
+          fill: $colorPrimary;
+          @include animate;
+          transition-property: fill;
+        }
+      }
+      &:active {
+        .similar__svg path {
+          stroke: $colorWhite;
+          @include animate;
+          transition-property: stroke;
+        }
+        .similar__svg circle {
+          fill: $colorPrimaryShade;
+          stroke: $colorPrimaryShade;
+          @include animate;
+          transition-property: fill, stroke;
+        }
+      }
+    }
   }
 }
 

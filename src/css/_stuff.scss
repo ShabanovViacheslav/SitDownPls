@@ -19,10 +19,6 @@
     @include animate;
     transition-property: background-color;
 
-    &:hover {
-      background-color: $colorGreyLight;
-    }
-
     &:focus:not(:hover) {
       background-color: $colorPinkLight;
     }
@@ -146,10 +142,6 @@
     cursor: pointer;
     @include animate;
     transition-property: color, background-color;
-
-    &:hover {
-      color: $colorPrimaryLight;
-    }
   
     &:focus:not(:hover) {
       color: $colorPrimaryShade;
@@ -211,6 +203,27 @@
       font-size: 5px;
       color: $colorGrey;
       letter-spacing: .6em;
+    }
+  }
+}
+
+@media (min-width: 1920px) {
+  .stuff {
+    &__btn {
+      &:hover {
+        background-color: $colorGreyLight;
+      }
+      &:active {
+        background-color: $colorGreyLight;
+      }
+    }
+    &__cart {
+      &:hover {
+        color: $colorPrimaryLight;
+      }
+      &:active {
+        color: $colorPrimaryShade;
+      }
     }
   }
 }

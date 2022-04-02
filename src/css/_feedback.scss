@@ -48,27 +48,6 @@
       @include animate;
       transition-property: stroke, fill;
     }
-
-    &:hover {
-
-      circle:first-child {
-        fill: $colorSecondary;
-        @include animate;
-        transition-property: fill;
-      }
-
-      path {
-        fill: $colorWhite;
-        @include animate;
-        transition-property: fill;
-      }
-
-      circle:last-child {
-        stroke: $colorSecondary;
-        @include animate;
-        transition-property: stroke;
-      }
-    }
   }
 
   &__form {
@@ -94,13 +73,6 @@
       font-weight: normal;
       font-size: 16px;
       color: $colorGrey;
-    }
-
-    &:hover {
-      background-color: $colorMdGrey;
-      border-color: $colorMdGrey;
-      @include animate;
-      transition-property: background-color, border-color;
     }
 
     &:focus:not(:hover) {
@@ -193,6 +165,43 @@
 
 .tippy-box[data-theme~='SitDownPls'][data-placement^='top'] > .tippy-arrow::before {
   border-top-color: $colorBlack;
+}
+
+@media (min-width: 1920px) {
+  .feedback {
+    &__svg {
+      &:hover {
+        circle:first-child {
+          fill: $colorSecondary;
+          @include animate;
+          transition-property: fill;
+        }
+        path {
+          fill: $colorWhite;
+          @include animate;
+          transition-property: fill;
+        }
+        circle:last-child {
+          stroke: $colorSecondary;
+          @include animate;
+          transition-property: stroke;
+        }
+      }
+    }
+    &__input {
+      &:hover {
+        background-color: $colorMdGrey;
+        border-color: $colorMdGrey;
+        @include animate;
+        transition-property: background-color, border-color;
+      }
+      &:active {
+        border-color: $colorGreenInput;
+        @include animate;
+        transition-property: border-color;
+      }
+    }
+  }
 }
 
 @media (max-width: 1919px) {

@@ -1,762 +1,802 @@
 .header {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: min(50px) min(56px) min(94px);
-    grid-template-areas: 
-        'formRegion formRegion phone phone . subnav subnav subnav subnav subnav subnav subnav'
-        'logoHeader logoHeader . navHeader navHeader navHeader navHeader navHeader navHeader navHeader navHeader navHeader'
-        'formSearch formSearch formSearch formSearch formSearch formSearch formSearch formSearch formSearch formSearch listHeader listHeader';
-    max-width: 1280px;
-    margin: 0 auto 33px auto;
-    align-items: center;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: min(50px) min(56px) min(94px);
+  grid-template-areas: 
+    'formRegion formRegion phone phone . subnav subnav subnav subnav subnav subnav subnav'
+    'logoHeader logoHeader . navHeader navHeader navHeader navHeader navHeader navHeader navHeader navHeader navHeader'
+    'formSearch formSearch formSearch formSearch formSearch formSearch formSearch formSearch formSearch formSearch listHeader listHeader';
+  max-width: 1280px;
+  margin: 0 auto 33px auto;
+  align-items: center;
 }
 
 .header__formregion {
-    grid-area: formRegion;
-    display: flex;
-    align-items: center;
+  grid-area: formRegion;
+  display: flex;
+  align-items: center;
 }
 
 .header__label {
-    margin-right: 5px;
-    font-weight: normal;
-    font-size: 16px;
+  margin-right: 5px;
+  font-weight: normal;
+  font-size: 16px;
 }
 
 .choices {
-    padding-right: 17px;
-    min-width: 75px;
-    @include animate;
-    transition-property: background-color;
+  padding-right: 17px;
+  min-width: 75px;
+  @include animate;
+  transition-property: background-color;
 }
 
 .choices[data-type*=select-one]::after {
-    content: "";
-    height: 9px;
-    width: 12px;
-    border: none;
-    position: absolute;
-    right: 0;
-    top: 58%;
-    margin-top: -2.5px;
-    pointer-events: none;
-    background-image: url(../img/arrow.svg);
-    background-repeat: no-repeat;
-    background-size: contain;
-    @include animate;
-    transition-property: background;
+  content: "";
+  height: 9px;
+  width: 12px;
+  border: none;
+  position: absolute;
+  right: 0;
+  top: 58%;
+  margin-top: -2.5px;
+  pointer-events: none;
+  background-image: url(../img/arrow.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  @include animate;
+  transition-property: background;
 }
 
 .choices[data-type*=select-one].is-open::after {
-    border: none;
-    transform: rotate(180deg);
-}
-
-.header__label + .choices:hover::after {
-    background-image: url(../img/arrowHover.svg);
-    @include animate;
-    transition-property: background;
+  border: none;
+  transform: rotate(180deg);
 }
 
 .header__label + .choices:focus:not(:hover)::after,
 .header__label + .choices:active::after {
-    background-image: url(../img/arrowFocus.svg);
-    @include animate;
-    transition-property: background;
+  background-image: url(../img/arrowFocus.svg);
+  @include animate;
+  transition-property: background;
 }
 
 .choices[data-type*=select-one] .choices__inner {
-    padding: 0;
+  padding: 0;
 }
 
 .choices__inner {
-    padding: 0;
-    min-height: 0;
-    font-size: 16px;
-    background-color: transparent;
-    border: none;
+  padding: 0;
+  min-height: 0;
+  font-size: 16px;
+  background-color: transparent;
+  border: none;
 }
 
 .choices__list--single {
-    padding: 0;
+  padding: 0;
 }
 
 .choices__item {
-    color: $colorPrimary;
-    @include animate;
-    transition-property: color;
-}
-
-.header__label + .choices:hover .choices__list--single .choices__item {
-    color: $colorPrimaryLight;
+  color: $colorPrimary;
+  @include animate;
+  transition-property: color;
 }
 
 .header__label + .choices:focus:not(:hover) .choices__list--single .choices__item {
-    color: $colorPrimaryShade;
+  color: $colorPrimaryShade;
 }
 
 .header__label + .choices:focus:not(:hover) {
-    background-color: $colorPinkViolet;
+  background-color: $colorPinkViolet;
 }
 
 .header__label + .choices:active .choices__list--single .choices__item {
-    color: $colorPrimaryShade;
+  color: $colorPrimaryShade;
 }
 
 .choices__list--dropdown .choices__item--selectable {
-    padding-right: 0;
-    color: $colorBlack;
+  padding-right: 0;
+  color: $colorBlack;
 }
 
 .is-open .choices__list--dropdown {
-    border: 2px solid $colorGreyLight;
+  border: 2px solid $colorGreyLight;
 }
 
 .is-selected {
-    display: none;
+  display: none;
 }
 
 .header__phone {
-    grid-area: phone;
-    justify-self: start;
-    font-weight: normal;
-    font-size: 14px;
-    color: $colorSecondary;
-    transform: translate(-5px, -2px);
-    @include animate;
-    transition-property: color, background-color;
+  grid-area: phone;
+  justify-self: start;
+  font-weight: normal;
+  font-size: 14px;
+  color: $colorSecondary;
+  transform: translate(-5px, -2px);
+  @include animate;
+  transition-property: color, background-color;
 
-    &:hover {
-        color: $colorSecondaryLight;
 
-        .header__svg path {
-            fill: $colorSecondaryLight;
-            @include animate;
-            transition-property: fill;
-        }
+  &:focus:not(:hover) {
+    background-color: $colorBone;
+  }
+
+  &:active {
+    color: $colorSecondaryShade;
+
+    .header__svg path {
+      fill: $colorSecondaryShade;
+      @include animate;
+      transition-property: fill;
     }
-
-    &:focus:not(:hover) {
-        background-color: $colorBone;
-    }
-
-    &:active {
-        color: $colorSecondaryShade;
-
-        .header__svg path {
-            fill: $colorSecondaryShade;
-            @include animate;
-            transition-property: fill;
-        }
-    }
+  }
 }
 
 .header__svg {
-    transform: translate(2px, 4px);
-    
+  transform: translate(2px, 4px);
+  
 }
 
 .header__svg path {
-    @include animate;
-    transition-property: fill;
+  @include animate;
+  transition-property: fill;
 }
 
 .header__subnav {
-    grid-area: subnav;
+  grid-area: subnav;
 
-    &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: -1;
-        width: 100vw;
-        height: 50px;
-        background-color: $colorGreyLight;
-    }
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100vw;
+    height: 50px;
+    background-color: $colorGreyLight;
+  }
 }
 
 .header__sublist {
-    display: flex;
-    justify-content: flex-end;
-    margin: 0;
-    padding: 0;
+  display: flex;
+  justify-content: flex-end;
+  margin: 0;
+  padding: 0;
 }
 
 .header__subitem:not(:last-child) {
-    margin-right: 65px;
+  margin-right: 65px;
 }
 
 .link_submenu:focus:not(:hover),
 .link_submenu:active,
 .link_menu:active {
-    color: $colorPrimaryShade;
+  color: $colorPrimaryShade;
 }
 
 .header__burger {
-    display: none;
+  display: none;
 }
 
 .logo_header {
-    grid-area: logoHeader;
-    align-self: end;
-    width: 88%;
-    height: 48%;
-    transform: translateY(3px);
+  grid-area: logoHeader;
+  align-self: end;
+  width: 88%;
+  height: 48%;
+  transform: translateY(3px);
 }
 
 .header__nav {
-    grid-area: navHeader;
-    align-self: end;
+  grid-area: navHeader;
+  align-self: end;
 }
 
 .header__items {
-    display: flex;
-    justify-content: flex-end;
-    margin: 0 3px 0 0;
-    padding: 0;
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 3px 0 0;
+  padding: 0;
 }
 
 .header__item:not(:last-child) {
-    margin-right: 91.5px;
+  margin-right: 91.5px;
 }
 
 .link_menu {
-    font-weight: normal;
-    font-size: 16px;
-    color: $colorBlack;
+  font-weight: normal;
+  font-size: 16px;
+  color: $colorBlack;
 }
 
 .header__formsearch {
-    position: relative;
-    z-index: 2;
-    grid-area: formSearch;
-    align-self: end;
-    display: flex;
-    min-height: 60px;
+  position: relative;
+  z-index: 2;
+  grid-area: formSearch;
+  align-self: end;
+  display: flex;
+  min-height: 60px;
 }
 
 .header__inputsearch {
-    padding-top: 5px;
-    padding-right: 75px;
-    padding-left: 59px;
-    width: 71%;
-    background-color: $colorGreyLight;
-    border: 2px solid $colorGreyLight;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
+  padding-top: 5px;
+  padding-right: 75px;
+  padding-left: 59px;
+  width: 71%;
+  background-color: $colorGreyLight;
+  border: 2px solid $colorGreyLight;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  @include animate;
+  transition-property: background-color, border-color;
+
+  &:focus:not(:hover) {
+    background-color: $colorPinkLight;
+    border-color: $colorPrimary;
+  }
+
+  &:active + .header__loupe path {
+    fill: $colorPrimary;
     @include animate;
-    transition-property: background-color, border-color;
-
-    &:hover {
-        background-color: $colorMdGrey;
-        border-color: $colorMdGrey;
-    }
-
-    &:focus:not(:hover) {
-        background-color: $colorPinkLight;
-        border-color: $colorPrimary;
-    }
-
-    &:active + .header__loupe path {
-        fill: $colorPrimary;
-        @include animate;
-        transition-property: fill;
-    }
+    transition-property: fill;
+  }
 }
 
 .header__inputsearch::placeholder {
-    font-weight: normal;
-    font-size: 16px;
-    color: $colorGrey;
+  font-weight: normal;
+  font-size: 16px;
+  color: $colorGrey;
 }
 
 .header__loupe {
-    position: absolute;
-    top: 50%;
-    left: 3%;
-    transform: translateY(-50%);
+  position: absolute;
+  top: 50%;
+  left: 3%;
+  transform: translateY(-50%);
 
-    path {
-        @include animate;
-        transition-property: fill;
-    }
+  path {
+    @include animate;
+    transition-property: fill;
+  }
 }
 
 .header__btn {
-    position: absolute;
-    top: 55%;
-    right: 338px;
-    padding: 0;
-    background-color: transparent;
-    border: none;
-    transform: translateY(-50%);
-    cursor: pointer;
+  position: absolute;
+  top: 55%;
+  right: 338px;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  transform: translateY(-50%);
+  cursor: pointer;
 
-    &:hover path,
-    &:focus:not(:hover) path,
-    &:active path {
-        stroke: $colorWhite;
-        @include animate;
-        transition-property: stroke;
-    }
+  &:focus:not(:hover) path,
+  &:active path {
+    stroke: $colorWhite;
+    @include animate;
+    transition-property: stroke;
+  }
 
-    &:hover circle {
-        fill: $colorPrimary;
-        @include animate;
-        transition-property: fill;
-    }
+  &:focus:not(:hover) circle {
+    fill: $colorPrimaryLight;
+    @include animate;
+    transition-property: fill;
+  }
 
-    &:focus:not(:hover) circle {
-        fill: $colorPrimaryLight;
-        @include animate;
-        transition-property: fill;
-    }
-
-    &:active circle {
-        fill: $colorPrimaryShade;
-        stroke: $colorPrimaryShade;
-        @include animate;
-        transition-property: fill, stroke;
-    }
+  &:active circle {
+    fill: $colorPrimaryShade;
+    stroke: $colorPrimaryShade;
+    @include animate;
+    transition-property: fill, stroke;
+  }
 }
 
 .header__arrow,
 .header__arrow circle,
 .header__arrow path {
-    @include animate;
-    transition-property: fill, stroke;
+  @include animate;
+  transition-property: fill, stroke;
 }
 
 .header__btn + .choices {
-    width: 29%;
-    background-color: $colorWhite;
-    border: 2px solid $colorGreyLight;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
+  width: 29%;
+  background-color: $colorWhite;
+  border: 2px solid $colorGreyLight;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  @include animate;
+  transition-property: border-color, background-color;
+
+  &:focus:not(:hover) {
+    background-color: $colorPinkLight;
+    border-color: $colorPrimary;
     @include animate;
     transition-property: border-color, background-color;
+  }
 
-    &:hover {
-        border-color: $colorPrimary;
-        @include animate;
-        transition-property: border-color;
-    }
-
-    &:focus:not(:hover) {
-        background-color: $colorPinkLight;
-        border-color: $colorPrimary;
-        @include animate;
-        transition-property: border-color, background-color;
-    }
-
-    &:active {
-        border-color: $colorPrimaryShade;
-        @include animate;
-        transition-property: border-color;
-    }
+  &:active {
+    border-color: $colorPrimaryShade;
+    @include animate;
+    transition-property: border-color;
+  }
 }
 
 .header__btn + .choices[data-type*=select-one]::after {
-    top: 50%;
-    right: 36px;
+  top: 50%;
+  right: 36px;
 }
 
 .header__btn + .choices .choices__inner {
-    position: absolute;
-    top: 50%;
-    left: 11%;
-    transform: translateY(-50%);
+  position: absolute;
+  top: 50%;
+  left: 11%;
+  transform: translateY(-50%);
 }
 
 .choices__item--choice[data-value='categoty'] {
-    display: none;
+  display: none;
 }
 
 .header__btn + .choices .choices__list[role='listbox'] {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .header__btn + .choices .choices__item--choice {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 .header__btn + .is-open .choices__list--dropdown {
-    z-index: -1;
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px;
-    box-sizing: content-box;
-    transform: translate(-2px, -4px);
+  z-index: -1;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  box-sizing: content-box;
+  transform: translate(-2px, -4px);
 }
 
 .header__list {
-    grid-area: listHeader;
-    align-self: end;
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 12px;
+  grid-area: listHeader;
+  align-self: end;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 12px;
 }
 
 .header__unit:not(:last-child) {
-    margin-right: 32px;
+  margin-right: 32px;
 }
 
 .header__login svg,
 .header__login path,
 .header__cart path:first-child {
-    @include animate;
-    transition-property: fill;
+  @include animate;
+  transition-property: fill;
 }
 
 .header__login {
-    display: inline-block;
-    background-color: transparent;
+  display: inline-block;
+  background-color: transparent;
+  @include animate;
+  transition-property: background-color;
+
+  &:focus:not(:hover) {
+    background-color: $colorPrimaryLight;
     @include animate;
     transition-property: background-color;
+  }
 
-    &:hover path {
-        fill: $colorPrimaryLight;
-        @include animate;
-        transition-property: fill;
-    }
+  &:focus:not(:hover) path {
+    fill: $colorWhite;
+    @include animate;
+    transition-property: fill;
+  }
 
-    &:focus:not(:hover) {
-        background-color: $colorPrimaryLight;
-        @include animate;
-        transition-property: background-color;
-    }
-
-    &:focus:not(:hover) path {
-        fill: $colorWhite;
-        @include animate;
-        transition-property: fill;
-    }
-
-    &:active path {
-        fill: $colorPrimaryShade;
-        @include animate;
-        transition-property: fill;
-    }
+  &:active path {
+    fill: $colorPrimaryShade;
+    @include animate;
+    transition-property: fill;
+  }
 }
 
 .header__cart {
-    display: inline-block;
-    background-color: transparent;
+  display: inline-block;
+  background-color: transparent;
+  @include animate;
+  transition-property: background-color;
+
+  &:focus:not(:hover) {
+    background-color: $colorPrimaryLight;
     @include animate;
     transition-property: background-color;
+  }
 
+  &:focus:not(:hover) path:first-child {
+    fill: $colorWhite;
+    @include animate;
+    transition-property: fill;
+  }
+
+  &:active path:first-child {
+    fill: $colorPrimaryShade;
+    @include animate;
+    transition-property: fill;
+  }
+}
+
+@media (min-width: 1920px) {
+  .header__label + .choices:hover::after {
+    background-image: url(../img/arrowHover.svg);
+    @include animate;
+    transition-property: background;
+  }
+  .header__label + .choices:active::after {
+    background-image: url(../img/arrowFocus.svg);
+    @include animate;
+    transition-property: background;
+  }
+  .header__label + .choices:hover .choices__list--single .choices__item {
+    color: $colorPrimaryLight;
+  }
+  .header__label + .choices:active .choices__list--single .choices__item {
+    color: $colorPrimaryShade;
+  }
+  .header__phone {
+    &:hover {
+      color: $colorSecondaryLight;
+      .header__svg path {
+        fill: $colorSecondaryLight;
+        @include animate;
+        transition-property: fill;
+      }
+    }
+    &:active {
+      color: $colorSecondaryShade;
+      .header__svg path {
+        fill: $colorSecondaryShade;
+        @include animate;
+        transition-property: fill;
+      }
+    }
+  }
+  .header__inputsearch {
+    &:hover {
+      background-color: $colorMdGrey;
+      border-color: $colorMdGrey;
+    }
+    &:active + .header__loupe path {
+      fill: $colorPrimary;
+      @include animate;
+      transition-property: fill;
+    }
+  }
+  .header__btn {
+    &:hover path,
+    &:active path {
+      stroke: $colorWhite;
+      @include animate;
+      transition-property: stroke;
+    }
+    &:hover circle {
+      fill: $colorPrimary;
+      @include animate;
+      transition-property: fill;
+    }
+    &:active circle {
+      fill: $colorPrimaryShade;
+      stroke: $colorPrimaryShade;
+      @include animate;
+      transition-property: fill, stroke;
+    }
+  }
+  .header__btn + .choices {
+    &:hover {
+      border-color: $colorPrimary;
+      @include animate;
+      transition-property: border-color;
+    }
+    &:active {
+      border-color: $colorPrimaryShade;
+      @include animate;
+      transition-property: border-color;
+    }
+  }
+  .header__login {
+    &:hover path {
+      fill: $colorPrimaryLight;
+      @include animate;
+      transition-property: fill;
+    }
+    &:active path {
+      fill: $colorPrimaryShade;
+      @include animate;
+      transition-property: fill;
+    }
+  }
+  .header__cart {
     &:hover path:first-child {
-        fill: $colorPrimaryLight;
-        @include animate;
-        transition-property: fill;
+      fill: $colorPrimaryLight;
+      @include animate;
+      transition-property: fill;
     }
-
-    &:focus:not(:hover) {
-        background-color: $colorPrimaryLight;
-        @include animate;
-        transition-property: background-color;
-    }
-
-    &:focus:not(:hover) path:first-child {
-        fill: $colorWhite;
-        @include animate;
-        transition-property: fill;
-    }
-
     &:active path:first-child {
-        fill: $colorPrimaryShade;
-        @include animate;
-        transition-property: fill;
+      fill: $colorPrimaryShade;
+      @include animate;
+      transition-property: fill;
     }
+  }
 }
 
 @media (max-width: 1919px) {
-    .header {
-        grid-template-columns: repeat(9, 1fr);
-        grid-template-rows: min(59px) min(46px) min(62px) min(93px);
-        grid-template-areas: 
-            'formRegion formRegion . . . . . phone phone'  
-            'subnav subnav subnav subnav subnav subnav subnav listHeader listHeader'
-            'logoHeader logoHeader navHeader navHeader navHeader navHeader navHeader navHeader navHeader'
-            'formSearch formSearch formSearch formSearch formSearch formSearch formSearch formSearch formSearch';
-        padding: 0 36px;
-    }
-    .header__phone {
-        justify-self: end;
-        transform: translate(0, -4px);
-    }
-    .header__subnav {
-        justify-self: start;
-    }
-    .header__subnav::before {
-        top: 59px;
-    }
-    .header__subitem:not(:last-child) {
-        margin-right: 64px;
-    }
-    .header__items {
-        margin-right: 2px;
-        margin-bottom: 5px;
-    }
-    .header__item:not(:last-child) {
-        margin-right: 42px;
-    }
-    .header__inputsearch {
-        padding-top: 3px;
-        padding-left: 57px;
-        width: 69%;
-    }
-    .header__loupe {
-        left: 34px;
-    }
-    .header__btn {
-        top: 53%;
-        right: 35%;
-    }
-    .header__btn + .choices {
-        width: 31%;
-    }
-    .header__btn + .choices[data-type*=select-one]::after {
-        right: 30px;
-    }
-    .header__btn + .choices .choices__inner {
-        left: 9%;
-    }
-    .header__list {
-        align-self: center;
-        margin-top: 5px;
-        margin-bottom: 0;
-    }
+  .header {
+      grid-template-columns: repeat(9, 1fr);
+      grid-template-rows: min(59px) min(46px) min(62px) min(93px);
+      grid-template-areas: 
+          'formRegion formRegion . . . . . phone phone'  
+          'subnav subnav subnav subnav subnav subnav subnav listHeader listHeader'
+          'logoHeader logoHeader navHeader navHeader navHeader navHeader navHeader navHeader navHeader'
+          'formSearch formSearch formSearch formSearch formSearch formSearch formSearch formSearch formSearch';
+      padding: 0 36px;
+  }
+  .header__phone {
+      justify-self: end;
+      transform: translate(0, -4px);
+  }
+  .header__subnav {
+      justify-self: start;
+  }
+  .header__subnav::before {
+      top: 59px;
+  }
+  .header__subitem:not(:last-child) {
+      margin-right: 64px;
+  }
+  .header__items {
+      margin-right: 2px;
+      margin-bottom: 5px;
+  }
+  .header__item:not(:last-child) {
+      margin-right: 42px;
+  }
+  .header__inputsearch {
+      padding-top: 3px;
+      padding-left: 57px;
+      width: 69%;
+  }
+  .header__loupe {
+      left: 34px;
+  }
+  .header__btn {
+      top: 53%;
+      right: 35%;
+  }
+  .header__btn + .choices {
+      width: 31%;
+  }
+  .header__btn + .choices[data-type*=select-one]::after {
+      right: 30px;
+  }
+  .header__btn + .choices .choices__inner {
+      left: 9%;
+  }
+  .header__list {
+      align-self: center;
+      margin-top: 5px;
+      margin-bottom: 0;
+  }
 }
 
 @media (max-width: 1023px) {
-    .header {
-        position: relative;
-        grid-template-columns: repeat(6, 1fr);
-        grid-template-rows: min(59px) min(46px) min(66px) min(89px);
-        grid-template-areas: 
-            'formRegion formRegion . . phone phone'  
-            'subnav subnav subnav subnav subnav subnav'
-            'burger . logoHeader logoHeader listHeader listHeader'
-            'formSearch formSearch formSearch formSearch formSearch formSearch';
-        padding: 0 72px;
+  .header {
+    position: relative;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: min(59px) min(46px) min(66px) min(89px);
+    grid-template-areas: 
+      'formRegion formRegion . . phone phone'  
+      'subnav subnav subnav subnav subnav subnav'
+      'burger . logoHeader logoHeader listHeader listHeader'
+      'formSearch formSearch formSearch formSearch formSearch formSearch';
+    padding: 0 72px;
+  }
+  .header__subitem:not(:last-child) {
+    margin-right: 35px;
+  }
+  .header__burger {
+    position: relative;
+    z-index: 5;
+    grid-area: burger;
+    align-self: end;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transform: translateY(-5px);
+  }
+  .header__line {
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    display: inline-block;
+    background-color: $colorPrimary;
+    border-radius: 4px;
+    transform: rotate(0);
+    @include animate;
+    transition-property: left, top, bottom, transform;
+    &_first {
+      top: 0;
+      left: 0;
     }
-    .header__subitem:not(:last-child) {
-        margin-right: 35px;
+    &_second {
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
     }
-    .header__burger {
-        position: relative;
-        z-index: 5;
-        grid-area: burger;
-        align-self: end;
-        display: inline-block;
-        width: 24px;
-        height: 24px;
-        background-color: transparent;
-        border: none;
-        cursor: pointer;
-        transform: translateY(-5px);
+    &_third {
+      bottom: 0;
+      left: 0;
     }
+  }
+  .header__burger_close {
     .header__line {
-        position: absolute;
-        width: 100%;
-        height: 3px;
-        display: inline-block;
-        background-color: $colorPrimary;
-        border-radius: 4px;
-        transform: rotate(0);
-        @include animate;
-        transition-property: left, top, bottom, transform;
-
-        &_first {
-            top: 0;
-            left: 0;
-        }
-
-        &_second {
-            top: 50%;
-            left: 0;
-            transform: translateY(-50%);
-        }
-
-        &_third {
-            bottom: 0;
-            left: 0;
-        }
-    }
-    .header__burger_close {
-
-        .header__line {
-
-            &_first {
-                top: 50%;
-                left: 0;
-                transform: translateY(-50%) rotate(45deg);
-            }
-    
-            &_second {
-                display: none;
-            }
-    
-            &_third {
-                top: 50%;
-                left: 0;
-                transform: translateY(-50%) rotate(-45deg);
-            }
-        }
-    }
-
-    .logo_header {
-        justify-self: center;
-        transform: translate(-3px, 2px);
-    }
-    .header__nav {
-        position: absolute;
-        z-index: 4;
-        top: 109px;
+      &_first {
+        top: 50%;
         left: 0;
+        transform: translateY(-50%) rotate(45deg);
+      }
+      &_second {
         display: none;
-        width: 100%;
-        min-height: 300px;
-        padding-top: 93px;
-        padding-left: 72px;
-        background-color: $colorWhite;
-        background-image: url(../img/elephant.svg);
-        background-repeat: no-repeat;
-        background-position: 88% 68%;
+      }
+      &_third {
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%) rotate(-45deg);
+      }
     }
-    .header__nav_visible {
-        display: block;
-
-        .header__items {
-            flex-direction: column;
-            flex-wrap: wrap;
-            align-content: flex-start;
-            column-gap: 33px;
-            max-height: 150px;
-
-            .header__item:not(:nth-child(3n)) {
-                margin-right: 0;
-                margin-bottom: 45px;
-            }
-        }
+  }
+  .logo_header {
+    justify-self: center;
+    transform: translate(-3px, 2px);
+  }
+  .header__nav {
+    position: absolute;
+    z-index: 4;
+    top: 109px;
+    left: 0;
+    display: none;
+    width: 100%;
+    min-height: 300px;
+    padding-top: 93px;
+    padding-left: 72px;
+    background-color: $colorWhite;
+    background-image: url(../img/elephant.svg);
+    background-repeat: no-repeat;
+    background-position: 88% 68%;
+  }
+  .header__nav_visible {
+    display: block;
+    .header__items {
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-content: flex-start;
+      column-gap: 33px;
+      max-height: 150px;
+      .header__item:not(:nth-child(3n)) {
+        margin-right: 0;
+        margin-bottom: 45px;
+      }
     }
-    .header__btn + .choices .choices__inner {
-        left: 19%;
-    }
-    .header__list {
-        align-self: end;
-    }
+  }
+  .header__btn + .choices .choices__inner {
+    left: 19%;
+  }
+  .header__list {
+    align-self: end;
+  }
 }
 
 @media (max-width: 767px) {
-    .header {
-        grid-template-rows: min(48px) min(60px) min(53px) min(48px) min-content;
-        grid-template-areas: 
-            '. logoHeader logoHeader logoHeader logoHeader .'
-            'formRegion formRegion formRegion formRegion . .'
-            'phone phone phone phone . .'
-            'burger . . listHeader listHeader listHeader'
-            'formSearch formSearch formSearch formSearch formSearch formSearch';
-        padding: 0 12px;
+  .header {
+    grid-template-rows: min(48px) min(60px) min(53px) min(48px) min-content;
+    grid-template-areas: 
+      '. logoHeader logoHeader logoHeader logoHeader .'
+      'formRegion formRegion formRegion formRegion . .'
+      'phone phone phone phone . .'
+      'burger . . listHeader listHeader listHeader'
+      'formSearch formSearch formSearch formSearch formSearch formSearch';
+    padding: 0 12px;
+  }
+  .header__phone {
+    justify-self: start;
+    align-self: start;
+  }
+  .header__subnav {
+    position: absolute;
+    top: 590px;
+    display: none;
+    padding: 0 12px;
+  }
+  .header__subnav_visible {
+    z-index: 2;
+    display: block;
+    background-color: $colorGreyLight;
+    &::before {
+      top: -21px;
+      height: 108px;
     }
-    .header__phone {
-        justify-self: start;
-        align-self: start;
+    .header__sublist {
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      row-gap: 9px;
+      .header__subitem:not(:last-child) {
+        margin-right: 0;
+      }
+      .header__subitem:nth-child(odd) {
+        margin-right: 62px;
+      }
+      .header__subitem:nth-child(3) {
+        width: 112px;
+      }
     }
-    .header__subnav {
-        position: absolute;
-        top: 590px;
-        display: none;
-        padding: 0 12px;
+  }
+  .header__burger {
+    align-self: start;
+    margin-left: 4px;
+  }
+  .logo_header {
+    align-self: auto;
+    width: auto;
+    height: auto;
+    transform: translate(0, 3px);
+  }
+  .header__nav {
+    top: 144px;
+    padding-top: 64px;
+    padding-left: 12px;
+    background-image: none;
+  }
+  .header__nav_visible {
+    .header__items {
+      flex-wrap: nowrap;
+      column-gap: normal;
+      max-height: none;
+      margin-bottom: 26px;
+      .header__item:not(:last-child) {
+        margin-bottom: 45px;
+      }
     }
-    .header__subnav_visible {
-        display: block;
-
-        &::before {
-            top: -21px;
-            height: 108px;
-        }
-
-        .header__sublist {
-            flex-wrap: wrap;
-            justify-content: flex-start;
-            row-gap: 9px;
-
-            .header__subitem:not(:last-child) {
-                margin-right: 0;
-            }
-
-            .header__subitem:nth-child(odd) {
-                margin-right: 62px;
-            }
-
-            .header__subitem:nth-child(3) {
-                width: 112px;
-            }
-        }
-    }
-    .header__burger {
-        align-self: start;
-        margin-left: 4px;
-    }
-    .logo_header {
-        align-self: auto;
-        width: auto;
-        height: auto;
-        transform: translate(0, 3px);
-    }
-    .header__nav {
-        top: 144px;
-        padding-top: 64px;
-        padding-left: 12px;
-        background-image: none;
-    }
-    .header__nav_visible {
-
-        .header__items {
-            flex-wrap: nowrap;
-            column-gap: normal;
-            max-height: none;
-
-            .header__item:not(:last-child) {
-                margin-bottom: 45px;
-            }
-        }
-    }
-    .header__formsearch {
-        align-self: start;
-        flex-wrap: wrap;
-        row-gap: 16px;
-        min-height: 136px;
-    }
-    .header__inputsearch {
-        width: 100%;
-        height: 60px;
-        border-radius: 10px;
-    }
-    .header__loupe {
-        top: 16%;
-        left: 34px;
-        transform: translateY(0);
-    }
-    .header__btn {
-        top: 10%;
-        right: 32px;
-        transform: translateY(0);
-    }
-    .header__btn + .choices {
-        width: 100%;
-        height: 60px;
-        border-radius: 10px;
-    }
-    .header__btn + .choices .choices__inner {
-        left: 10%;
-    }
-    .header__list {
-        align-self: start;
-        margin-top: 0;
-        transform: translateY(-7px);
-    }
+  }
+  .header__formsearch {
+    align-self: start;
+    flex-wrap: wrap;
+    row-gap: 16px;
+    min-height: 136px;
+  }
+  .header__inputsearch {
+    width: 100%;
+    height: 60px;
+    border-radius: 10px;
+  }
+  .header__loupe {
+    top: 16%;
+    left: 34px;
+    transform: translateY(0);
+  }
+  .header__btn {
+    top: 10%;
+    right: 32px;
+    transform: translateY(0);
+  }
+  .header__btn + .choices {
+    width: 100%;
+    height: 60px;
+    border-radius: 10px;
+  }
+  .header__btn + .choices .choices__inner {
+    left: 10%;
+  }
+  .header__list {
+    align-self: start;
+    margin-top: 0;
+    transform: translateY(-7px);
+  }
 }

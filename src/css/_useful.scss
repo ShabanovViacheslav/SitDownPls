@@ -37,21 +37,6 @@
       }
     }
 
-    &:hover {
-      .useful__svg path {
-
-        stroke: $colorWhite;
-        @include animate;
-        transition-property: stroke;
-      }
-
-      .useful__svg circle {
-        fill: $colorPrimary;
-        @include animate;
-        transition-property: fill;
-      }
-    }
-
     &:focus:not(:hover) {
 
       .useful__svg path {
@@ -121,6 +106,38 @@
 .swiper_useful {
   width: 100%;
   height: auto;
+}
+
+@media (min-width: 1920px) {
+  .useful {
+    &__btn {
+      &:hover {
+        .useful__svg path {
+          stroke: $colorWhite;
+          @include animate;
+          transition-property: stroke;
+        }
+        .useful__svg circle {
+          fill: $colorPrimary;
+          @include animate;
+          transition-property: fill;
+        }
+      }
+      &:active {
+        .useful__svg path {
+          stroke: $colorWhite;
+          @include animate;
+          transition-property: stroke;
+        }
+        .useful__svg circle {
+          fill: $colorPrimaryShade;
+          stroke: $colorPrimaryShade;
+          @include animate;
+          transition-property: fill, stroke;
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: 1919px) {

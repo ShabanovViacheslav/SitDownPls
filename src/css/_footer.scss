@@ -91,15 +91,6 @@
 
   &__social {
 
-    &:hover {
-
-      .footer__svg path {
-        fill: $colorPrimary;
-        @include animate;
-        transition-property: fill;
-      }
-    }
-
     &:focus:not(:hover) {
 
       .footer__svg path {
@@ -133,6 +124,27 @@
     color: $colorGrey;
     text-align: center;
     letter-spacing: 1px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .footer {
+    &__social {
+      &:hover {
+        .footer__svg path {
+          fill: $colorPrimary;
+          @include animate;
+          transition-property: fill;
+        }
+      }
+      &:active {
+        .footer__svg path {
+          fill: $colorPrimaryShade;
+          @include animate;
+          transition-property: fill;
+        }
+      }
+    }
   }
 }
 

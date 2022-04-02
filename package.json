@@ -15,7 +15,9 @@
     "browser-sync": "latest",
     "del": "latest",
     "gulp": "latest",
+    "gulp-autoprefixer": "^8.0.0",
     "gulp-babel": "latest",
+    "gulp-clean-css": "^4.3.0",
     "gulp-cli": "latest",
     "gulp-htmlmin": "latest",
     "gulp-image": "^6.2.1",
@@ -24,6 +26,7 @@
     "gulp-sourcemaps": "latest",
     "gulp-svg-sprite": "latest",
     "gulp-uglify-es": "latest",
+    "inputmask": "^5.0.7",
     "just-validate": "latest",
     "sass": "latest"
   },

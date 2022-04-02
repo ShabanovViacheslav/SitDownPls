@@ -44,10 +44,6 @@ h1 {
     text-decoration: underline;
   }
 
-  &:hover {
-    color: $colorPrimary;
-  }
-
   &:focus:not(:hover) {
     background-color: $colorPinkViolet;
   }
@@ -108,11 +104,6 @@ h1 {
     background-color: $colorPrimary;
     border: 2px solid $colorPrimary;
 
-    &:hover {
-      background-color: $colorPrimaryLight;
-      border-color: $colorPrimaryLight;
-    }
-
     &:focus:not(:hover) {
       background-color: $colorPrimaryLight;
     }
@@ -156,11 +147,6 @@ h1 {
     border: 2px solid $colorPrimary;
     color: $colorPrimary;
     text-align: center;
-
-    &:hover {
-      color: $colorWhite;
-      background-color: $colorPrimary;
-    }
 
     &:focus:not(:hover) {
       color: $colorWhite;
@@ -383,10 +369,6 @@ h1 {
   @include animate;
   transition-property: color, background-color;
 
-  &:hover:not(.product_categories) {
-    color: $colorPrimary;
-  }
-
   &:focus:not(:hover, .product_categories) {
     background-color: $colorPinkViolet;
   }
@@ -410,6 +392,40 @@ h1 {
 @import './useful';
 @import './feedback';
 @import './footer';
+
+@media (min-width: 1920px) {
+  .link:hover {
+    color: $colorPrimary;
+  }
+  .btn {
+    &_primary {
+      &:hover {
+        background-color: $colorPrimaryLight;
+        border-color: $colorPrimaryLight;
+      }
+      &:active {
+        background-color: $colorPrimaryShade;
+        border-color: $colorPrimaryShade;
+      }
+    }
+    &_offer,
+    &_rate,
+    &_useful {
+      &:hover {
+        color: $colorWhite;
+        background-color: $colorPrimary;
+      }
+      &:active {
+        color: $colorWhite;
+        background-color: $colorPrimaryShade;
+        border-color: $colorPrimaryShade;
+      }
+    }
+  }
+  .product:hover:not(.product_categories) {
+    color: $colorPrimary;
+  }
+}
 
 @media (max-width: 1919px) {
   .title {
@@ -655,6 +671,3 @@ h1 {
     }
   }
 }
-
-
-
