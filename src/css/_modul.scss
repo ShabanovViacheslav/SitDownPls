@@ -175,6 +175,10 @@
       color: $colorGrey;
     }
 
+    &:required:valid {
+      border-color: $colorGreenInput;
+    }
+
     &:focus:not(:hover) {
       background-color: $colorPinkLight;
       border-color: $colorPrimary;

@@ -88,6 +88,7 @@
   &__discount {
     grid-area: discount;
     display: inline-block;
+    margin-left: -30px;
     width: 92px;
     height: 34px;
     padding: 9px 19px;
@@ -100,7 +101,7 @@
   &__list {
     grid-area: listOffer;
     margin: 0;
-    padding: 0 30px;
+    padding: 0;
     display: flex;
   }
 
@@ -119,11 +120,22 @@
       text-decoration-line: line-through;
     }
   }
+
+  &__img {
+    grid-area: img;
+    place-self: end;
+  }
 }
 
 .swiper_offer {
   width: 100%;
-  height: 511px;
+  min-height: 511px;
+  height: 100%;
+}
+
+.wrapper_offer {
+  min-height: 511px;
+  height: 100%;
 }
 
 @media (min-width: 1920px) {
@@ -167,6 +179,9 @@
     }
     &__btn_next {
       right: 36px;
+    }
+    &__img {
+      display: none;
     }
   }
 }

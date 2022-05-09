@@ -11,6 +11,7 @@
 }
 
 body {
+  min-width: 320px;
   font-family: 'Open Sans', sans-serif;
   color: $colorBlack;
   scroll-behavior: smooth;
@@ -139,8 +140,6 @@ h1 {
   &_rate,
   &_useful {
     grid-area: btn;
-    margin-top: 23px;
-    margin-left: 30px;
     padding: 16px 0;
     width: 128px;
     height: 54px;
@@ -160,9 +159,9 @@ h1 {
     }
   }
 
+  &_offer,
   &_rate {
     align-self: end;
-    margin: 0;
   }
 }
 
@@ -185,17 +184,35 @@ h1 {
   }
 
   &_offer {
-    grid-template-rows: min-content 3fr min-content 1fr;
+    grid-template-rows: min-content 3fr 1fr min-content 1fr;
     grid-template-areas: 
       'discount'
+      '.'
       'product'
       'listOffer'
       'btn';
     width: calc(100% / 4 - 24px);
-    padding-top: 30px;
+    min-height: 511px;
+    height: 100%;
+    padding: 30px;
+
+    & .product {
+      width: 95%;
+    }
 
     &big {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas: 
+      'discount discount'
+      '. img'
+      'product img'
+      'listOffer img'
+      'btn img';
       width: calc(100% / 2 - 16px);
+
+      & .product {
+        width: 78%;
+      }
     }
   
     &chair {
@@ -206,19 +223,6 @@ h1 {
     &sofa {
       background-image: url(../img/sofa.png);
       background-position: 52% 14%;
-  
-      &::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        z-index: -1;
-        background-image: url(../img/z44.png);
-        background-repeat: no-repeat;
-        background-position: 92% 92%;
-      }
     }
   
     &clock {
@@ -234,19 +238,6 @@ h1 {
     &sofa2 {
       background-image: url(../img/sofa2.png);
       background-position: 52% 14%;
-  
-      &::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        z-index: -1;
-        background-image: url(../img/z85.png);
-        background-repeat: no-repeat;
-        background-position: 92% 92%;
-      }
     }
   
     &thermometer {
@@ -260,14 +251,14 @@ h1 {
   }
 
   &_rate {
-    grid-template-rows: min-content 56% 11% 21%;
+    grid-template-rows: min-content 2fr 1fr min-content 1fr;
     grid-template-areas: 
       'estimate'
+      '.'
       'product'
       'price'
       'btn';
-    padding-top: 33px;
-    padding-left: 30px;
+    padding: 30px 0 30px 30px;
 
     &black {
       background-image: url(../img/sofa_black.png);
@@ -277,6 +268,10 @@ h1 {
     &brown {
       background-image: url(../img/sofa_brown.png);
       background-position: 50% 28%;
+
+      & .product_rate {
+        width: 100%;
+      }
     }
 
     &blue {
@@ -346,12 +341,10 @@ h1 {
   }
 
   &_useful {
-    grid-template-rows: min-content 1fr min-content;
+    grid-template-rows: min-content min(250px);
     grid-template-areas: 
       'picture'
-      'text'
-      'btn';
-    padding-bottom: 30px;
+      'descr';
     min-height: 676px;
     height: 100%;
   }
@@ -359,27 +352,32 @@ h1 {
 
 .product {
   grid-area: product;
-  align-self: end;
+  align-self: start;
   margin: 0;
-  padding: 23px 30px;
   font-weight: normal;
   font-size: 24px;
   line-height: 130%;
   color: $colorBlack;
-  @include animate;
-  transition-property: color, background-color;
-
-  &:focus:not(:hover, .product_categories) {
-    background-color: $colorPinkViolet;
-  }
 
   &_rate {
+    align-self: start;
+    width: 84%;
     padding: 0;
   }
 
   &_categories {
     align-self: start;
     padding: 0;
+  }
+
+  &__link {
+    color: inherit;
+    @include animate;
+    transition-property: color, background-color;
+
+    &:focus:not(:hover, .product_categories) {
+      background-color: $colorPinkViolet;
+    }
   }
 }
 
@@ -422,7 +420,7 @@ h1 {
       }
     }
   }
-  .product:hover:not(.product_categories) {
+  .product__link:hover:not(.product_categories) {
     color: $colorPrimary;
   }
 }
@@ -435,7 +433,17 @@ h1 {
     &_offer {
       width: calc(100% / 3 - 21px);
       &big {
-        width: calc(100% / 3 - 21px);
+        grid-template-columns: 1fr;
+        grid-template-rows: min-content 3fr 1fr min-content 1fr;
+        grid-template-areas: 
+          'discount'
+          '.'
+          'product'
+          'listOffer'
+          'btn';
+        & .product {
+          width: 95%;
+        }
       }
       &chair {
         background-image: url(../img/chair1024.png);
@@ -443,9 +451,6 @@ h1 {
       &sofa {
         background-image: url(../img/sofa1024.png);
         background-position-y: 30%;
-        &::after {
-          content: none;
-        }
       }
       &clock {
         background-image: url(../img/clock1024.png);
@@ -456,16 +461,10 @@ h1 {
       &sofa2 {
         background-image: url(../img/sofa2_1024.png);
         background-position-y: 30%;
-        &::after {
-          content: none;
-        }
       }
       &thermometer {
         background-image: url(../img/thermometer1024.png);
       }
-    }
-    &_rate {
-      grid-template-rows: min-content 56% 11% 20%;
     }
     &_categories {
       background-position-y: 58%;
@@ -475,10 +474,6 @@ h1 {
       }
       &chairs {
         background-image: url(../img/cat_armchair1024.png);
-      }
-      &beds {
-        background-image: url(../img/cat_bed1024.png);
-        background-size: contain;
       }
       &dressers {
         background-image: url(../img/cat_dresser1024.png);
@@ -494,14 +489,35 @@ h1 {
   }
 }
 
+@media (max-width: 1250px) {
+  .card {
+    &_categories {
+      &beds {
+        background-image: url(../img/cat_bed1024.png);
+        background-size: contain;
+      }
+    }
+  }
+} 
+
 @media (max-width: 1023px) {
   .title {
     width: 90%;
   }
-  .card_offer {
-    width: calc(100% / 2 - 16px);
-    &big {
+  .card {
+    &_offer {
       width: calc(100% / 2 - 16px);
+      &big {
+        width: calc(100% / 2 - 16px);
+      }
+    }
+    &_rate {
+      padding-right: 5px;
+    }
+    &_categories {
+      &beds {
+        background-size: auto;
+      }
     }
   }
 }
@@ -520,6 +536,9 @@ h1 {
       width: 100%;
       font-size: 24px;
       line-height: 100%;
+    }
+    &_feedback {
+      margin-bottom: 6px;
     }
   }
   .btn {
@@ -566,9 +585,8 @@ h1 {
       }
     }
     &_rate {
-      grid-template-rows: min-content 56% 11% 21%;
-      padding-top: 17px;
-      padding-left: 16px;
+      grid-template-rows: min-content 1fr repeat(3, auto);
+      padding: 16px;
       background-size: 77%;
       &black {
         background-position-y: 21%;
@@ -598,7 +616,6 @@ h1 {
       }
       &chairs {
         background-image: url(../img/cat_armchair320.png);
-        background-size: contain;
       }
       &beds {
         background-image: url(../img/cat_bed320.png);
@@ -612,7 +629,6 @@ h1 {
         padding: 13px 0 0 16px;
         background-image: url(../img/cat_dresser320.png);
         background-position-y: 85%;
-        background-size: contain;
         .categories__list {
           margin-bottom: 8px;
         }
@@ -657,7 +673,8 @@ h1 {
     }
   }
   .product_rate {
-    margin-bottom: 9px;
+    align-self: center;
+    margin-bottom: 18px;
     font-size: 16px;
   }
   .link {

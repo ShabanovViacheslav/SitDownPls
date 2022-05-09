@@ -111,15 +111,15 @@ h1 {
 .card {
   position: relative;
   display: grid;
-  grid-template-rows: min-content 56% 11% 21%;
+  grid-template-rows: min-content 2fr 1fr min-content 1fr;
   grid-template-areas: 
     'estimate'
+    '.'
     'product'
     'price'
     'btn';
   height: calc((100% - 64px) / 3);
-  padding-top: 33px;
-  padding-left: 30px;
+  padding: 30px 0 30px 30px;
   background-repeat: no-repeat;
   border-radius: 10px;
 
@@ -138,11 +138,19 @@ h1 {
   &_black {
     background-image: url(../img/sofa_black.png);
     background-position: 50% 32%;
+
+    .product {
+      width: 83%;
+    }
   }
 
   &_brown {
     background-image: url(../img/sofa_brown.png);
     background-position: 50% 28%;
+
+    .product {
+      width: 100%;
+    }
   }
 
   &_blue {
@@ -228,18 +236,23 @@ h1 {
 
 .product {
   grid-area: product;
-  align-self: end;
+  align-self: start;
+  width: 84%;
   margin: 0;
   padding: 0;
   font-weight: normal;
   font-size: 24px;
   line-height: 130%;
   color: $colorBlack;
-  @include animate;
-  transition-property: color, background-color;
 
-  &:focus:not(:hover) {
-    background-color: $colorPinkViolet;
+  &__link {
+    color: inherit;
+    @include animate;
+    transition-property: color, background-color;
+
+    &:focus:not(:hover) {
+      background-color: $colorPinkViolet;
+    }
   }
 }
 
@@ -267,10 +280,8 @@ h1 {
       }
     }
   }
-  .product {
-    &:hover {
-      color: $colorPrimary;
-    }
+  .product__link:hover {
+    color: $colorPrimary;
   }
 }
 
@@ -310,10 +321,9 @@ h1 {
     }
   }
   .card {
-    grid-template-rows: min-content 56% 11% 21%;
+    grid-template-rows: min-content 1fr repeat(3, auto);
     height: calc((100% - 32px) / 3);
-    padding-top: 17px;
-    padding-left: 16px;
+    padding: 16px;
     background-size: 77%;
     &_black {
       background-position-y: 21%;
@@ -341,7 +351,7 @@ h1 {
     }
   }
   .product {
-    margin-bottom: 9px;
+    margin-bottom: 18px;
     font-size: 16px;
   }
   .logo {

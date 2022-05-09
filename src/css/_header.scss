@@ -1,7 +1,7 @@
 .header {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: min(50px) min(56px) min(94px);
+  grid-template-rows: minmax(50px, min-content) minmax(56px, min-content) min(94px);
   grid-template-areas: 
     'formRegion formRegion phone phone . subnav subnav subnav subnav subnav subnav subnav'
     'logoHeader logoHeader . navHeader navHeader navHeader navHeader navHeader navHeader navHeader navHeader navHeader'
@@ -99,6 +99,7 @@
 }
 
 .is-open .choices__list--dropdown {
+  z-index: 3;
   border: 2px solid $colorGreyLight;
 }
 
@@ -160,6 +161,7 @@
 .header__sublist {
   display: flex;
   justify-content: flex-end;
+  flex-wrap: wrap;
   margin: 0;
   padding: 0;
 }
@@ -193,6 +195,7 @@
 
 .header__items {
   display: flex;
+  flex-wrap: wrap;
   justify-content: flex-end;
   margin: 0 3px 0 0;
   padding: 0;
@@ -358,11 +361,11 @@
   align-self: end;
   display: flex;
   justify-content: flex-end;
-  margin-bottom: 12px;
+  margin-bottom: 7px;
 }
 
 .header__unit:not(:last-child) {
-  margin-right: 32px;
+  margin-right: 20px;
 }
 
 .header__login svg,
@@ -374,6 +377,7 @@
 
 .header__login {
   display: inline-block;
+  padding: 4px;
   background-color: transparent;
   @include animate;
   transition-property: background-color;
@@ -399,6 +403,7 @@
 
 .header__cart {
   display: inline-block;
+  padding: 4px;
   background-color: transparent;
   @include animate;
   transition-property: background-color;
@@ -704,6 +709,16 @@
       'burger . . listHeader listHeader listHeader'
       'formSearch formSearch formSearch formSearch formSearch formSearch';
     padding: 0 12px;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 100vw;
+      height: 50px;
+      background-color: $colorGreyLight;
+    }
   }
   .header__phone {
     justify-self: start;

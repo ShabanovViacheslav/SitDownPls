@@ -3,18 +3,23 @@
   margin: 0 auto 70px auto;
 
   &__container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 32px;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: calc(50% - 16px);
+      background-image: url(../img/curve.svg);
+      background-repeat: no-repeat;
+      transform: translateY(-20px);
+    }
   }
 
   &__box {
-
-    &_curve {
-      background-image: url(../img/curve.svg);
-      background-repeat: no-repeat;
-      transform: translateY(-15px);
-    }
+    width: calc(50% - 16px);
   }
 
   &__text {
@@ -73,6 +78,10 @@
       font-weight: normal;
       font-size: 16px;
       color: $colorGrey;
+    }
+
+    &:required:valid {
+      border-color: $colorGreenInput;
     }
 
     &:focus:not(:hover) {
@@ -210,16 +219,17 @@
     padding-left: 36px;
     &__container {
       grid-template-columns: 4fr 5fr;
+      &::after {
+        width: calc(56% - 16px);
+        background-size: contain;
+        background-position: left, bottom;
+      }
     }
     &__text {
       width: 95%;
     }
     &__box{
-      &_curve{
-        background-size: contain;
-        background-position: left, bottom;
-        transform: translate(-3px, -21px);
-      }
+      width: calc(44% - 16px);
     }
   }
 }
@@ -230,13 +240,15 @@
     padding-left: 72px;
     &__container {
       grid-template-columns: 4fr 2fr;
+      &::after {
+        width: calc(33% - 16px);
+        background-image: url(../img/curve768.svg);
+        background-size: contain;
+        background-position: right, bottom;
+      }
     }
     &__box{
-      &_curve{
-        background-image: url(../img/curve768.svg);
-        background-size: 95%;
-        transform: translate(10px, -22px);
-      }
+      width: calc(67% - 16px);
     }
   }
 }
@@ -247,6 +259,9 @@
     padding-left: 12px;
     &__container {
       display: block;
+      &::after {
+        content: none;
+      }
     }
     &__text{
       &_label{
@@ -255,9 +270,7 @@
       }
     }
     &__box{
-      &_curve{
-        display: none;
-      }
+      width: 100%;
     }
   }
 }

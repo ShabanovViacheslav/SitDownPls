@@ -30,11 +30,15 @@
       delay: 10000,
     },
     speed: 500,
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
+    pagination: true,
+    breakpoints: {
+      768: {
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        }
+      }
     },
-    allowTouchMove: false,
     a11y: {
       paginationBulletMessage: 'Следующий слайд',
     },
@@ -190,6 +194,10 @@
       agreement: 'Примите соглашение',
       },
   });
+
+  const phone = document.querySelector(".feedback__input_phone");
+  let im = new Inputmask("+7(999) 999-99-99");
+  im.mask(phone);
 
   window.addEventListener('resize', ()=> {
     setCardsView(cards, 'card_hidden');

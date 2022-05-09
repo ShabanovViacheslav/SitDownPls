@@ -90,12 +90,16 @@
     width: 100%;
   }
 
+  &__descr {
+    grid-area: descr;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px;
+  }
+
   &__text {
-    grid-area: text;
-    width: 90%;
-    margin-top: 27px;
-    margin-bottom: 0;
-    margin-left: 30px;
+    margin: 0;
     font-weight: normal;
     font-size: 24px;
     line-height: 33px;
@@ -151,7 +155,7 @@
       right: 36px;
     }
     &__text {
-      width: 77%;
+      width: 97%;
       font-size: 16px;
       line-height: 22px;
     }
@@ -167,6 +171,9 @@
     }
     &__btn_next {
       right: 72px;
+    }
+    &__descr {
+      padding-top: 25px;
     }
   }
 }
