@@ -9,17 +9,20 @@
     new Choices(i, {
       searchEnabled: false,
       itemSelectText: '',
+      position: 'bottom',
     });
   }
 
   const burger = document.querySelector('.header__burger');
-  const menu = document.querySelector('.header__nav');
-  const subMenu = document.querySelector('.header__subnav');
+  const menu = document.querySelector('.header__nav[data-target="burger"]');
+  const subMenu = document.querySelector('.header__subnav[data-target="burger"]');
+  const frame = document.querySelector('.header__menu');
   
   burger.addEventListener('click', () => {
     menu.classList.toggle('header__nav_visible');
     burger.classList.toggle('header__burger_close');
     subMenu.classList.toggle('header__subnav_visible');
+    frame.classList.toggle('header__menu_visible');
   })
 
   // similar
@@ -63,11 +66,13 @@
   const modul = document.querySelector('.modul');
   const input = document.querySelector('.modul__input_name');
   const box = document.querySelector('.modul__box_main');
+  const body = document.querySelector('body');
   
   btn.addEventListener('click', () => {
     modul.classList.toggle('modul_visible');
     box.classList.toggle('modul__box_visible');
     input.focus();
+    body.classList.toggle('hidden');
   });
 
   const greet = document.querySelector('.modul__greet');
@@ -81,6 +86,7 @@
       greet.classList.toggle('modul__greet_hidden');
       thanks.classList.toggle('modul__thanks_visible');
     }
+    body.classList.toggle('hidden');
   });
 
   const validation = new JustValidate('.modul__form', {
@@ -126,6 +132,7 @@
   swBtn.addEventListener('click', () => {
     modul.classList.toggle('modul_visible');
     swBox.classList.toggle('modul__box_visiblesw');
+    body.classList.toggle('hidden');
   });
 
   const closeSw = closeswiper;
@@ -133,6 +140,7 @@
   closeSw.addEventListener('click', () => {
     modul.classList.toggle('modul_visible');
     swBox.classList.toggle('modul__box_visiblesw');
+    body.classList.toggle('hidden');
   });
 
   let swiper2 = new Swiper('.modul__thumbs', {

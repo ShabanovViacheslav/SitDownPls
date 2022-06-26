@@ -9,17 +9,20 @@
     new Choices(i, {
       searchEnabled: false,
       itemSelectText: '',
+      position: 'bottom',
     });
   }
 
   const burger = document.querySelector('.header__burger');
-  const menu = document.querySelector('.header__nav');
-  const subMenu = document.querySelector('.header__subnav');
+  const menu = document.querySelector('.header__nav[data-target="burger"]');
+  const subMenu = document.querySelector('.header__subnav[data-target="burger"]');
+  const box = document.querySelector('.header__menu');
   
   burger.addEventListener('click', () => {
     menu.classList.toggle('header__nav_visible');
     burger.classList.toggle('header__burger_close');
     subMenu.classList.toggle('header__subnav_visible');
+    box.classList.toggle('header__menu_visible');
   })
 
   // hero

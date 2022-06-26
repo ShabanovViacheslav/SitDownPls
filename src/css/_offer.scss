@@ -98,6 +98,11 @@
     color: $colorWhite;
   }
 
+  &__box {
+    grid-area: picture;
+    justify-self: center;
+  }
+
   &__list {
     grid-area: listOffer;
     margin: 0;
@@ -202,7 +207,7 @@
 @media (max-width: 767px) {
   .offer {
     padding-right: 12px;
-    padding-bottom: 17px;
+    padding-bottom: 52px;
     padding-left: 12px;
     &__btn {
       top: auto;

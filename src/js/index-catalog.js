@@ -9,17 +9,20 @@
     new Choices(i, {
       searchEnabled: false,
       itemSelectText: '',
+      position: 'bottom',
     });
   }
 
   const burger = document.querySelector('.header__burger');
-  const menu = document.querySelector('.header__nav');
-  const subMenu = document.querySelector('.header__subnav');
+  const menu = document.querySelector('.header__nav[data-target="burger"]');
+  const subMenu = document.querySelector('.header__subnav[data-target="burger"]');
+  const box = document.querySelector('.header__menu');
   
   burger.addEventListener('click', () => {
     menu.classList.toggle('header__nav_visible');
     burger.classList.toggle('header__burger_close');
     subMenu.classList.toggle('header__subnav_visible');
+    box.classList.toggle('header__menu_visible');
   })
 
   // catalog
@@ -31,31 +34,35 @@
 
   setTitleView ();
 
-  new Swiper('.swiper_catalog', {
-    slidesPerView: 2,
-    slidesPerGroup: 2,
-    spaceBetween: 16,
-    breakpoints: {
-      768 : {
-        spaceBetween: 32,
+  function setSlider() {
+    new Swiper('.swiper_catalog', {
+      slidesPerView: 2,
+      slidesPerGroup: 2,
+      spaceBetween: 16,
+      breakpoints: {
+        768 : {
+          spaceBetween: 32,
+        },
+        1024: {
+          slidesPerView: 3,
+          slidesPerGroup: 3,
+          spaceBetween: 32,
+        }, 
       },
-      1024: {
-        slidesPerView: 3,
-        slidesPerGroup: 3,
-        spaceBetween: 32,
-      }, 
-    },
-    grid: {
-      rows: 3,
-    },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-      renderBullet: function (index, className) {
-        return '<span class="' + className + '" aria-label="Следующий слайд">' + (index + 1) + "</span>";
+      grid: {
+        rows: 3,
       },
-    },
-  });
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+        renderBullet: function (index, className) {
+          return '<span class="' + className + '" aria-label="Следующий слайд">' + (index + 1) + "</span>";
+        },
+      },
+    });
+  };
+
+  setSlider();
 
   let range = document.querySelector('.catalog__range');
 
@@ -240,6 +247,7 @@
 
   window.addEventListener('resize', ()=> {
     setTitleView();
+    setSlider();
   });
 })();
 

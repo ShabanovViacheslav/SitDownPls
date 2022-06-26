@@ -33,12 +33,24 @@ h1 {
   margin: -1px;
 }
 
+.logo {
+
+  &_header {
+    flex-shrink: 0;
+  }
+}
+
 .link {
   font-weight: normal;
   font-size: 14px;
   color: $colorGrey;
   @include animate;
   transition-property: color, background-color;
+
+  &_menu {
+    font-size: 16px;
+    color: $colorBlack;
+  }
 
   &_feedback {
     color: $colorPrimary;
@@ -47,6 +59,12 @@ h1 {
 
   &:focus:not(:hover) {
     background-color: $colorPinkViolet;
+  }
+
+  &_submenu:focus:not(:hover),
+  &_submenu:active,
+  &_menu:active {
+    color: $colorPrimaryShade;
   }
 }
 
@@ -187,7 +205,7 @@ h1 {
     grid-template-rows: min-content 3fr 1fr min-content 1fr;
     grid-template-areas: 
       'discount'
-      '.'
+      'picture'
       'product'
       'listOffer'
       'btn';
@@ -204,45 +222,20 @@ h1 {
       grid-template-columns: repeat(2, 1fr);
       grid-template-areas: 
       'discount discount'
-      '. img'
+      'picture picture'
       'product img'
       'listOffer img'
       'btn img';
       width: calc(100% / 2 - 16px);
 
+      .offer__box {
+        position: absolute;
+        transform: translateY(-28px);
+      }
+
       & .product {
         width: 78%;
       }
-    }
-  
-    &chair {
-      background-image: url(../img/chair.png);
-      background-position: 50% 24%;
-    }
-  
-    &sofa {
-      background-image: url(../img/sofa.png);
-      background-position: 52% 14%;
-    }
-  
-    &clock {
-      background-image: url(../img/clock.png);
-      background-position: 50% 22%;
-    }
-  
-    &dear {
-      background-image: url(../img/dear.png);
-      background-position: 50% 24%;
-    }
-  
-    &sofa2 {
-      background-image: url(../img/sofa2.png);
-      background-position: 52% 14%;
-    }
-  
-    &thermometer {
-      background-image: url(../img/thermometer.png);
-      background-position: 50% 22%;
     }
   }
 
@@ -254,20 +247,24 @@ h1 {
     grid-template-rows: min-content 2fr 1fr min-content 1fr;
     grid-template-areas: 
       'estimate'
-      '.'
+      'image'
       'product'
       'price'
       'btn';
     padding: 30px 0 30px 30px;
 
     &black {
-      background-image: url(../img/sofa_black.png);
-      background-position: 50% 32%;
+
+      .rate__img {
+        transform: translateY(20px);
+      }
     }
 
     &brown {
-      background-image: url(../img/sofa_brown.png);
-      background-position: 50% 28%;
+      
+      .rate__img {
+        transform: translateY(10px);
+      }
 
       & .product_rate {
         width: 100%;
@@ -275,33 +272,10 @@ h1 {
     }
 
     &blue {
-      background-image: url(../img/sofa_blue.png);
-      background-position: 50% 28%;
-    }
-
-    &orange {
-      background-image: url(../img/sofa_orange.png);
-      background-position: 50% 22%;
-    }
-
-    &ligth {
-      background-image: url(../img/sofa_ligth.png);
-      background-position: 50% 24%;
-    }
-
-    &beige {
-      background-image: url(../img/sofa_beige.png);
-      background-position: 50% 24%;
-    }
-
-    &grey {
-      background-image: url(../img/sofa_grey.png);
-      background-position: 50% 21%;
-    }
-
-    &choco {
-      background-image: url(../img/sofa_choco.png);
-      background-position: 50% 23%;
+      
+      .rate__img {
+        transform: translateY(10px);
+      }
     }
   }
 
@@ -392,8 +366,13 @@ h1 {
 @import './footer';
 
 @media (min-width: 1920px) {
-  .link:hover {
-    color: $colorPrimary;
+  .link {
+    &:hover {
+      color: $colorPrimary;
+    }
+    &:active {
+      color: $colorPrimaryShade;
+    }
   }
   .btn {
     &_primary {
@@ -437,33 +416,23 @@ h1 {
         grid-template-rows: min-content 3fr 1fr min-content 1fr;
         grid-template-areas: 
           'discount'
-          '.'
+          'picture'
           'product'
           'listOffer'
           'btn';
+        .offer__box {
+          position: static;
+          align-self: center;
+          transform: translate(-10px, 0);
+        }
         & .product {
-          width: 95%;
+          width: 85%;
         }
       }
       &chair {
-        background-image: url(../img/chair1024.png);
-      }
-      &sofa {
-        background-image: url(../img/sofa1024.png);
-        background-position-y: 30%;
-      }
-      &clock {
-        background-image: url(../img/clock1024.png);
-      }
-      &dear {
-        background-image: url(../img/dear1024.png);
-      }
-      &sofa2 {
-        background-image: url(../img/sofa2_1024.png);
-        background-position-y: 30%;
-      }
-      &thermometer {
-        background-image: url(../img/thermometer1024.png);
+        .offer__box {
+          align-self: center;
+        }
       }
     }
     &_categories {
@@ -516,8 +485,19 @@ h1 {
     }
     &_categories {
       &beds {
-        background-size: auto;
+        background-size: contain;
       }
+    }
+    &_categories:not(:first-child) {
+      height: 0;
+      padding-bottom: calc((511 - 27) * 100% / 296);
+    }
+  }
+  .logo {
+    &_header {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
     }
   }
 }
@@ -587,20 +567,12 @@ h1 {
     &_rate {
       grid-template-rows: min-content 1fr repeat(3, auto);
       padding: 16px;
-      background-size: 77%;
-      &black {
-        background-position-y: 21%;
-      }
+      &black,
       &brown,
-      &blue,
-      &beige {
-        background-position-y: 20%;
-      }
-      &orange,
-      &ligth,
-      &grey,
-      &choco {
-        background-position-y: 19%;
+      &blue  {
+        .rate__img {
+          transform: translateY(1px);
+        }
       }
     }
     &_categories {
@@ -671,6 +643,10 @@ h1 {
         transform: translate(5px, -1px);
       }
     }
+    &_categories:not(:first-child) {
+      padding-bottom: calc((206 - 13) * 100% / 140);
+      background-size: contain
+    }
   }
   .product_rate {
     align-self: center;
@@ -683,8 +659,13 @@ h1 {
     }
   }
   .logo {
+    &_header {
+      position: static;
+      left: auto;
+      transform: translateX(0);
+    }
     &_footer {
-      margin-bottom: 19px;
+      margin-bottom: 23px;
     }
   }
 }

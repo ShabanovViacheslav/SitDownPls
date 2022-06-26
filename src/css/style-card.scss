@@ -16,6 +16,10 @@ body {
   scroll-behavior: smooth;
 }
 
+.hidden {
+  overflow-y: hidden;
+}
+
 a {
   text-decoration: none;
 }
@@ -32,12 +36,24 @@ h1 {
   margin: -1px;
 }
 
+.logo {
+
+  &_header {
+    flex-shrink: 0;
+  }
+}
+
 .link {
   font-weight: normal;
   font-size: 14px;
   color: $colorGrey;
   @include animate;
   transition-property: color, background-color;
+
+  &_menu {
+    font-size: 16px;
+    color: $colorBlack;
+  }
 
   &_active {
     color: $colorPrimaryShade;
@@ -50,6 +66,12 @@ h1 {
 
   &:focus:not(:hover) {
     background-color: $colorPinkViolet;
+  }
+
+  &_submenu:focus:not(:hover),
+  &_submenu:active,
+  &_menu:active {
+    color: $colorPrimaryShade;
   }
 }
 
@@ -123,14 +145,13 @@ h1 {
   grid-template-rows: min-content 2fr 1fr min-content 1fr;
   grid-template-areas: 
     'estimate'
-    '.'
+    'image'
     'product'
     'price'
     'btn';
   min-height: 420px;
   height: 100%;
   padding: 30px 0 30px 30px;
-  background-repeat: no-repeat;
   border-radius: 10px;
 
   &::before {
@@ -145,44 +166,26 @@ h1 {
     border-radius: 10px;
   }
 
-  &_orange {
-    background-image: url(../img/sofa_orange.png);
-    background-position: 50% 22%;
-  }
+  &_r85,
+  &_s44 {
 
-  &_ligth {
-    background-image: url(../img/sofa_ligth.png);
-    background-position: 50% 24%;
-  }
-
-  &_grey {
-    background-image: url(../img/sofa_grey.png);
-    background-position: 50% 21%;
-  }
-
-  &_green {
-    background-image: url(../img/sofa_green.png);
-    background-position: 50% 22%;
-  }
-
-  &_r85 {
-    background-image: url(../img/sofa_r85.png);
-    background-position: 50% 27%;
+    .similar__img{
+      transform: translateY(5px);
+    }
   }
 
   &_h58 {
-    background-image: url(../img/sofa_h58.png);
-    background-position: 50% 20%;
+
+    .similar__img {
+      transform: translateY(-10px);
+    }
   }
 
-  &_s44 {
-    background-image: url(../img/sofa_s44.png);
-    background-position: 50% 27%;
-  }
+  &_grey {
 
-  &_r43 {
-    background-image: url(../img/sofa_r43.png);
-    background-position: 50% 27%;
+    .similar__img {
+      transform: translateY(-8px);
+    }
   }
 }
 
@@ -216,9 +219,14 @@ h1 {
 @import './footer';
 
 @media (min-width: 1920px) {
-  .link:hover {
-    color: $colorPrimary;
-  }
+  .link {
+    &:hover {
+      color: $colorPrimary;
+    }
+    &:active {
+      color: $colorPrimaryShade;
+    }
+  }  
   .btn {
     &_similar {
       &:hover {
@@ -247,6 +255,16 @@ h1 {
   }
 }
 
+@media (max-width: 1023px) {
+  .logo {
+    &_header {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}
+
 @media (max-width: 767px) {
   .link{
     &_modul {
@@ -269,18 +287,16 @@ h1 {
   }
   .card {
     grid-template-rows: min-content 1fr repeat(3, auto);
-    min-height: 278px;
-    height: 100%;
+    min-height: 0;
+    height: calc(100vw - 42px);
     padding: 16px;
-    background-size: 77%;
-    &_orange,
-    &_ligth,
-    &_grey,
-    &_green,
     &_r85,
     &_s44,
-    &_r43 {
-      background-position-y: 19%;
+    &_h58,
+    &_grey {
+      .similar__img {
+        transform: translateY(0);
+      }
     }
   }
   .product {

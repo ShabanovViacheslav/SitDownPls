@@ -1,9 +1,10 @@
-.swiper {
-  min-height: 400px;
-  height: 100%;
+.hero .swiper {
+  height: 0;
+  padding-bottom: calc(400 * 100% / 1920);
 }
 
 .hero__slide {
+  padding-bottom: calc(400 * 100% / 1920);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -51,8 +52,11 @@
 }
 
 @media (max-width: 1919px) {
+  .hero .swiper {
+    padding-bottom: calc(400 * 100% / 1024);
+  }
   .hero__slide {
-    background-size: 100% 100%;
+    padding-bottom: calc(400 * 100% / 1024);
     &_first {
       background-image: url(../img/sofa1024.jpg);
     }
@@ -69,8 +73,11 @@
 }
 
 @media (max-width: 1023px) {
+  .hero .swiper {
+    padding-bottom: calc(400 * 100% / 768);
+  }
   .hero__slide {
-    background-size: cover;
+    padding-bottom: calc(400 * 100% / 768);
     &_first {
       background-image: url(../img/sofa768.jpg);
     }
@@ -88,12 +95,12 @@
 }
 
 @media (max-width: 767px) {
-  .swiper {
-    min-height: 210px;
+  .hero .swiper {
     margin-bottom: 32px;
+    padding-bottom: calc(210 * 100% / 320);
   }
   .hero__slide {
-    background-size: 100% 100%;
+    padding-bottom: calc(210 * 100% / 320);
     &_first {
       background-image: url(../img/sofa320.jpg);
     }

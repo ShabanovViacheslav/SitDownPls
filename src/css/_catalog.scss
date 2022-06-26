@@ -282,6 +282,12 @@
     }
   }
 
+  &__img {
+    grid-area: image;
+    place-self: center;
+    margin-left: -30px;
+  }
+
   &__price {
     grid-area: price;
     align-self: end;
@@ -793,7 +799,7 @@
       width: 140px;
     }
     &__products {
-      height: 866px;
+      height: calc(100vw * 3 - 94px);
       margin-bottom: 10px;
     }
     &__estimate {
@@ -803,6 +809,12 @@
         height: 12px;
         background-size: contain;
       }
+    }
+    &__img {
+      margin-left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
     }
     &__price {
       margin-bottom: 18px;

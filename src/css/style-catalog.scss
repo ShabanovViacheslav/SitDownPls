@@ -32,6 +32,13 @@ h1 {
   margin: -1px;
 }
 
+.logo {
+
+  &_header {
+    flex-shrink: 0;
+  }
+}
+
 .link {
   font-weight: normal;
   font-size: 14px;
@@ -39,12 +46,23 @@ h1 {
   @include animate;
   transition-property: color, background-color;
 
+  &_menu {
+    font-size: 16px;
+    color: $colorBlack;
+  }
+
   &_active {
     color: $colorPrimaryShade;
   }
 
   &:focus:not(:hover) {
     background-color: $colorPinkViolet;
+  }
+
+  &_submenu:focus:not(:hover),
+  &_submenu:active,
+  &_menu:active {
+    color: $colorPrimaryShade;
   }
 }
 
@@ -114,13 +132,12 @@ h1 {
   grid-template-rows: min-content 2fr 1fr min-content 1fr;
   grid-template-areas: 
     'estimate'
-    '.'
+    'image'
     'product'
     'price'
     'btn';
   height: calc((100% - 64px) / 3);
   padding: 30px 0 30px 30px;
-  background-repeat: no-repeat;
   border-radius: 10px;
 
   &::before {
@@ -136,8 +153,10 @@ h1 {
   }
 
   &_black {
-    background-image: url(../img/sofa_black.png);
-    background-position: 50% 32%;
+
+    .catalog__img {
+      transform: translateY(25px);
+    }
 
     .product {
       width: 83%;
@@ -145,8 +164,10 @@ h1 {
   }
 
   &_brown {
-    background-image: url(../img/sofa_brown.png);
-    background-position: 50% 28%;
+
+    .catalog__img {
+      transform: translateY(15px);
+    }
 
     .product {
       width: 100%;
@@ -154,84 +175,13 @@ h1 {
   }
 
   &_blue {
-    background-image: url(../img/sofa_blue.png);
-    background-position: 50% 28%;
+
+    .catalog__img {
+      transform: translateY(15px);
+    }
+    
   }
 
-  &_orange {
-    background-image: url(../img/sofa_orange.png);
-    background-position: 50% 22%;
-  }
-
-  &_ligth {
-    background-image: url(../img/sofa_ligth.png);
-    background-position: 50% 24%;
-  }
-
-  &_beige {
-    background-image: url(../img/sofa_beige.png);
-    background-position: 50% 24%;
-  }
-
-  &_grey {
-    background-image: url(../img/sofa_grey.png);
-    background-position: 50% 21%;
-  }
-
-  &_choco {
-    background-image: url(../img/sofa_choco.png);
-    background-position: 50% 23%;
-  }
-
-  &_green {
-    background-image: url(../img/sofa_green.png);
-    background-position: 50% 22%;
-  }
-
-  &_h64 {
-    background-image: url(../img/sofa_h64.png);
-    background-position: 50% 21%;
-  }
-
-  &_c42 {
-    background-image: url(../img/sofa_c42.png);
-    background-position: 50% 22%;
-  }
-
-  &_r85 {
-    background-image: url(../img/sofa_r85.png);
-    background-position: 50% 27%;
-  }
-
-  &_h58 {
-    background-image: url(../img/sofa_h58.png);
-    background-position: 50% 20%;
-  }
-
-  &_u58 {
-    background-image: url(../img/sofa_u58.png);
-    background-position: 50% 30%;
-  }
-
-  &_s44 {
-    background-image: url(../img/sofa_s44.png);
-    background-position: 50% 27%;
-  }
-
-  &_r43 {
-    background-image: url(../img/sofa_r43.png);
-    background-position: 50% 27%;
-  }
-
-  &_f41 {
-    background-image: url(../img/sofa_f41.png);
-    background-position: 50% 27%;
-  }
-
-  &_c80 {
-    background-image: url(../img/sofa_c80.png);
-    background-position: 50% 21%;
-  }
 }
 
 .product {
@@ -266,6 +216,9 @@ h1 {
     &:hover {
       color: $colorPrimary;
     }
+    &:active {
+      color: $colorPrimaryShade;
+    }
   }
   .btn {
     &_catalog {
@@ -299,6 +252,13 @@ h1 {
       margin-bottom: 0;
     }
   }
+  .logo {
+    &_header {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
 }
 
 @media (max-width: 767px) {
@@ -322,32 +282,14 @@ h1 {
   }
   .card {
     grid-template-rows: min-content 1fr repeat(3, auto);
-    height: calc((100% - 32px) / 3);
+    height: calc(100vw - 42px);
     padding: 16px;
-    background-size: 77%;
-    &_black {
-      background-position-y: 21%;
-    }
+    &_black,
     &_brown,
-    &_blue,
-    &_beige {
-      background-position-y: 20%;
-    }
-    &_orange,
-    &_ligth,
-    &_grey,
-    &_choco,
-    &_green,
-    &_h64,
-    &_c42,
-    &_r85,
-    &_h55,
-    &_u58,
-    &_s44,
-    &_r43,
-    &_f41,
-    &_c80 {
-      background-position-y: 19%;
+    &_blue  {
+      .catalog__img {
+        transform: translateY(1px);
+      }
     }
   }
   .product {

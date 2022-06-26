@@ -1,14 +1,7 @@
 .header {
-  grid-template-rows: min(50px) min(56px) min(94px) min-content;
-  grid-template-areas: 
-    'formRegion formRegion phone phone . subnav subnav subnav subnav subnav subnav subnav'
-    'logoHeader logoHeader . navHeader navHeader navHeader navHeader navHeader navHeader navHeader navHeader navHeader'
-    'formSearch formSearch formSearch formSearch formSearch formSearch formSearch formSearch formSearch formSearch listHeader listHeader'
-    'breadcrumps breadcrumps breadcrumps breadcrumps breadcrumps breadcrumps breadcrumps breadcrumps breadcrumps breadcrumps breadcrumps breadcrumps';
-  
-  &__breadcrumps {
-    grid-area: breadcrumps;
-    margin-top: 22px;
+
+  &__container[data-ordinal="fifth"] {
+    margin-bottom: 18px;
   }
 
   &__slash {
@@ -18,46 +11,15 @@
 
 @media (max-width: 1919px) {
   .header {
-    grid-template-columns: repeat(9, 1fr);
-    grid-template-rows: min(59px) min(46px) min(62px) min(93px) min-content;
-    grid-template-areas: 
-      'formRegion formRegion . . . . . phone phone'  
-      'subnav subnav subnav subnav subnav subnav subnav listHeader listHeader'
-      'logoHeader logoHeader navHeader navHeader navHeader navHeader navHeader navHeader navHeader'
-      'formSearch formSearch formSearch formSearch formSearch formSearch formSearch formSearch formSearch'
-      'breadcrumps breadcrumps breadcrumps breadcrumps breadcrumps breadcrumps breadcrumps breadcrumps breadcrumps';
-    padding: 0 36px;
-    &__formsearch {
-      z-index: 3;
+    margin-bottom: 35px;
+    &__container[data-ordinal="fifth"] {
+      margin-bottom: 20px;
     }
-  }
-}
-
-@media (max-width: 1023px) {
-  .header {
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: min(59px) min(46px) min(66px) min(89px) min-content;
-    grid-template-areas: 
-      'formRegion formRegion . . phone phone'  
-      'subnav subnav subnav subnav subnav subnav'
-      'burger . logoHeader logoHeader listHeader listHeader'
-      'formSearch formSearch formSearch formSearch formSearch formSearch'
-      'breadcrumps breadcrumps breadcrumps breadcrumps breadcrumps breadcrumps';
-    padding: 0 72px;
   }
 }
 
 @media (max-width: 767px) {
   .header {
-    grid-template-rows: min(48px) min(60px) min(53px) min(48px) min-content;
-    grid-template-areas: 
-      '. logoHeader logoHeader logoHeader logoHeader .'
-      'formRegion formRegion formRegion formRegion . .'
-      'phone phone phone phone . .'
-      'burger . . listHeader listHeader listHeader'
-      'formSearch formSearch formSearch formSearch formSearch formSearch';
-    padding: 0 12px;
-    margin-bottom: 36px;
     &__breadcrumps {
       display: none;
     }
